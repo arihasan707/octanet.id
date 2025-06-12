@@ -2,35 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-[type="text"],
-input:where(:not([type])),
-[type="email"],
-[type="url"],
-[type="password"],
-[type="number"],
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="search"],
-[type="tel"],
-[type="time"],
-[type="week"],
-[multiple],
-textarea,
-select,
-.form-select {
-    @apply rounded-lg;
-}
-
-table.dataTable th.dt-type-numeric,
-table.dataTable th.dt-type-date,
-table.dataTable td.dt-type-numeric,
-table.dataTable td.dt-type-date {
-    @apply text-start;
-}
-
-[type="text"] {
-    border-color: #bfc1c3;
+.container {
+    @apply max-w-[1240px];
 }
 
 .collapse {

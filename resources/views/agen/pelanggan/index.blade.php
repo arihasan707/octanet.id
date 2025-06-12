@@ -423,7 +423,7 @@
             const imagePreview = document.getElementById("uploaded-img__preview");
 
 
-            // =============================== Upload Edit Image start ================================================
+            // =============================== Upload Add Image start ================================================
             fileInput.addEventListener("change", (e) => {
                 if (e.target.files.length) {
                     const src = URL.createObjectURL(e.target.files[0]);

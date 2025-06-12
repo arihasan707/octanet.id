@@ -1,43 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Login - Octanet Internet Service Provider</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <!--favicon icon-->
+    <link rel="icon" href="{{ asset('assets/front/img/favicon.png') }}" type="image/png" sizes="16x16" />
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!--title-->
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <!--build:css-->
+    <link id="theme-style" href="{{ asset('assets/front/css/main.css') }}" as="style" rel="stylesheet" />
+    <link id="theme-dynamic" href="" as="style" rel="stylesheet" />
+    <!-- endbuild -->
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('assets/front/css/bootstrap.min.css') }}" rel="stylesheet">
+    @stack('styles')
 
-    <!-- Template Main CSS File -->
-    <link href="{{asset('assets/login/css/style.css')}}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Mar 09 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="antialiased">
-    {{ $slot }}
+
+    <!-- Page Content -->
+    <div class="main bg-gradient-to-t from-red-500 to-black">
+        {{ $slot }}
+    </div>
 
     @stack('scripts')
 </body>

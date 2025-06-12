@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Agen\BankController;
 use App\Http\Controllers\Admin\AreaController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Agen\PelangganController;
@@ -17,11 +18,10 @@ use App\Http\Controllers\Admin\PermintaanPencairanDanaController;
 use App\Http\Controllers\Agen\DashboardController as AgenDashboard;
 use App\Http\Controllers\Admin\PelangganController as adminPelangganController;
 use App\Http\Controllers\Agen\PaymentController;
+use App\Http\Controllers\BerandaController;
 
 Route::middleware('guestOnly')->group(function () {
-    Route::get('/', function () {
-        return view('beranda');
-    })->name('beranda');
+    Route::get('/', BerandaController::class)->name('beranda');
 
     Route::get('/tentang-kami', function () {
         return view('tentang-kami');
@@ -83,6 +83,9 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
     Route::get('/admin/pelanggan', [adminPelangganController::class, 'index'])->name('admin.pelanggan');
     Route::post('/admin/pelanggan/{id}/update', [adminPelangganController::class, 'update'])->name('admin.pelanggan.update');
     Route::get('/admin/download/{filename}', [adminPelangganController::class, 'download'])->name('admin.download');
+    //banner
+    Route::get('/admin/banner', [BannerController::class, 'index'])->name('admin.banner');
+    Route::post('/admin/banner/store', [BannerController::class, 'store'])->name('admin.banner.store');
 });
 
 require __DIR__ . '/auth.php';

@@ -1,137 +1,66 @@
 <x-guest.guest-layout>
 
+    @push('styles')
+    <style>
+        #keuntungan .swiper-slide .team-content>div {
+            display: flex;
+            justify-content: center;
+        }
+
+        #keuntungan .swiper-slide .team-content svg {
+            width: 74px;
+            margin-bottom: 3px;
+        }
+
+        #keuntungan .swiper-slide .team-content p {
+            margin-top: 6px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        form label {
+            font-weight: 600;
+        }
+    </style>
+    @endpush
+
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-12 flex justify-center text-center">
                     <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-                        <h2>Strategic Solutions for Business Growth</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo. Sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.</p>
+                        <h2>Menjadi Agen OCTAnet</h2>
+                        <p>Raih keuntungan setiap bulannya dengan menjadi agen resmi kami.</p>
                         <div class="hero-btns">
-                            <a href="#consultation" class="btn btn-primary">Get a Free Consultation</a>
-                            <a href="#services" class="btn btn-outline">Our Services</a>
+                            <a href="#" class="btn btn-primary">Skema Komisi</a>
+                            <a href="#keuntungan" class="btn btn-outline">Lihat Keuntungan</a>
                         </div>
                         <div class="hero-stats">
                             <div class="stat-item">
-                                <h3><span data-purecounter-start="0" data-purecounter-end="15"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                                <p>Years Experience</p>
-                            </div>
-                            <div class="stat-item">
                                 <h3><span data-purecounter-start="0" data-purecounter-end="500"
                                         data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                                <p>Clients Worldwide</p>
+                                <p>Total Keanggotaan</p>
                             </div>
                             <div class="stat-item">
-                                <h3><span data-purecounter-start="0" data-purecounter-end="98"
+                                <h3><span data-purecounter-start="0" data-purecounter-end="100"
                                         data-purecounter-duration="1" class="purecounter"></span>%</h3>
-                                <p>Success Rate</p>
+                                <p>Legalitas tersertifikasi</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-                        <img src="assets/img/about/about-21.webp" alt="Consulting Services" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
-                    <div class="about-image">
-                        <img src="assets/img/about/about-square-12.webp" alt="About Our Consulting Firm"
-                            class="img-fluid main-image">
-                        <div class="experience-badge">
-                            <span class="years">15+</span>
-                            <span class="text">Years of Experience</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="about-content">
-                        <h2>We Help Businesses Reach Their Full Potential</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                            luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo.</p>
-
-                        <div class="row features-row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <div class="icon">
-                                        <i class="bi bi-graph-up-arrow"></i>
-                                    </div>
-                                    <h4>Business Growth</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <div class="icon">
-                                        <i class="bi bi-lightbulb"></i>
-                                    </div>
-                                    <h4>Innovative Solutions</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <div class="icon">
-                                        <i class="bi bi-people"></i>
-                                    </div>
-                                    <h4>Expert Team</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <div class="icon">
-                                        <i class="bi bi-trophy"></i>
-                                    </div>
-                                    <h4>Proven Results</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cta-button">
-                            <a href="#about" class="btn btn-primary">Learn More About Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section><!-- /About Section -->
-
     <!-- Work Process Section -->
-    <section id="work-process" class="work-process section">
+    <section id="langkah-pendaftaran" class="work-process section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Our Consulting Process</h2>
-            <div><span>Check Our</span> <span class="description-title">Our Consulting Process</span></div>
+            <div><span>5 Langkah Mudah</span><br><span class="description-title">Bergabung Menjadi Agen OCTAnet</span>
+            </div>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -139,16 +68,13 @@
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="steps-content">
-                        <h2>Our Proven Consulting Process</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                            luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo.</p>
-
+                        <h2>Ada Pertanyaan atau Butuh Bantuan ?</h2>
+                        <p class="lead">
+                            Silahkan hubungi. kami siap memberikan
+                            informasi yang anda butuhkan.
+                        </p>
                         <div class="steps-cta">
-                            <a href="#contact" class="btn btn-primary">Start Your Project</a>
-                            <a href="#about" class="btn btn-outline">Learn More</a>
+                            <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
                         </div>
                     </div>
                 </div>
@@ -207,327 +133,12 @@
 
     </section><!-- /Work Process Section -->
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Services</h2>
-            <div><span>Check Our</span> <span class="description-title">Services</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="icon-box">
-                            <i class="bi bi-bar-chart-line"></i>
-                        </div>
-                        <h3>Strategic Planning</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle"></i> Market Analysis</li>
-                            <li><i class="bi bi-check-circle"></i> Competitive Positioning</li>
-                            <li><i class="bi bi-check-circle"></i> Growth Strategies</li>
-                        </ul>
-                        <a href="service-details.html" class="read-more">Learn More <i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="icon-box">
-                            <i class="bi bi-briefcase"></i>
-                        </div>
-                        <h3>Business Transformation</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle"></i> Process Optimization</li>
-                            <li><i class="bi bi-check-circle"></i> Organizational Change</li>
-                            <li><i class="bi bi-check-circle"></i> Digital Transformation</li>
-                        </ul>
-                        <a href="service-details.html" class="read-more">Learn More <i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="icon-box">
-                            <i class="bi bi-cash-coin"></i>
-                        </div>
-                        <h3>Financial Advisory</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle"></i> Financial Analysis</li>
-                            <li><i class="bi bi-check-circle"></i> Investment Planning</li>
-                            <li><i class="bi bi-check-circle"></i> Risk Management</li>
-                        </ul>
-                        <a href="service-details.html" class="read-more">Learn More <i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-card">
-                        <div class="icon-box">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h3>Human Resources</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle"></i> Talent Acquisition</li>
-                            <li><i class="bi bi-check-circle"></i> Performance Management</li>
-                            <li><i class="bi bi-check-circle"></i> Leadership Development</li>
-                        </ul>
-                        <a href="service-details.html" class="read-more">Learn More <i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-card">
-                        <div class="icon-box">
-                            <i class="bi bi-laptop"></i>
-                        </div>
-                        <h3>Technology Consulting</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle"></i> IT Strategy</li>
-                            <li><i class="bi bi-check-circle"></i> System Implementation</li>
-                            <li><i class="bi bi-check-circle"></i> Cybersecurity</li>
-                        </ul>
-                        <a href="service-details.html" class="read-more">Learn More <i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
-                    <div class="service-card">
-                        <div class="icon-box">
-                            <i class="bi bi-megaphone"></i>
-                        </div>
-                        <h3>Marketing Strategy</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle"></i> Brand Development</li>
-                            <li><i class="bi bi-check-circle"></i> Digital Marketing</li>
-                            <li><i class="bi bi-check-circle"></i> Market Research</li>
-                        </ul>
-                        <a href="service-details.html" class="read-more">Learn More <i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="800">
-                <a href="#contact" class="btn btn-primary">Request a Consultation</a>
-            </div>
-
-        </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Consultation Section -->
-    <section id="consultation" class="consultation section light-background">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Consultation Form</h2>
-            <div><span>Schedule a&nbsp;</span> <span class="description-title">Consultation Form</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="cta-wrapper">
-                <div class="row align-items-center">
-                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-                        <div class="cta-content">
-                            <h2>Ready to Transform Your Business?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo. Sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua.</p>
-                            <div class="cta-stats">
-                                <div class="stat-item">
-                                    <span class="number"><span data-purecounter-start="0" data-purecounter-end="500"
-                                            data-purecounter-duration="0" class="purecounter">500</span>+</span>
-                                    <span class="text">Projects Completed</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="number"><span data-purecounter-start="0" data-purecounter-end="98"
-                                            data-purecounter-duration="0" class="purecounter">98</span>%</span>
-                                    <span class="text">Client Satisfaction</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="number"><span data-purecounter-start="0" data-purecounter-end="15"
-                                            data-purecounter-duration="0" class="purecounter">15</span>+</span>
-                                    <span class="text">Years Experience</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
-                        <div class="cta-form">
-                            <h3>Schedule a Free Consultation</h3>
-                            <p>Fill out the form below and our team will contact you within 24 hours.</p>
-                            <form action="forms/consultation.php" method="post" class="php-email-form">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                        required="">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                        required="">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control" name="phone" placeholder="Your Phone">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <select class="form-control" name="service" required="">
-                                        <option value="" disabled="" selected="">Select Service</option>
-                                        <option value="Strategic Planning">Strategic Planning</option>
-                                        <option value="Business Transformation">Business Transformation</option>
-                                        <option value="Financial Advisory">Financial Advisory</option>
-                                        <option value="Human Resources">Human Resources</option>
-                                        <option value="Technology Consulting">Technology Consulting</option>
-                                    </select>
-                                </div>
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit">Get Started</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- /Consultation Section -->
-
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="why-choose-us section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Why Choose Us</h2>
-            <div><span>Why Choose</span> <span class="description-title">Our Services</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="features-content">
-                        <h2>Why Choose Our Consulting Services</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-                            luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="bi bi-award"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Industry Expertise</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        sed quia consequuntur magni dolores.</p>
-                                </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="bi bi-graph-up"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Data-Driven Approach</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        sed quia consequuntur magni dolores.</p>
-                                </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="bi bi-clock-history"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Timely Delivery</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        sed quia consequuntur magni dolores.</p>
-                                </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Guaranteed Results</h4>
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        sed quia consequuntur magni dolores.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="features-image">
-                        <div class="stats-card">
-                            <div class="stat-item">
-                                <h3><span data-purecounter-start="0" data-purecounter-end="95"
-                                        data-purecounter-duration="1" class="purecounter"></span>%</h3>
-                                <p>Client Satisfaction</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3><span data-purecounter-start="0" data-purecounter-end="250"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                                <p>Projects Completed</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3><span data-purecounter-start="0" data-purecounter-end="30"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                                <p>Industry Awards</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3><span data-purecounter-start="0" data-purecounter-end="20"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                                <p>Countries Served</p>
-                            </div>
-                        </div>
-                        <img src="assets/img/misc/misc-square-11.webp" alt="" class="img-fluid main-image">
-                        <div class="experience-badge">
-                            <div class="badge-content">
-                                <span class="number">15+</span>
-                                <span class="text">Years of Excellence</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section><!-- /Why Choose Us Section -->
 
     <!-- Team Section -->
-    <section id="team" class="team section">
+    <section id="keuntungan" class="team section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Team</h2>
-            <div><span>Check Our</span> <span class="description-title">Expert Team</span></div>
+            <div><span>Keuntungan menjadi <span class="description-title"> Agen OCTAnet</span></span></div>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -568,616 +179,145 @@
 
                     <div class="swiper-slide">
                         <div class="team-card">
-                            <div class="team-image">
-                                <img src="assets/img/person/person-m-3.webp" class="img-fluid" alt="" loading="lazy">
-                                <div class="team-overlay">
-                                    <div class="social-links">
-                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                                        <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-instagram"></i></a>
-                                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="team-content">
-                                <h3>Marcus Wilson</h3>
-                                <span>Chief Technology Officer</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-                                    nec ullamcorper mattis.</p>
+                                <div class=" text-[50px] text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                                        <path fill="currentColor"
+                                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372s372 166.6 372 372s-166.6 372-372 372m47.7-395.2l-25.4-5.9V348.6c38 5.2 61.5 29 65.5 58.2c.5 4 3.9 6.9 7.9 6.9h44.9c4.7 0 8.4-4.1 8-8.8c-6.1-62.3-57.4-102.3-125.9-109.2V263c0-4.4-3.6-8-8-8h-28.1c-4.4 0-8 3.6-8 8v33c-70.8 6.9-126.2 46-126.2 119c0 67.6 49.8 100.2 102.1 112.7l24.7 6.3v142.7c-44.2-5.9-69-29.5-74.1-61.3c-.6-3.8-4-6.6-7.9-6.6H363c-4.7 0-8.4 4-8 8.7c4.5 55 46.2 105.6 135.2 112.1V761c0 4.4 3.6 8 8 8h28.4c4.4 0 8-3.6 8-8.1l-.2-31.7c78.3-6.9 134.3-48.8 134.3-124c-.1-69.4-44.2-100.4-109-116.4m-68.6-16.2c-5.6-1.6-10.3-3.1-15-5c-33.8-12.2-49.5-31.9-49.5-57.3c0-36.3 27.5-57 64.5-61.7zM534.3 677V543.3c3.1.9 5.9 1.6 8.8 2.2c47.3 14.4 63.2 34.4 63.2 65.1c0 39.1-29.4 62.6-72 66.4" />
+                                    </svg>
+                                </div>
+                                <p>Bisnis Tanpa modal, dapat pasive income setiap bulan.</p>
+                            </div>
+                        </div><!-- End Team Card -->
+                    </div><!-- End slide item -->
+
+
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <div class="team-content">
+                                <div class=" text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="m12 .186l3.617 3.082l4.737.378l.378 4.737L23.814 12l-3.082 3.617l-.378 4.737l-4.737.378L12 23.814l-3.616-3.082l-4.737-.378l-.378-4.737L.187 12l3.082-3.617l.378-4.737l4.737-.378zm0 2.628L9.188 5.21l-3.683.293l-.294 3.684L2.814 12l2.397 2.812l.294 3.684l3.683.294L12 21.186l2.813-2.396l3.683-.294l.294-3.684L21.186 12L18.79 9.188l-.294-3.684l-3.683-.293zM17.915 9.5L11 16.414L6.586 12L8 10.586l3 3l5.5-5.5z" />
+                                    </svg>
+                                </div>
+                                <p>Legalitas penjualan internet secara aman dan sudah tersertifikasi.
+                                </p>
+                            </div>
+                        </div><!-- End Team Card -->
+                    </div><!-- End slide item -->
+
+
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <div class="team-content">
+                                <div class=" text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M18.72 14.76c.35-.85.54-1.76.54-2.76c0-.72-.11-1.41-.3-2.05c-.65.15-1.33.23-2.04.23A9.07 9.07 0 0 1 9.5 6.34a9.2 9.2 0 0 1-4.73 4.88c-.04.25-.04.52-.04.78A7.27 7.27 0 0 0 12 19.27c1.05 0 2.06-.23 2.97-.64c.57 1.09.83 1.63.81 1.63c-1.64.55-2.91.82-3.78.82c-2.42 0-4.73-.95-6.43-2.66a9 9 0 0 1-2.24-3.69H2v-4.55h1.09a9.09 9.09 0 0 1 15.33-4.6a9 9 0 0 1 2.47 4.6H22v4.55h-.06L18.38 18l-5.3-.6v-1.67h4.83zm-9.45-2.99c.3 0 .59.12.8.34a1.136 1.136 0 0 1 0 1.6c-.21.21-.5.33-.8.33c-.63 0-1.14-.5-1.14-1.13s.51-1.14 1.14-1.14m5.45 0c.63 0 1.13.51 1.13 1.14s-.5 1.13-1.13 1.13s-1.14-.5-1.14-1.13a1.14 1.14 0 0 1 1.14-1.14" />
+                                    </svg>
+                                </div>
+                                <p>Customer support dan teknisi yang siap membantu 1x24 jam.
+                                </p>
                             </div>
                         </div><!-- End Team Card -->
                     </div><!-- End slide item -->
 
                     <div class="swiper-slide">
                         <div class="team-card">
-                            <div class="team-image">
-                                <img src="assets/img/person/person-f-5.webp" class="img-fluid" alt="" loading="lazy">
-                                <div class="team-overlay">
-                                    <div class="social-links">
-                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                                        <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-instagram"></i></a>
-                                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="team-content">
-                                <h3>Sophia Reynolds</h3>
-                                <span>Product Designer</span>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                    fugiat nulla pariatur.</p>
+                                <div class=" text-[50px] text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M11 18h2v3h-2zm5 3v2H8v-2zm4-3H4a3.003 3.003 0 0 1-3-3V4a3.003 3.003 0 0 1 3-3h16a3.003 3.003 0 0 1 3 3v11a3.003 3.003 0 0 1-3 3M4 3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Z" />
+                                        <path fill="currentColor"
+                                            d="m16 15l-1.914-6.38L13 13l-1.309-3h-.331L10 14L8.843 9.933L8.309 11H5v-1h2.691L9 7l1.068 3.713L10.64 9h1.669l.487.973L14 4l2 8l.64-2H19v1h-1.64z" />
+                                    </svg>
+                                </div>
+                                <p>Aplikasi yang dapat membantu memonitoring penujualan pelanggan.
+                                </p>
                             </div>
                         </div><!-- End Team Card -->
                     </div><!-- End slide item -->
 
                     <div class="swiper-slide">
                         <div class="team-card">
-                            <div class="team-image">
-                                <img src="assets/img/person/person-m-8.webp" class="img-fluid" alt="" loading="lazy">
-                                <div class="team-overlay">
-                                    <div class="social-links">
-                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                                        <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-instagram"></i></a>
-                                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="team-content">
-                                <h3>Daniel Chen</h3>
-                                <span>Marketing Specialist</span>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div><!-- End Team Card -->
-                    </div><!-- End slide item -->
-
-                    <div class="swiper-slide">
-                        <div class="team-card">
-                            <div class="team-image">
-                                <img src="assets/img/person/person-f-9.webp" class="img-fluid" alt="" loading="lazy">
-                                <div class="team-overlay">
-                                    <div class="social-links">
-                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                                        <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-instagram"></i></a>
-                                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    </div>
+                                <div class=" text-[50px] text-red-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                        <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="4">
+                                            <path d="m18 24l-6 9l-8-4.5V42h40V15l-7 8l-6-5l-7 8z" />
+                                            <path d="M4 28.5V17l7 6l5.5-8l6 3L31 9l5.5 4.5L44 6v9.5" />
+                                        </g>
+                                    </svg>
                                 </div>
-                            </div>
-                            <div class="team-content">
-                                <h3>Olivia Thompson</h3>
-                                <span>Lead Developer</span>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                    doloremque laudantium.</p>
-                            </div>
-                        </div><!-- End Team Card -->
-                    </div><!-- End slide item -->
-
-                    <div class="swiper-slide">
-                        <div class="team-card">
-                            <div class="team-image">
-                                <img src="assets/img/person/person-m-12.webp" class="img-fluid" alt="" loading="lazy">
-                                <div class="team-overlay">
-                                    <div class="social-links">
-                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                                        <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-instagram"></i></a>
-                                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-content">
-                                <h3>Jason Parker</h3>
-                                <span>UI/UX Designer</span>
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
-                                    quia consequuntur magni.</p>
+                                <p>Perluasan dan pengembangan area cakupan penjualan.
+                                </p>
                             </div>
                         </div><!-- End Team Card -->
                     </div><!-- End slide item -->
 
                 </div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
             </div>
 
         </div>
 
     </section><!-- /Team Section -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Testimonials</h2>
-            <div><span>Check Our</span> <span class="description-title">Testimonials</span></div>
-        </div><!-- End Section Title -->
-
+    <!-- Consultation Section -->
+    <section id="daftar-agen" class="consultation section light-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row g-4">
-                <!-- Testimonial Item 1 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
-                            imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
-                        </p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-author">
-                                <img src="assets/img/person/person-m-3.webp" alt="Author"
-                                    class="img-fluid rounded-circle" loading="lazy">
-                                <div>
-                                    <h5>Michael Anderson</h5>
-                                    <span>Software Developer</span>
-                                </div>
-                            </div>
-                            <div class="quote-icon">
-                                <i class="bi bi-quote"></i>
-                            </div>
+            <div class="cta-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+                        <div class="cta-content">
+                            <h2>Daftar Menjadi Agen</h2>
+                            <p>Jika Anda adalah orang yang mampu dan tepat untuk menjadi Agen kami, segera isi data
+                                Anda secara lengkap pada form berikut ini.
+                                Selanjutnya Anda akan dihubungi oleh tim kami untuk verifikasi.</p>
                         </div>
                     </div>
-                </div><!-- End Testimonial Item -->
-
-                <!-- Testimonial Item 2 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna
-                            derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-author">
-                                <img src="assets/img/person/person-f-5.webp" alt="Author"
-                                    class="img-fluid rounded-circle" loading="lazy">
-                                <div>
-                                    <h5>Sophia Martinez</h5>
-                                    <span>Marketing Specialist</span>
-                                </div>
-                            </div>
-                            <div class="quote-icon">
-                                <i class="bi bi-quote"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Testimonial Item -->
-
-                <!-- Testimonial Item 3 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
-                            ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum.
-                        </p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-author">
-                                <img src="assets/img/person/person-m-7.webp" alt="Author"
-                                    class="img-fluid rounded-circle" loading="lazy">
-                                <div>
-                                    <h5>David Wilson</h5>
-                                    <span>Graphic Designer</span>
-                                </div>
-                            </div>
-                            <div class="quote-icon">
-                                <i class="bi bi-quote"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Testimonial Item -->
-
-                <!-- Testimonial Item 4 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                            porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
-                            viverra quis.</p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-author">
-                                <img src="assets/img/person/person-f-9.webp" alt="Author"
-                                    class="img-fluid rounded-circle" loading="lazy">
-                                <div>
-                                    <h5>Emily Johnson</h5>
-                                    <span>UX Designer</span>
-                                </div>
-                            </div>
-                            <div class="quote-icon">
-                                <i class="bi bi-quote"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Testimonial Item -->
-
-                <!-- Testimonial Item 5 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>Praesent nonummy mi in odio. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis
-                            hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
-                        </p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-author">
-                                <img src="assets/img/person/person-f-11.webp" alt="Author"
-                                    class="img-fluid rounded-circle" loading="lazy">
-                                <div>
-                                    <h5>Olivia Thompson</h5>
-                                    <span>Entrepreneur</span>
-                                </div>
-                            </div>
-                            <div class="quote-icon">
-                                <i class="bi bi-quote"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Testimonial Item -->
-
-                <!-- Testimonial Item 6 -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
-                            rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis
-                            pretium.</p>
-                        <div class="testimonial-footer">
-                            <div class="testimonial-author">
-                                <img src="assets/img/person/person-m-12.webp" alt="Author"
-                                    class="img-fluid rounded-circle" loading="lazy">
-                                <div>
-                                    <h5>James Taylor</h5>
-                                    <span>Financial Analyst</span>
-                                </div>
-                            </div>
-                            <div class="quote-icon">
-                                <i class="bi bi-quote"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Testimonial Item -->
-
-            </div>
-
-        </div>
-
-    </section><!-- /Testimonials Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Pricing Plans</h2>
-            <div><span>Check Our</span> <span class="description-title">Pricing Plans</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container pricing-toggle-container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="d-flex align-items-center justify-content-center text-center">
-                <div class="pricing-toggle">
-                    <span class="monthly active">Monthly</span>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                    <span class="yearly">Yearly</span>
-                    <div class="discount-badge">Save 20%</div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pricing-item">
-                        <div class="pricing-header">
-                            <h3>Basic Plan</h3>
-                            <div class="price-monthly">$1,499<span>/mo</span></div>
-                            <div class="price-yearly">$14,390<span>/year</span></div>
-                            <p>Perfect for small businesses</p>
-                        </div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li><i class="bi bi-check-circle"></i> Business Analysis</li>
-                                <li><i class="bi bi-check-circle"></i> Strategic Planning</li>
-                                <li><i class="bi bi-check-circle"></i> 10 Consulting Hours</li>
-                                <li><i class="bi bi-check-circle"></i> Monthly Report</li>
-                                <li><i class="bi bi-x-circle"></i> Market Research</li>
-                                <li><i class="bi bi-x-circle"></i> Implementation Support</li>
-                                <li><i class="bi bi-x-circle"></i> Dedicated Consultant</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <a href="#contact" class="btn btn-outline">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pricing-item featured">
-                        <div class="pricing-badge">Popular</div>
-                        <div class="pricing-header">
-                            <h3>Professional Plan</h3>
-                            <div class="price-monthly">$2,999<span>/mo</span></div>
-                            <div class="price-yearly">$28,790<span>/year</span></div>
-                            <p>Ideal for growing companies</p>
-                        </div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li><i class="bi bi-check-circle"></i> Business Analysis</li>
-                                <li><i class="bi bi-check-circle"></i> Strategic Planning</li>
-                                <li><i class="bi bi-check-circle"></i> 25 Consulting Hours</li>
-                                <li><i class="bi bi-check-circle"></i> Weekly Reports</li>
-                                <li><i class="bi bi-check-circle"></i> Market Research</li>
-                                <li><i class="bi bi-check-circle"></i> Implementation Support</li>
-                                <li><i class="bi bi-x-circle"></i> Dedicated Consultant</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <a href="#contact" class="btn btn-primary">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="pricing-item">
-                        <div class="pricing-header">
-                            <h3>Enterprise Plan</h3>
-                            <div class="price-monthly">$4,999<span>/mo</span></div>
-                            <div class="price-yearly">$47,990<span>/year</span></div>
-                            <p>For established enterprises</p>
-                        </div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li><i class="bi bi-check-circle"></i> Business Analysis</li>
-                                <li><i class="bi bi-check-circle"></i> Strategic Planning</li>
-                                <li><i class="bi bi-check-circle"></i> 50 Consulting Hours</li>
-                                <li><i class="bi bi-check-circle"></i> Weekly Reports</li>
-                                <li><i class="bi bi-check-circle"></i> Market Research</li>
-                                <li><i class="bi bi-check-circle"></i> Implementation Support</li>
-                                <li><i class="bi bi-check-circle"></i> Dedicated Consultant</li>
-                            </ul>
-                        </div>
-                        <div class="pricing-footer">
-                            <a href="#contact" class="btn btn-outline">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pricing-note text-center mt-5" data-aos="fade-up" data-aos-delay="600">
-                <p>Need a custom solution? <a href="#contact">Contact us</a> for a personalized quote.</p>
-            </div>
-
-        </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Frequently Asked Questions</h2>
-            <div><span>Frequently Asked</span> <span class="description-title">Questions</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4 justify-content-between">
-                <div class="col-lg-8">
-
-                    <div class="faq-list">
-                        <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="100">
-                            <h3>Vivamus suscipit tortor eget felis porttitor volutpat?</h3>
-                            <div class="faq-content">
-                                <p>
-                                    Nulla quis lorem ut libero malesuada feugiat. Vestibulum ac diam sit amet quam
-                                    vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere
-                                    blandit. Nulla porttitor accumsan tincidunt.
-                                </p>
-                            </div>
-                            <i class="bi bi-plus faq-toggle"></i>
-                        </div><!-- End FAQ Item-->
-
-                        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Curabitur aliquet quam id dui posuere blandit?</h3>
-                            <div class="faq-content">
-                                <p>
-                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                                    Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet
-                                    ligula. Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt
-                                    nibh pulvinar.
-                                </p>
-                            </div>
-                            <i class="bi bi-plus faq-toggle"></i>
-                        </div><!-- End FAQ Item-->
-
-                        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-                            <h3>Sed porttitor lectus nibh ullamcorper sit amet?</h3>
-                            <div class="faq-content">
-                                <p>
-                                    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent
-                                    sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin
-                                    molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum.
-                                </p>
-                            </div>
-                            <i class="bi bi-plus faq-toggle"></i>
-                        </div><!-- End FAQ Item-->
-
-                        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-                            <h3>Nulla quis lorem ut libero malesuada feugiat?</h3>
-                            <div class="faq-content">
-                                <p>
-                                    Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia
-                                    in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et
-                                    ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.
-                                </p>
-                            </div>
-                            <i class="bi bi-plus faq-toggle"></i>
-                        </div><!-- End FAQ Item-->
-
-                        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                            <h3>Vestibulum ac diam sit amet quam vehicula elementum?</h3>
-                            <div class="faq-content">
-                                <p>
-                                    Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                                    Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet
-                                    ligula.
-                                </p>
-                            </div>
-                            <i class="bi bi-plus faq-toggle"></i>
-                        </div><!-- End FAQ Item-->
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="faq-card">
-                        <i class="bi bi-chat-dots-fill"></i>
-                        <h3>Can't find answer to your question?</h3>
-                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                            Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum
-                            ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui
-                            posuere blandit. Nulla quis lorem ut libero malesuada feugiat.</p>
-                        <a href="#contact" class="btn btn-primary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <!-- Section Title -->
-        <div class="container section-title">
-            <h2>Contact</h2>
-            <div><span>Contact</span> <span class="description-title">Us</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <h3>Contact Information</h3>
-                            <p>Feel free to reach out with any questions about the book, speaking engagements, or
-                                media inquiries.</p>
-
-                            <div class="contact-details">
-                                <div class="contact-item">
-                                    <i class="bi bi-envelope"></i>
-                                    <div>
-                                        <h4>Email:</h4>
-                                        <p>author@example.com</p>
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
+                        <div class="cta-form">
+                            <form action="forms/consultation.php" method="post" class="php-email-form">
+                                <div class="row">
+                                    <div class="col-lg-12  form-group">
+                                        <label for="name" class="form-label">Nama Lengkap</label>
+                                        <input type="text" name="name" class="form-control" placeholder="" required="">
+                                    </div>
+                                    <div class="col-lg-6 form-group mt-3">
+                                        <label for="no_hp" class="form-label">Nomor Telepon/HP</label>
+                                        <input type="text" class="form-control" name="no_hp" placeholder="" required="">
+                                    </div>
+                                    <div class="col-lg-6 form-group mt-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder=""
+                                            required="">
+                                    </div>
+                                    <div class="col-lg-12 form-group mt-3">
+                                        <label class="form-label d-block">Alamat</label>
+                                        <textarea name="alamat" class="w-[100%] border-slate-300" rows="5"
+                                            id=""></textarea>
+                                    </div>
+                                    <div class="my-3">
+                                        <div class="loading">Loading</div>
+                                        <div class="error-message"></div>
+                                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit">Daftar</button>
                                     </div>
                                 </div>
-
-                                <div class="contact-item">
-                                    <i class="bi bi-telephone"></i>
-                                    <div>
-                                        <h4>Phone:</h4>
-                                        <p>+1 (555) 123-4567</p>
-                                    </div>
-                                </div>
-
-                                <div class="contact-item">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <div>
-                                        <h4>Address:</h4>
-                                        <p>123 Book Street, Literary Lane</p>
-                                        <p>Wordsmith City, NY 10001</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="social-links">
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
+                            </form>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="contact-form-wrapper">
-                        <form action="forms/contact.php" method="post" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="John Doe"
-                                        required="">
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <label for="email">Your Email</label>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="john@example.com" required="">
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="subject">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="I loved your book!" required="">
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="message">Message</label>
-                                <textarea class="form-control" name="message" rows="7"
-                                    placeholder="Your message here..." required=""></textarea>
-                            </div>
-
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-
-                            <div class="text-center">
-                                <button type="submit">Send Message</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- /Contact Section -->
+    </section><!-- /Consultation Section -->
+
 </x-guest.guest-layout>

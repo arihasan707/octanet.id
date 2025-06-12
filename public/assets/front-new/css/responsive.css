@@ -1,0 +1,14 @@
+@media (max-width: 862px) {
+    .btn-login {
+        display: none;
+    }
+    .header__left {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header__menu {
+        display: none !important;
+    }
+}

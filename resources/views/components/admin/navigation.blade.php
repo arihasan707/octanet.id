@@ -67,6 +67,13 @@
                     <span>Pelanggan</span>
                 </a>
             </li>
+            <li class="sidebar-menu-group-title active">Tampilan Web Utama</li>
+            <li>
+                <a href="{{route('admin.banner')}}">
+                    <iconify-icon icon="uil:image" class="menu-icon"></iconify-icon>
+                    <span>Banner</span>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>

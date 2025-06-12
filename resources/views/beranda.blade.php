@@ -1,402 +1,962 @@
 <x-app-layout>
     @push('styles')
     <style>
-        .hosting-promo {
-            height: 180px;
+    @media (min-width:768px) and (max-width:8560px) {
+        .banner__img .sm {
+            display: none;
         }
+    }
 
-        section {
-            background-color: #fafafa;
-        }
+    .ak-facilities4-slider-wrapper svg {
+        width: 70px;
+    }
 
-        .tagline {
-            font-size: 48px;
-            font-weight: 700;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            background-color: red;
-            border-radius: 60px;
-            width: 60px;
-            height: 60px;
-        }
-
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            color: #fafafa;
-            font-weight: 800;
-            font-size: larger;
-        }
-
-        svg {
-            display: block;
-            margin: auto;
-            color: red;
-            padding: 16px;
-        }
-
-        section h5 {
-            font-weight: 600;
-        }
-
-        @media (min-width: 750px) {
-            p {
-                font-size: 18px;
-            }
-
-        }
+    iconify-icon {
+        font-size: large;
+    }
     </style>
     @endpush
-
-
-    <!--hero section start-->
-    <section class="hero-slider-section bg-image hero-equal-height">
-        <div class="px-0 container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="hero_content_slider swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="{{asset('assets/front/img/afac73f3-fd92-4bc1-9f28-303b3a4ff706.webp')}}"
-                                    alt="" srcset="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{asset('assets/front/img/afac73f3-fd92-4bc1-9f28-303b3a4ff706.webp')}}"
-                                    alt="" srcset="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{asset('assets/front/img/afac73f3-fd92-4bc1-9f28-303b3a4ff706.webp')}}"
-                                    alt="" srcset="">
+    <!-- Banner-4 area end -->
+    <!-- Banner area start -->
+    <section class="banner-bg p-relative" data-background="{{ asset('assets/front-new/img/banner-bg-shape.png') }}">
+        <div class="scroll-button-wrapper">
+            <a class="scroll-btn" href="#">SCROLL</a>
+        </div>
+        <div class="banner1-blur-round"></div>
+        <div class="container">
+            <div class="banner-slider banner-active">
+                @forelse ($banners as $row)
+                <a href="{{$row->link}}">
+                    <div class="banner-item">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="banner__img p-relative">
+                                    <div class="panel"></div>
+                                    <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
+                                        <img src="{{asset('storage/' . $row->img_desktop)}}" alt="image not found">
+                                    </div>
+                                    <img class="sm" src="{{asset('storage/' . $row->img_mobile)}}"
+                                        alt="image not found">
+                                    <div class="shape p-relative"></div>
+                                </div>
                             </div>
                         </div>
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                    </div>
+                </a>
+                @empty
+                <div class="banner-item">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="banner__img p-relative">
+                                <div class="panel"></div>
+                                <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
+                                    <img src="{{asset('assets/front-new/img/empty-banner-lg.jpg')}}"
+                                        alt="image not found">
+                                </div>
+                                <img class="sm" src="{{asset('assets/front-new/img/empty-banner-sm.jpg')}}"
+                                    alt="image not found">
+                                <div class="shape p-relative"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                @endforelse
+            </div>
+            <div class="banner-img-shape">
+                <img src="{{ asset('assets/front-new/img/banner-img-shape.png') }}" alt="banner-img-shape">
             </div>
         </div>
     </section>
+    <!-- Banner area end -->
 
-    <!-- <section class="promo-section mt-n-150">
+    <!-- Brand area start -->
+    <div class="brand-area p-relative">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3 z-10">
-                    <div class="card hosting-promo border-0 rounded-custom mt-4 shadow">
-                        <div class="card-body">
-                            <div class="hosting-promo-icon mb-3 d-flex justify-content-center">
-                                <span class="fas fa-wifi icon-size-lg text-orange-500"></span>
-                            </div>
-                            <div class="hosting-promo-content text-center">
-                                <h4 class=" text-orange-600">Home Internet</h4>
-                                <a href="#" target="_blank" class="read-more-link d-inline-flex align-items-center">
-                                    <span>Lihat Selengkapnya</span> <i class="fas fa-arrow-right ms-2"></i>
-                                </a>
-                            </div>
-                        </div>
+            <div class="brand-wrapper ak-brand4-shadow">
+                <div class="brand-slider brand-active">
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-1.jpg') }}" width="150px"
+                                alt="brand-logo-1">
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 z-10">
-                    <div class="card hosting-promo border-0 rounded-custom mt-4 shadow">
-                        <div class="card-body">
-                            <div class="hosting-promo-icon mb-3 d-flex justify-content-center">
-                                <span class="fas fa-signal icon-size-lg text-orange-500"></span>
-                            </div>
-                            <div class="hosting-promo-content text-center">
-                                <h4 class=" text-orange-600">Broadband Bisnis</h4>
-                                <a href="#" target="_blank" class="read-more-link d-inline-flex align-items-center">
-                                    <span>Lihat Selengkapnya</span> <i class="fas fa-arrow-right ms-2"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-2.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 z-10">
-                    <div class="card hosting-promo border-0 rounded-custom mt-4 shadow">
-                        <div class="card-body">
-                            <div class="hosting-promo-icon mb-3 d-flex justify-content-center">
-                                <span class="fas fa-server icon-size-lg text-orange-500"></span>
-                            </div>
-                            <div class="hosting-promo-content text-center">
-                                <h4 class=" text-orange-600">Internet Dedicated</h4>
-                                <a href="#" target="_blank" class="read-more-link d-inline-flex align-items-center">
-                                    <span>Lihat Selengkapnya</span> <i class="fas fa-arrow-right ms-2"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-3.jpg') }}" width="150px"
+                                alt="brand-logo-3">
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 z-10">
-                    <div class="card hosting-promo border-0 rounded-custom mt-4 shadow">
-                        <div class="card-body">
-                            <div class="hosting-promo-icon mb-3 d-flex justify-content-center">
-                                <span class="fas fa-network-wired icon-size-lg text-orange-500"></span>
-                            </div>
-                            <div class="hosting-promo-content text-center">
-                                <h4 class=" text-orange-600">METRO-E</h4>
-                                <a href="#" target="_blank" class="read-more-link d-inline-flex align-items-center">
-                                    <span>Lihat Selengkapnya</span> <i class="fas fa-arrow-right ms-2"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-4.jpg') }}" width="150px"
+                                alt="brand-logo-4">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section class="promo-section">
-        <div class="container">
-            <div class="row flex justify-center gap-4 text-center">
-                <div class="col-lg-12 text-center">
-                    <h2 class="font-semibold">Solusi Internet terlengkap dari OCTAnet</h2>
-                </div>
-                <div class="col-lg-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="130" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M5 21q-.825 0-1.412-.587T3 19v-4q0-.825.588-1.412T5 13h10V9h2v4h2q.825 0 1.413.588T21 15v4q0 .825-.587 1.413T19 21zm2-3q.425 0 .713-.288T8 17t-.288-.712T7 16t-.712.288T6 17t.288.713T7 18m3.5 0q.425 0 .713-.288T11.5 17t-.288-.712T10.5 16t-.712.288T9.5 17t.288.713t.712.287m3.5 0q.425 0 .713-.288T15 17t-.288-.712T14 16t-.712.288T13 17t.288.713T14 18m.25-9.75L12.8 6.8q.65-.6 1.45-.95T16 5.5t1.75.35t1.45.95l-1.45 1.45q-.35-.35-.788-.55T16 7.5t-.963.2t-.787.55m-2.5-2.5l-1.4-1.4q1.1-1.1 2.55-1.725T16 2t3.1.625t2.55 1.725l-1.4 1.4q-.825-.825-1.912-1.287T16 4t-2.337.463T11.75 5.75" />
-                    </svg>
-                    <h5>Jaringan Stabil</h5>
-                </div>
-                <div class="col-lg-2 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 20 20">
-                        <g fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M1.5 10a8.5 8.5 0 1 0 17 0a8.5 8.5 0 0 0-17 0m16 0a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0"
-                                clip-rule="evenodd" />
-                            <path fill-rule="evenodd"
-                                d="M6.5 10c0 4.396 1.442 8 3.5 8s3.5-3.604 3.5-8s-1.442-8-3.5-8s-3.5 3.604-3.5 8m6 0c0 3.889-1.245 7-2.5 7s-2.5-3.111-2.5-7S8.745 3 10 3s2.5 3.111 2.5 7"
-                                clip-rule="evenodd" />
-                            <path
-                                d="m3.735 5.312l.67-.742q.16.144.343.281c1.318.988 3.398 1.59 5.665 1.59c1.933 0 3.737-.437 5.055-1.19a5.6 5.6 0 0 0 .857-.597l.65.76q-.448.383-1.01.704c-1.477.845-3.452 1.323-5.552 1.323c-2.47 0-4.762-.663-6.265-1.79a6 6 0 0 1-.413-.34m0 9.389l.67.74q.16-.145.343-.28c1.318-.988 3.398-1.59 5.665-1.59c1.933 0 3.737.436 5.055 1.19q.482.277.857.596l.65-.76a6.6 6.6 0 0 0-1.01-.704c-1.477-.844-3.452-1.322-5.552-1.322c-2.47 0-4.762.663-6.265 1.789q-.22.165-.413.34M2 10.5v-1h16v1z" />
-                        </g>
-                    </svg>
-                    <h5>Kuota Unlimited</h5>
-                </div>
-                <div class="col-lg-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M4.9 17.1q-1.425-1.5-2.162-3.325T2 10t.738-3.775T4.9 2.9l1.2 1.2Q4.9 5.3 4.3 6.863T3.7 10t.6 3.138T6.1 15.9zm2.4-2.4q-.975-.975-1.487-2.2T5.3 10t.513-2.5T7.3 5.3l1.2 1.2q-.75.675-1.125 1.6T7 10q0 .9.375 1.825T8.5 13.5zM7 22l3.375-10.125q-.4-.35-.638-.825T9.5 10q0-1.05.725-1.775T12 7.5t1.775.725T14.5 10q0 .575-.238 1.05t-.637.825L17 22h-2l-.65-2H9.675L9 22zm3.325-4h3.35L12 13zm6.375-3.3l-1.2-1.2q.75-.675 1.125-1.6T17 10q0-.9-.375-1.825T15.5 6.5l1.2-1.2q.975.975 1.45 2.2t.55 2.5q0 1.275-.512 2.5T16.7 14.7m2.4 2.4l-1.2-1.2q1.2-1.2 1.8-2.762T20.3 10t-.6-3.137T17.9 4.1l1.2-1.2q1.425 1.5 2.163 3.325T22 10t-.7 3.775t-2.2 3.325" />
-                    </svg>
-                    <h5>Fiber Optic</h5>
-                </div>
-                <div class="col-lg-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="m22.9 21.2l-4.1-4.1c.4-1 .2-2.3-.7-3.1c-.9-.9-2.2-1.1-3.3-.6l1.9 1.9l-1.4 1.4l-2-2c-.5 1.1-.3 2.4.6 3.4c.9.9 2.1 1.1 3.1.7l4.1 4.1c.2.2.5.2.6 0l1-1c.3-.3.3-.6.2-.7M13 20H2v-2c0-2.2 3.6-4 8-4c.5 0 1 0 1.4.1c-.3.6-.4 1.2-.4 1.9c0 1.6.8 3.1 2 4M10 4C7.8 4 6 5.8 6 8s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4" />
-                    </svg>
-                    <h5>IT Services</h5>
-                </div>
-                <div class="col-lg-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 16 16">
-                        <path fill="currentColor"
-                            d="M11.5 0h-7C3.675 0 3 .675 3 1.5v13c0 .825.675 1.5 1.5 1.5h7c.825 0 1.5-.675 1.5-1.5v-13c0-.825-.675-1.5-1.5-1.5M6 .75h4v.5H6zM8 15a1 1 0 1 1 0-2a1 1 0 0 1 0 2m4-3H4V2h8z" />
-                    </svg>
-                    <h5>Satu Aplikasi Pembayaran</h5>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing-section ptb-80">
-        <div class="container">
-            <div class="row g-4 align-items-center justify-content-between">
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="card text-center single-pricing-pack">
-                        <div class="py-4">
-                            <h4 class="mb-0 font-bold text-red-500">Broadband Bisnis</h4>
-                            <p>Speed Up to <strong class="text-red-500 text-[20px]">250</strong> mbps</p>
-                        </div>
-                        <div class="card-header py-4 border-0 pricing-header">
-                            <div class="price text-center mb-0 monthly-price" style="display: block;">
-                                <p class=" font-normal text-sm leading-none">Mulai dari</p>
-                                Rp650.000<span>/bulan*</span>
-                                <p class=" font-normal text-sm leading-none">Harga belum termasuk PPN</p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled mb-4 pricing-feature-list">
-                                <li>Layanan <span>Internet Only</span></li>
-                                <li>Data Quota <span>Unlimited</span></li>
-                                <li>IP Address <span>Private Static</span></li>
-                                <li>Biaya Pemasangan <span>Rp500.000</span></li>
-                                <li>Alat Wifi/Router <span>DiPinjamkan</span></li>
-                            </ul>
-                            <a href="#" class="btn btn-danger mb-3 font-semibold" target="_blank">Order</a>
-                        </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-5.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="card popular-price text-center single-pricing-pack">
-                        <div class="py-4">
-                            <h4 class="mb-0 font-bold text-red-500">Home Internet TV+ <span
-                                    class="badge bg-warning ms-2">Best Seller</span></h4>
-                            <p>Speed Up to <strong class="text-red-500 text-[20px]">30</strong> mbps</p>
-                        </div>
-                        <div class="card-header py-4 border-0 pricing-header text-white">
-                            <div class="price text-center mb-0 monthly-price" style="display: block;">
-                                <p class=" font-normal text-sm leading-none">Mulai dari</p>
-                                Rp175.000<span>/bulan*</span>
-                                <p class=" font-normal text-sm leading-none">Harga belum termasuk PPN</p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled mb-4 pricing-feature-list">
-                                <li>Layanan <span>Internet Only</span></li>
-                                <li>Data Quota <span>Unlimited</span></li>
-                                <li>Akses Perangkat <span>5 Perangkat</span></li>
-                                <li>Biaya Pemasangan <span>Gratis</span></li>
-                                <li>Alat Wifi/Router <span>DiPinjamkan</span></li>
-                            </ul>
-                            <a href="#" class="btn btn-danger mb-3 font-semibold" target="_blank">Order</a>
-                        </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-6.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="card text-center single-pricing-pack">
-                        <div class="py-4">
-                            <h4 class="mb-0 font-bold text-red-500">Dedicated</h4>
-                            <p>Speed Up to <strong class="text-red-500 text-[20px]">500</strong> mbps</p>
-                        </div>
-                        <div class="card-header py-4 border-0 pricing-header">
-                            <div class="price text-center mb-0 monthly-price" style="display: block;">
-                                <p class=" font-normal text-sm leading-none">Mulai dari</p>
-                                Rp2.600.000<span>/bulan*</span>
-                                <p class=" font-normal text-sm leading-none">Harga belum termasuk PPN</p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled mb-4 pricing-feature-list">
-                                <li>Layanan <span>Internet Only</span></li>
-                                <li>Data Quota <span>Unlimited</span></li>
-                                <li>IP Address <span>IP Public Static /30</span></li>
-                                <li>Biaya Pemasangan <span>Rp3.000.000</span></li>
-                                <li>Alat Wifi/Router <span>DiPinjamkan</span></li>
-                            </ul>
-                            <a href="#" class="btn btn-danger mb-3 font-semibold" target="_blank">Order</a>
-                        </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-7.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-12 flex justify-center">
-                    <div class="support-cta mt-2 card p-3 rounded-2xl">
-                        <h6 class="mb-1 font-bold text-[18px]">Butuh internet dengan
-                            paket
-                            lainnya ?<a href="pricing-comparison.html" class="ms-2 text-red-500 hover:text-red-600"> Cek
-                                Paketnya <span class=" me-2 fa fa-arrow-right icon-sm"></span></a></h6>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-8.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="ptb-40">
-        <div class="container">
-            <div class="row text-center flex justify-center">
-                <div class="col-lg-12 text-center mb-2">
-                    <h2 class="font-semibold">Lebih Mudah Dengan <span class="text-red-500">OCTAnet</span></h2>
-                </div>
-                <div class="col-md-5 col-lg-7">
-                    <p>OCTAnet adalah merk layanan
-                        akses
-                        internet dengan
-                        kecepatan
-                        tinggi. Kami adalah
-                        penyedia layanan
-                        akses internet resmi yang memiliki perizinan lengkap dari Departemen Komunikasi dan
-                        Informatika.
-                        kami menyediakan solusi layanan internet berkapasitas besar sesuai dengan
-                        kebutuhan menggunakan
-                        media wireless dan fiberoptik.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="network-map-section py-7 gray-light-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-9 col-lg-8">
-                    <div class="section-heading text-center mb-5">
-                        <h2 class="mb-1 font-semibold">Jaringan Kami Telah Tersebar
-                            Di<span> Indonesia</span>
-                        </h2>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-9.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="row flex justify-center">
-                <div class="col-lg-10">
-                    <div class="network-map-wrap">
-                        <ul class="custom-map-location">
-                            <li style="top: 80%; left: 28%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Depok"
-                                    data-bs-original-title="Depok" aria-describedby="tooltip442675"></span>
-                            </li>
-                            <li style="top: 83%; left: 34%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Bekasi"
-                                    data-bs-original-title="Bekasi" aria-describedby="tooltip976174"></span>
-                            </li>
-                            <li style="top: 70%; left: 32%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Jakarta"
-                                    data-bs-original-title="Jakarta" aria-describedby="tooltip115187"></span>
-                            </li>
-                            <li style="top:85%; left: 45%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Bali"
-                                    data-bs-original-title="Bali" aria-describedby="tooltip879715"></span>
-                            </li>
-                            <li style="top: 80%; left: 40%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Jatim"
-                                    data-bs-original-title="Jatim" aria-describedby="tooltip677649"></span>
-                            </li>
-                            <li style="top: 76%; left: 34%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Bogor"
-                                    data-bs-original-title="Bogor" aria-describedby="tooltip304554"></span>
-                            </li>
-                            <li style="top: 72%; left: 25%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Tangerang"
-                                    data-bs-original-title="Tangerang" aria-describedby="tooltip41463"></span>
-                            </li>
-                            <li style="top: 77%; left: 30%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Jabar"
-                                    data-bs-original-title="Jabar" aria-describedby="tooltip86496"></span>
-                            </li>
-                            <li style="top: 77%; left: 34%;">
-                                <span data-toggle="tooltip" data-placement="top" aria-label="Jateng"
-                                    data-bs-original-title="Jateng" aria-describedby="tooltip478068"></span>
-                            </li>
-                        </ul>
-                        <img src="{{ asset('assets/front/img/map.png') }}" alt="location map">
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-10.jpg') }}" width="120px"
+                                alt="brand-logo-2">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--hosting promo end-->
-    <section class=" ptb-20 bg-[#ffecec]">
-        <div class="container">
-            <div class="row justify-content-md-center justify-content-sm-center items-center">
-                <div class="col-lg-6">
-                    <img src="{{asset('assets/front/img/mobile-app.png')}}" alt="" srcset="">
-                </div>
-                <div class="col-lg-6 text-center">
-                    <h2 class="mb-3 font-bold">Atur Semua Pembayaran Tagihan Internet Kamu Dengan OCTAnet Mobile</h2>
-                    <p class="mb-4">Dan nikmati berbagai promo menarik serta fitur pendukung lainnya</p>
-
-                    <h5 class="mb-3">Segera Download di :</h5>
-                    <div class=" flex justify-center">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="{{asset('assets/front/img/img_play-store.webp')}}" width="200px" alt="" srcset="">
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-11.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-12.jpg') }}" width="110px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-13.jpg') }}" width="110px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-14.jpg') }}" width="110px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-15.jpg') }}" width="110px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-16.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-17.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-18.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-19.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-20.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-21.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-22.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-23.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-24.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-25.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-26.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-27.jpg') }}" width="150px"
+                                alt="brand-logo-2">
+                        </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                            <img src="{{ asset('assets/front-new/img/logo-client/logo-28.jpg') }}" width="150px"
+                                alt="brand-logo-2">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Brand area end -->
+
+    <!-- Facilities area start -->
+
+    <section class="ak-facilities4-area pt-125 pb-130">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-60">
+                        <h2 class="main-title bdFadeBottom">Solusi Internet
+                            terlengkap dari OCTAnet
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="ak-facilities4-slider-wrapper">
+                <div class="swiper ak-facilities4-active">
+                    <div class="swiper-wrapper text-center">
+                        <div class="swiper-slide bdFadeUp">
+                            <div class="ak-facilities4-item">
+                                <div class="ak-facilities4-content-wrapper">
+                                    <div class="ak-facilities4-item-img-wrapper">
+                                        <div class="img-icon mb-25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="130" viewBox="0 0 24 24">
+                                                <path fill="currentColor"
+                                                    d="M5 21q-.825 0-1.412-.587T3 19v-4q0-.825.588-1.412T5 13h10V9h2v4h2q.825 0 1.413.588T21 15v4q0 .825-.587 1.413T19 21zm2-3q.425 0 .713-.288T8 17t-.288-.712T7 16t-.712.288T6 17t.288.713T7 18m3.5 0q.425 0 .713-.288T11.5 17t-.288-.712T10.5 16t-.712.288T9.5 17t.288.713t.712.287m3.5 0q.425 0 .713-.288T15 17t-.288-.712T14 16t-.712.288T13 17t.288.713T14 18m.25-9.75L12.8 6.8q.65-.6 1.45-.95T16 5.5t1.75.35t1.45.95l-1.45 1.45q-.35-.35-.788-.55T16 7.5t-.963.2t-.787.55m-2.5-2.5l-1.4-1.4q1.1-1.1 2.55-1.725T16 2t3.1.625t2.55 1.725l-1.4 1.4q-.825-.825-1.912-1.287T16 4t-2.337.463T11.75 5.75" />
+                                            </svg>
+                                        </div>
+                                        <div class="item-number">01</div>
+                                    </div>
+                                    <h3>Jaringan <br> Stabil</h3>
+                                    <p>Nikmati internet cepat dan jaringan stabil kapan pun, di mana pun.</p>
+                                </div>
+                                <div class="ak-facilities4-item-active-img">
+                                    <img src="{{ asset('assets/front-new/img/ak-facilities4-item-active-img.png') }}"
+                                        alt="image not found">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide bdFadeUp">
+                            <div class="ak-facilities4-item">
+                                <div class="ak-facilities4-content-wrapper">
+                                    <div class="ak-facilities4-item-img-wrapper">
+                                        <div class="img-icon mb-25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 20 20">
+                                                <g fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M1.5 10a8.5 8.5 0 1 0 17 0a8.5 8.5 0 0 0-17 0m16 0a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0"
+                                                        clip-rule="evenodd" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M6.5 10c0 4.396 1.442 8 3.5 8s3.5-3.604 3.5-8s-1.442-8-3.5-8s-3.5 3.604-3.5 8m6 0c0 3.889-1.245 7-2.5 7s-2.5-3.111-2.5-7S8.745 3 10 3s2.5 3.111 2.5 7"
+                                                        clip-rule="evenodd" />
+                                                    <path
+                                                        d="m3.735 5.312l.67-.742q.16.144.343.281c1.318.988 3.398 1.59 5.665 1.59c1.933 0 3.737-.437 5.055-1.19a5.6 5.6 0 0 0 .857-.597l.65.76q-.448.383-1.01.704c-1.477.845-3.452 1.323-5.552 1.323c-2.47 0-4.762-.663-6.265-1.79a6 6 0 0 1-.413-.34m0 9.389l.67.74q.16-.145.343-.28c1.318-.988 3.398-1.59 5.665-1.59c1.933 0 3.737.436 5.055 1.19q.482.277.857.596l.65-.76a6.6 6.6 0 0 0-1.01-.704c-1.477-.844-3.452-1.322-5.552-1.322c-2.47 0-4.762.663-6.265 1.789q-.22.165-.413.34M2 10.5v-1h16v1z" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="item-number">02</div>
+                                    </div>
+                                    <h3>Kuota <br> Unlimited</h3>
+                                    <p>Internetan sepuasnya tanpa takut kehabisan.</p>
+                                </div>
+                                <div class="ak-facilities4-item-active-img">
+                                    <img src="{{ asset('assets/front-new/img/ak-facilities4-item-active-img.png') }}"
+                                        alt="image not found">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide bdFadeUp">
+                            <div class="ak-facilities4-item">
+                                <div class="ak-facilities4-content-wrapper">
+                                    <div class="ak-facilities4-item-img-wrapper">
+                                        <div class="img-icon mb-25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 24 24">
+                                                <path fill="currentColor"
+                                                    d="M4.9 17.1q-1.425-1.5-2.162-3.325T2 10t.738-3.775T4.9 2.9l1.2 1.2Q4.9 5.3 4.3 6.863T3.7 10t.6 3.138T6.1 15.9zm2.4-2.4q-.975-.975-1.487-2.2T5.3 10t.513-2.5T7.3 5.3l1.2 1.2q-.75.675-1.125 1.6T7 10q0 .9.375 1.825T8.5 13.5zM7 22l3.375-10.125q-.4-.35-.638-.825T9.5 10q0-1.05.725-1.775T12 7.5t1.775.725T14.5 10q0 .575-.238 1.05t-.637.825L17 22h-2l-.65-2H9.675L9 22zm3.325-4h3.35L12 13zm6.375-3.3l-1.2-1.2q.75-.675 1.125-1.6T17 10q0-.9-.375-1.825T15.5 6.5l1.2-1.2q.975.975 1.45 2.2t.55 2.5q0 1.275-.512 2.5T16.7 14.7m2.4 2.4l-1.2-1.2q1.2-1.2 1.8-2.762T20.3 10t-.6-3.137T17.9 4.1l1.2-1.2q1.425 1.5 2.163 3.325T22 10t-.7 3.775t-2.2 3.325" />
+                                            </svg>
+                                        </div>
+                                        <div class="item-number">03</div>
+                                    </div>
+                                    <h3>Fiber <br> Optic</h3>
+                                    <p>Lebih cepat dan stabil, nikmati koneksi fiber optic sekarang juga.</p>
+                                </div>
+                                <div class="ak-facilities4-item-active-img">
+                                    <img src="{{ asset('assets/front-new/img/ak-facilities4-item-active-img.png') }}"
+                                        alt="image not found">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide bdFadeUp">
+                            <div class="ak-facilities4-item">
+                                <div class="ak-facilities4-content-wrapper">
+                                    <div class="ak-facilities4-item-img-wrapper">
+                                        <div class="img-icon mb-25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 24 24">
+                                                <path fill="currentColor"
+                                                    d="m22.9 21.2l-4.1-4.1c.4-1 .2-2.3-.7-3.1c-.9-.9-2.2-1.1-3.3-.6l1.9 1.9l-1.4 1.4l-2-2c-.5 1.1-.3 2.4.6 3.4c.9.9 2.1 1.1 3.1.7l4.1 4.1c.2.2.5.2.6 0l1-1c.3-.3.3-.6.2-.7M13 20H2v-2c0-2.2 3.6-4 8-4c.5 0 1 0 1.4.1c-.3.6-.4 1.2-.4 1.9c0 1.6.8 3.1 2 4M10 4C7.8 4 6 5.8 6 8s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4" />
+                                            </svg>
+                                        </div>
+                                        <div class="item-number">04</div>
+                                    </div>
+                                    <h3>IT <br> Services</h3>
+                                    <p>Tim kami siaga untuk memastikan internet Anda berjalan lancar 24 Jam.</p>
+                                </div>
+                                <div class="ak-facilities4-item-active-img">
+                                    <img src="{{ asset('assets/front-new/img/ak-facilities4-item-active-img.png') }}"
+                                        alt="image not found">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide bdFadeUp">
+                            <div class="ak-facilities4-item">
+                                <div class="ak-facilities4-content-wrapper">
+                                    <div class="ak-facilities4-item-img-wrapper">
+                                        <div class="img-icon mb-25">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 16 16">
+                                                <path fill="currentColor"
+                                                    d="M11.5 0h-7C3.675 0 3 .675 3 1.5v13c0 .825.675 1.5 1.5 1.5h7c.825 0 1.5-.675 1.5-1.5v-13c0-.825-.675-1.5-1.5-1.5M6 .75h4v.5H6zM8 15a1 1 0 1 1 0-2a1 1 0 0 1 0 2m4-3H4V2h8z" />
+                                            </svg>
+                                        </div>
+                                        <div class="item-number">05</div>
+                                    </div>
+                                    <h3>Satu Aplikasi Pembayaran</h3>
+                                    <p>Satu aplikasi untuk pembayaran praktis, cepat, dan aman.</p>
+                                </div>
+                                <div class="ak-facilities4-item-active-img">
+                                    <img src="{{ asset('assets/front-new/img/ak-facilities4-item-active-img.png') }}"
+                                        alt="image not found">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="ak-facilities4-slider-dot bdFadeBottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- facilities area end -->
+
+    <!-- Package area start -->
+
+    <section class="ak-package4-area ak-package4-bg pt-125 pb-125 p-relative">
+        <div class="container">
+            <div class="section-title text-center section-title-4 mb-60">
+                <h2 class="main-title bdFadeBottom"> Layanan Paket OCTAnet
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
+                    <div class="ak-package3-item package4-item">
+                        <div class="ak-package4-item-content">
+                            <div class="ak-package3-item-heading">
+                                <h3>Broadband Bisnis</h3>
+                                <p>Speed Up to <strong class="text-red-500 text-[20px]">250</strong> mbps</p>
+                            </div>
+                            <div class="ak-package3-item-price-list">
+                                <ul>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span>
+
+                                        Layanan Internet Only
+                                    </li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Data Quota Unlimited</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> IP Address Private Static</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Biaya Pemasangan</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Alat Wifi/Router DiPinjamkan</li>
+                                </ul>
+                            </div>
+                            <div class="ak-package3-item-price d-flex">
+                                <span>Rp</span>
+                                <h3 class="ak-offer-price-point">650.000
+                                    <sub class="ak-offer-price-date">/ Bulan</sub>
+                                </h3>
+                            </div>
+                            <div class="ak-package3-item-btn mt-15">
+                                <a class="unfill-btn button w-100" href="#">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
+                    <div class="ak-package3-item ak-package3-item-active ak-package4-item-active p-relative">
+                        <div class="ak-package4-item-active-img">
+                            <img src="assets/img/package/ak-package4-item-active-bg-img.png" alt="image not found">
+                        </div>
+                        <div class="ak-package4-item-content">
+                            <div class="ak-package3-item-heading">
+                                <h3>Home Internet TV+</h3>
+                                <p class="text-white">Speed Up to <strong class="text-red-500 text-[20px]">30</strong>
+                                    mbps</p>
+                            </div>
+                            <div class="ak-package3-item-price-list">
+                                <ul>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Layanan Internet Only</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Data Quota Unlimited</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Akses Perangkat 5 Perangkat</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Biaya Pemasangan Gratis</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Alat Wifi/Router DiPinjamkan</li>
+                                </ul>
+                            </div>
+                            <div class="ak-package3-item-price d-flex">
+                                <span>Rp</span>
+                                <h3 class="ak-offer-price-point"> 175.000
+                                    <sub class="ak-offer-price-date">/ Bulan</sub>
+                                </h3>
+                            </div>
+                            <div class="ak-package-active-item-btn price-active-item-btn mt-15">
+                                <a class="unfill-btn button white w-100" href="#">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
+                    <div class="ak-package3-item package4-item">
+                        <div class="ak-package4-item-content">
+                            <div class="ak-package3-item-heading">
+                                <h3>Dedicated</h3>
+                                <p>Speed Up to <strong class="text-red-500 text-[20px]">500</strong> mbps</p>
+                            </div>
+                            <div class="ak-package3-item-price-list">
+                                <ul>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Layanan Internet Only</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Data Quota Unlimited</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> IP Address IP Public Static /30</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Biaya Pemasangan</li>
+                                    <li><span>
+                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
+                                        </span> Alat Wifi/Router DiPinjamkan</li>
+                                </ul>
+                            </div>
+                            <div class="ak-package3-item-price d-flex">
+                                <span>Rp</span>
+                                <h3 class="ak-offer-price-point"> 2.600.000
+                                    <sub class="ak-offer-price-date">/ Bulan</sub>
+                                </h3>
+                            </div>
+                            <div class="ak-package3-item-btn mt-15">
+                                <a class="unfill-btn button w-100" href="#">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ak-package4-button text-center mt-15 bdFadeBottom">
+                <a class="text-btn" href="pricing.html">View All Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package area end -->
+
+    <!-- FAQ area start -->
+
+    <section class="faq-area bd-accordion-fix x-clip pt-130 pb-130 p-relative">
+        <div class="ak-faq4-left-shape">
+            <img src="{{ asset('assets/front-new/img/faq-shape-img.png') }}" alt="image not found">
+        </div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-6 col-lg-7 col-12 order-last order-lg-first">
+                    <div class="ak-faq2-accordion-wrapper">
+                        <div class="ak-faq">
+                            <div class="accordion" id="accordionExample-st-2">
+                                <div class="ak-faq-group ak-faq2-group">
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingOne-st-2">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne-st-2"
+                                                aria-expanded="false" aria-controls="collapseOne-st-2">
+                                                How much bandwidth the iptv stream use?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne-st-2" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                Please pay attention that except MAG devices one
+                                                subscription can be
+                                                used on multiple devices but you can watch only on one
+                                                device at the
+                                                same
+                                                time.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingTwo-st-2">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo-st-2" aria-expanded="true"
+                                                aria-controls="collapseTwo-st-2">
+                                                Can I use my subscription on multiple devices?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo-st-2" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingTwo-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                Please pay attention that except MAG devices one
+                                                subscription can be
+                                                used on multiple devices but you can watch only on one
+                                                device at the
+                                                same
+                                                time.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingThree-st-2">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree-st-2"
+                                                aria-expanded="false" aria-controls="collapseThree-st-2">
+                                                My channel is freezing what should I do?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree-st-2" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                Please pay attention that except MAG devices one
+                                                subscription can be
+                                                used on multiple devices but you can watch only on one
+                                                device at the
+                                                same
+                                                time.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingFour-st-2">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour-st-2"
+                                                aria-expanded="false" aria-controls="collapseFour-st-2">
+                                                What payment methods are available?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour-st-2" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                Please pay attention that except MAG devices one
+                                                subscription can be
+                                                used on multiple devices but you can watch only on one
+                                                device at the
+                                                same
+                                                time.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-12 order-first order-lg-last">
+                    <div class="ak-faq2-content-wrapper">
+                        <div class="section-title">
+                            <h5 class="ak-sub-title4 mb-35 bdFadeBottom">Read FAQ</h5>
+                            <h2 class="main-title bdFadeBottom">Do you Have Any <span
+                                    class="ak-title-highlight">Questions</span>
+                            </h2>
+                        </div>
+                        <p class="bdFadeBottom">We are committed to providing our customers
+                            with exceptional service while offering our
+                            employees the best training.</p>
+                        <div class="ak-faq2-btn mt-65 bdFadeBottom">
+                            <a class="button" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ area end -->
+
+    <section class="ak-order-area ak-order-bg pt-125 pb-130 p-relative">
+        <div class="ak-order-shape">
+            <img src="{{ asset('assets/front-new/img/ak-order-shape-img.png') }}" alt="image not found">
+        </div>
+        <div class="ak-order-bg-img">
+            <img src="{{ asset('assets/front-new/img/ak-order-bg-img.png') }}" alt="image not found">
+        </div>
+        <div class="container">
+            <div class="ak-order-content-wrapper p-relative z-index-1">
+                <div class="section-title order-section-title text-center mb-60">
+                    <h2 class="main-title bdFadeBottom"
+                        style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        Lebih Mudah Dengan OCTAnet</h2>
+                    <h5 class="ak-sub-title4 mb-25 bdFadeBottom"
+                        style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        kami menyediakan solusi layanan internet berkapasitas besar sesuai dengan
+                        kebutuhan menggunakan
+                        media wireless dan fiberoptik.
+                    </h5>
+                </div>
+                <div class="ak-order-button text-center mt-60 bdFadeBottom"
+                    style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                    <a class="button white" href="pricing.html">Order Now</a>
+                </div>
+            </div>
+        </div>
     </section>
 
 
+
+    <!-- News area start -->
+
+    <section class="blog-area pt-125 pb-130 x-clip">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center mb-60">
+                        <div class="bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <h2 class="main-title ">Blog & Artikel Terbaru</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item pt-40 mb-40">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-5 col-12">
+                        <div class="blog-img bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <a href="blog-single.html">
+                                <img src="assets/img/blog/blog-img-1.jpg" alt="blog-img-1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-12">
+                        <div class="blog-content bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <h3>
+                                <a href="blog-single.html">World Best IPTV for Android Tv, iPhone, Samsung, PS4…</a>
+                            </h3>
+                            <p>Our IPTV Subscription Service is transforming the way you watch TV by giving you
+                                unlimited access to all the channels
+                            </p>
+                            <div class="blog-meta-wrapper">
+                                <div class="blog-meta">
+                                    <a href="team-details.html">
+                                        <span class="ak-blog-author-icon"><i class="fa-light fa-circle-user"></i></span>
+                                        <span class="ak-blog-author-text">By Jaiden</span>
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.93317 18.9111H16.0667C17.4435 18.9111 18.5624 17.7922 18.5624 16.4155V3.97897C18.5624 2.60218 17.4435 1.48331 16.0667 1.48331H15.0769V0.78621C15.0769 0.402794 14.7631 0.0891113 14.3797 0.0891113C13.9963 0.0891113 13.6826 0.402794 13.6826 0.78621V1.48331H5.31731V0.78621C5.31731 0.402794 5.00356 0.0891113 4.62015 0.0891113C4.23673 0.0891113 3.92305 0.402794 3.92305 0.78621V1.48331H2.93317C1.55637 1.48331 0.4375 2.60218 0.4375 3.97897V16.4155C0.4375 17.7922 1.55637 18.9111 2.93317 18.9111ZM1.83175 3.97897C1.83175 3.37251 2.3267 2.87756 2.93317 2.87756H3.92305V3.57466C3.92305 3.95808 4.23673 4.27176 4.62015 4.27176C5.00356 4.27176 5.31725 3.95808 5.31725 3.57466V2.87756H13.6826V3.57466C13.6826 3.95808 13.9963 4.27176 14.3797 4.27176C14.7631 4.27176 15.0768 3.95808 15.0768 3.57466V2.87756H16.0667C16.6732 2.87756 17.1681 3.37251 17.1681 3.97897V16.4155C17.1681 17.0219 16.6732 17.5169 16.0667 17.5169H2.93317C2.3267 17.5169 1.83175 17.0219 1.83175 16.4155V3.97897Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 8.10603C5.97286 8.10603 6.36299 7.7159 6.36299 7.23465C6.36299 6.75341 5.97286 6.36328 5.49161 6.36328C5.01037 6.36328 4.62024 6.75341 4.62024 7.23465C4.62024 7.7159 5.01037 8.10603 5.49161 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 8.10603C9.80696 8.10603 10.1971 7.7159 10.1971 7.23465C10.1971 6.75341 9.80696 6.36328 9.32572 6.36328C8.84447 6.36328 8.45435 6.75341 8.45435 7.23465C8.45435 7.7159 8.84447 8.10603 9.32572 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 8.10603C13.6411 8.10603 14.0312 7.7159 14.0312 7.23465C14.0312 6.75341 13.6411 6.36328 13.1598 6.36328C12.6786 6.36328 12.2885 6.75341 12.2885 7.23465C12.2885 7.7159 12.6786 8.10603 13.1598 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 11.5914C5.97286 11.5914 6.36299 11.2013 6.36299 10.72C6.36299 10.2388 5.97286 9.84863 5.49161 9.84863C5.01037 9.84863 4.62024 10.2388 4.62024 10.72C4.62024 11.2013 5.01037 11.5914 5.49161 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 11.5914C9.80696 11.5914 10.1971 11.2013 10.1971 10.72C10.1971 10.2388 9.80696 9.84863 9.32572 9.84863C8.84447 9.84863 8.45435 10.2388 8.45435 10.72C8.45435 11.2013 8.84447 11.5914 9.32572 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 11.5914C13.6411 11.5914 14.0312 11.2013 14.0312 10.72C14.0312 10.2388 13.6411 9.84863 13.1598 9.84863C12.6786 9.84863 12.2885 10.2388 12.2885 10.72C12.2885 11.2013 12.6786 11.5914 13.1598 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 15.077C5.97286 15.077 6.36299 14.6868 6.36299 14.2056C6.36299 13.7244 5.97286 13.3342 5.49161 13.3342C5.01037 13.3342 4.62024 13.7244 4.62024 14.2056C4.62024 14.6868 5.01037 15.077 5.49161 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 15.077C9.80696 15.077 10.1971 14.6868 10.1971 14.2056C10.1971 13.7244 9.80696 13.3342 9.32572 13.3342C8.84447 13.3342 8.45435 13.7244 8.45435 14.2056C8.45435 14.6868 8.84447 15.077 9.32572 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 15.077C13.6411 15.077 14.0312 14.6868 14.0312 14.2056C14.0312 13.7244 13.6411 13.3342 13.1598 13.3342C12.6786 13.3342 12.2885 13.7244 12.2885 14.2056C12.2885 14.6868 12.6786 15.077 13.1598 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                    </svg>
+                                    <span>16 December 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="blog-item-button bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <a class="blog-btn-icon" href="blog-single.html"><i
+                                    class="fa-thin fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item pt-40 mb-40">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-5 col-12">
+                        <div class="blog-img bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <a href="blog-single.html">
+                                <img src="assets/img/blog/blog-img-2.jpg" alt="blog-img-2">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-12">
+                        <div class="blog-content bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <h3>
+                                <a href="blog-single.html">Why and how to use a VPN ? Find the best VPN for IPTV</a>
+                            </h3>
+                            <p>Our IPTV Subscription Service is transforming the way you watch TV by giving you
+                                unlimited access to all the channels
+                            </p>
+                            <div class="blog-meta-wrapper">
+                                <div class="blog-meta">
+                                    <a href="team-details.html">
+                                        <span class="ak-blog-author-icon"><i class="fa-light fa-circle-user"></i></span>
+                                        <span class="ak-blog-author-text">By Alfred</span>
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.93317 18.9111H16.0667C17.4435 18.9111 18.5624 17.7922 18.5624 16.4155V3.97897C18.5624 2.60218 17.4435 1.48331 16.0667 1.48331H15.0769V0.78621C15.0769 0.402794 14.7631 0.0891113 14.3797 0.0891113C13.9963 0.0891113 13.6826 0.402794 13.6826 0.78621V1.48331H5.31731V0.78621C5.31731 0.402794 5.00356 0.0891113 4.62015 0.0891113C4.23673 0.0891113 3.92305 0.402794 3.92305 0.78621V1.48331H2.93317C1.55637 1.48331 0.4375 2.60218 0.4375 3.97897V16.4155C0.4375 17.7922 1.55637 18.9111 2.93317 18.9111ZM1.83175 3.97897C1.83175 3.37251 2.3267 2.87756 2.93317 2.87756H3.92305V3.57466C3.92305 3.95808 4.23673 4.27176 4.62015 4.27176C5.00356 4.27176 5.31725 3.95808 5.31725 3.57466V2.87756H13.6826V3.57466C13.6826 3.95808 13.9963 4.27176 14.3797 4.27176C14.7631 4.27176 15.0768 3.95808 15.0768 3.57466V2.87756H16.0667C16.6732 2.87756 17.1681 3.37251 17.1681 3.97897V16.4155C17.1681 17.0219 16.6732 17.5169 16.0667 17.5169H2.93317C2.3267 17.5169 1.83175 17.0219 1.83175 16.4155V3.97897Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 8.10603C5.97286 8.10603 6.36299 7.7159 6.36299 7.23465C6.36299 6.75341 5.97286 6.36328 5.49161 6.36328C5.01037 6.36328 4.62024 6.75341 4.62024 7.23465C4.62024 7.7159 5.01037 8.10603 5.49161 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 8.10603C9.80696 8.10603 10.1971 7.7159 10.1971 7.23465C10.1971 6.75341 9.80696 6.36328 9.32572 6.36328C8.84447 6.36328 8.45435 6.75341 8.45435 7.23465C8.45435 7.7159 8.84447 8.10603 9.32572 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 8.10603C13.6411 8.10603 14.0312 7.7159 14.0312 7.23465C14.0312 6.75341 13.6411 6.36328 13.1598 6.36328C12.6786 6.36328 12.2885 6.75341 12.2885 7.23465C12.2885 7.7159 12.6786 8.10603 13.1598 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 11.5914C5.97286 11.5914 6.36299 11.2013 6.36299 10.72C6.36299 10.2388 5.97286 9.84863 5.49161 9.84863C5.01037 9.84863 4.62024 10.2388 4.62024 10.72C4.62024 11.2013 5.01037 11.5914 5.49161 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 11.5914C9.80696 11.5914 10.1971 11.2013 10.1971 10.72C10.1971 10.2388 9.80696 9.84863 9.32572 9.84863C8.84447 9.84863 8.45435 10.2388 8.45435 10.72C8.45435 11.2013 8.84447 11.5914 9.32572 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 11.5914C13.6411 11.5914 14.0312 11.2013 14.0312 10.72C14.0312 10.2388 13.6411 9.84863 13.1598 9.84863C12.6786 9.84863 12.2885 10.2388 12.2885 10.72C12.2885 11.2013 12.6786 11.5914 13.1598 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 15.077C5.97286 15.077 6.36299 14.6868 6.36299 14.2056C6.36299 13.7244 5.97286 13.3342 5.49161 13.3342C5.01037 13.3342 4.62024 13.7244 4.62024 14.2056C4.62024 14.6868 5.01037 15.077 5.49161 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 15.077C9.80696 15.077 10.1971 14.6868 10.1971 14.2056C10.1971 13.7244 9.80696 13.3342 9.32572 13.3342C8.84447 13.3342 8.45435 13.7244 8.45435 14.2056C8.45435 14.6868 8.84447 15.077 9.32572 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 15.077C13.6411 15.077 14.0312 14.6868 14.0312 14.2056C14.0312 13.7244 13.6411 13.3342 13.1598 13.3342C12.6786 13.3342 12.2885 13.7244 12.2885 14.2056C12.2885 14.6868 12.6786 15.077 13.1598 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                    </svg>
+                                    <span>11 December 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="blog-item-button bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <a class="blog-btn-icon" href="blog-single.html"><i
+                                    class="fa-thin fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item pt-40 mb-40">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-5 col-12">
+                        <div class="blog-img bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <a href="blog-single.html">
+                                <img src="assets/img/blog/blog-img-3.jpg" alt="blog-img-3">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5 col-12">
+                        <div class="blog-content bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <h3>
+                                <a href="blog-single.html">Is Smart IPTV or SIPTV the best app for IPTV ? Review</a>
+                            </h3>
+                            <p>Our IPTV Subscription Service is transforming the way you watch TV by giving you
+                                unlimited access to all the channels
+                            </p>
+                            <div class="blog-meta-wrapper">
+                                <div class="blog-meta">
+                                    <a href="team-details.html">
+                                        <span class="ak-blog-author-icon"><i class="fa-light fa-circle-user"></i></span>
+                                        <span class="ak-blog-author-text">By Morgan</span>
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.93317 18.9111H16.0667C17.4435 18.9111 18.5624 17.7922 18.5624 16.4155V3.97897C18.5624 2.60218 17.4435 1.48331 16.0667 1.48331H15.0769V0.78621C15.0769 0.402794 14.7631 0.0891113 14.3797 0.0891113C13.9963 0.0891113 13.6826 0.402794 13.6826 0.78621V1.48331H5.31731V0.78621C5.31731 0.402794 5.00356 0.0891113 4.62015 0.0891113C4.23673 0.0891113 3.92305 0.402794 3.92305 0.78621V1.48331H2.93317C1.55637 1.48331 0.4375 2.60218 0.4375 3.97897V16.4155C0.4375 17.7922 1.55637 18.9111 2.93317 18.9111ZM1.83175 3.97897C1.83175 3.37251 2.3267 2.87756 2.93317 2.87756H3.92305V3.57466C3.92305 3.95808 4.23673 4.27176 4.62015 4.27176C5.00356 4.27176 5.31725 3.95808 5.31725 3.57466V2.87756H13.6826V3.57466C13.6826 3.95808 13.9963 4.27176 14.3797 4.27176C14.7631 4.27176 15.0768 3.95808 15.0768 3.57466V2.87756H16.0667C16.6732 2.87756 17.1681 3.37251 17.1681 3.97897V16.4155C17.1681 17.0219 16.6732 17.5169 16.0667 17.5169H2.93317C2.3267 17.5169 1.83175 17.0219 1.83175 16.4155V3.97897Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 8.10603C5.97286 8.10603 6.36299 7.7159 6.36299 7.23465C6.36299 6.75341 5.97286 6.36328 5.49161 6.36328C5.01037 6.36328 4.62024 6.75341 4.62024 7.23465C4.62024 7.7159 5.01037 8.10603 5.49161 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 8.10603C9.80696 8.10603 10.1971 7.7159 10.1971 7.23465C10.1971 6.75341 9.80696 6.36328 9.32572 6.36328C8.84447 6.36328 8.45435 6.75341 8.45435 7.23465C8.45435 7.7159 8.84447 8.10603 9.32572 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 8.10603C13.6411 8.10603 14.0312 7.7159 14.0312 7.23465C14.0312 6.75341 13.6411 6.36328 13.1598 6.36328C12.6786 6.36328 12.2885 6.75341 12.2885 7.23465C12.2885 7.7159 12.6786 8.10603 13.1598 8.10603Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 11.5914C5.97286 11.5914 6.36299 11.2013 6.36299 10.72C6.36299 10.2388 5.97286 9.84863 5.49161 9.84863C5.01037 9.84863 4.62024 10.2388 4.62024 10.72C4.62024 11.2013 5.01037 11.5914 5.49161 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 11.5914C9.80696 11.5914 10.1971 11.2013 10.1971 10.72C10.1971 10.2388 9.80696 9.84863 9.32572 9.84863C8.84447 9.84863 8.45435 10.2388 8.45435 10.72C8.45435 11.2013 8.84447 11.5914 9.32572 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 11.5914C13.6411 11.5914 14.0312 11.2013 14.0312 10.72C14.0312 10.2388 13.6411 9.84863 13.1598 9.84863C12.6786 9.84863 12.2885 10.2388 12.2885 10.72C12.2885 11.2013 12.6786 11.5914 13.1598 11.5914Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M5.49161 15.077C5.97286 15.077 6.36299 14.6868 6.36299 14.2056C6.36299 13.7244 5.97286 13.3342 5.49161 13.3342C5.01037 13.3342 4.62024 13.7244 4.62024 14.2056C4.62024 14.6868 5.01037 15.077 5.49161 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M9.32572 15.077C9.80696 15.077 10.1971 14.6868 10.1971 14.2056C10.1971 13.7244 9.80696 13.3342 9.32572 13.3342C8.84447 13.3342 8.45435 13.7244 8.45435 14.2056C8.45435 14.6868 8.84447 15.077 9.32572 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                        <path
+                                            d="M13.1598 15.077C13.6411 15.077 14.0312 14.6868 14.0312 14.2056C14.0312 13.7244 13.6411 13.3342 13.1598 13.3342C12.6786 13.3342 12.2885 13.7244 12.2885 14.2056C12.2885 14.6868 12.6786 15.077 13.1598 15.077Z"
+                                            fill="#4D4D4D"></path>
+                                    </svg>
+                                    <span>05 December 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="blog-item-button bdFadeBottom"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            <a class="blog-btn-icon" href="blog-single.html"><i
+                                    class="fa-thin fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-btn text-center mt-60 bdFadeBottom"
+                style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                <a class="unfill-btn button" href="blog.html">Read All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order area start -->
+
+    <section class="ak-footer-cta-content-wrapper">
+        <div class="ak-footer-cta-area ak-footer-cta-top rounded-lg">
+
+            <div class="ak-footer-cta-bg">
+                <div class="ak-footer-cta-bg-img">
+                    <img src="{{ asset('assets/front-new/img/ak-footer-cta-bg.png') }}" alt="image not found">
+                </div>
+                <div class="ak-footer-cta-content-wrapper x-clip">
+                    <div class="container">
+                        <div class="row p-4">
+                            <div class="col-xl-6 col-lg-6">
+                                <img src="{{asset('assets/front-new/img/mobile-app.png')}}" alt="" srcset="">
+                            </div>
+                            <div class="col-xl-6 col-lg-6 flex items-center">
+                                <div class="ak-footer-cta-details bdFadeBottom text-center">
+                                    <h3 class="ak-footer-cta-heading">Atur Semua Pembayaran Tagihan Internet
+                                        Kamu Dengan
+                                        OCTAnet Mobile</h3>
+                                    <p>Dan nikmati berbagai promo menarik serta fitur pendukung lainnya</p>
+                                    <h5 class="my-3 text-white font-bold text-xl">Segera Download di :</h5>
+                                    <div class=" flex justify-center">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="{{asset('assets/front/img/img_play-store.webp')}}" width="200px"
+                                                alt="" srcset="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order area end -->
 
 </x-app-layout>
