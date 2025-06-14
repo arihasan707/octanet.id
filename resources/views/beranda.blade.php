@@ -594,7 +594,7 @@
                 </div>
                 <div class="ak-order-button text-center mt-60 bdFadeBottom"
                     style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                    <a class="button white" href="pricing.html">Lihat Detail</a>
+                    <a class="button white" href="{{route('keagenan')}}">Lihat Detail</a>
                 </div>
             </div>
         </div>
