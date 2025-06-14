@@ -1,19 +1,7 @@
 <x-app-layout>
 
     @push('styles')
-    <style>
-    @media (min-width: 750px) {
-        p {
-            font-size: 18px;
-        }
-    }
 
-    @media (max-width:1023px) {
-        .misi-section .card {
-            margin-top: 10px;
-        }
-    }
-    </style>
     @endpush
 
     <x-bradcrumb title="Tentang OCTAnet">Tentang Kami</x-bradcrumb>

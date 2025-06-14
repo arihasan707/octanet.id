@@ -42,8 +42,9 @@
     <div id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
-                <div class="loading-icon text-center d-flex flex-column align-items-center justify-content-center">
-                    <img src="assets/img/logo/ak-preloader.svg" alt="">
+                <div
+                    class="loading-icon animate-bounce text-center d-flex flex-column align-items-center justify-content-center">
+                    <img src="{{ asset('assets/front-new/img/logo-octanet.png') }}" alt="">
                 </div>
             </div>
         </div>

@@ -19,6 +19,7 @@ use App\Http\Controllers\Agen\DashboardController as AgenDashboard;
 use App\Http\Controllers\Admin\PelangganController as adminPelangganController;
 use App\Http\Controllers\Agen\PaymentController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\BeritaArtikelController;
 
 Route::middleware('guestOnly')->group(function () {
     Route::get('/', BerandaController::class)->name('beranda');
@@ -26,6 +27,12 @@ Route::middleware('guestOnly')->group(function () {
     Route::get('/tentang-kami', function () {
         return view('tentang-kami');
     })->name('tentang');
+
+    Route::get('/layanan-dan-harga', function () {
+        return view('price');
+    })->name('price');
+
+    Route::get('berita-dan-artikel', [BeritaArtikelController::class, 'index'])->name('berita-artikel');
 
     Route::get('/info-keagenan', function () {
         return view('info-keagenan');

@@ -1,19 +1,19 @@
 <x-app-layout>
     @push('styles')
     <style>
-    @media (min-width:768px) and (max-width:8560px) {
-        .banner__img .sm {
-            display: none;
+        @media (min-width:768px) and (max-width:8560px) {
+            .banner__img .sm {
+                display: none;
+            }
         }
-    }
 
-    .ak-facilities4-slider-wrapper svg {
-        width: 70px;
-    }
+        .ak-facilities4-slider-wrapper svg {
+            width: 70px;
+        }
 
-    iconify-icon {
-        font-size: large;
-    }
+        iconify-icon {
+            font-size: large;
+        }
     </style>
     @endpush
     <!-- Banner-4 area end -->
@@ -440,11 +440,12 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
                     <div class="ak-package3-item ak-package3-item-active ak-package4-item-active p-relative">
                         <div class="ak-package4-item-active-img">
-                            <img src="assets/img/package/ak-package4-item-active-bg-img.png" alt="image not found">
+                            <img src="{{ asset('assets/front-new/img/ak-package4-item-active-bg-img.png') }}"
+                                alt="image not found">
                         </div>
                         <div class="ak-package4-item-content">
                             <div class="ak-package3-item-heading">
-                                <h3>Home Internet TV+</h3>
+                                <h3>Home Internet</h3>
                                 <p class="text-white">Speed Up to <strong class="text-red-500 text-[20px]">30</strong>
                                     mbps</p>
                             </div>
@@ -519,7 +520,7 @@
                 </div>
             </div>
             <div class="ak-package4-button text-center mt-15 bdFadeBottom">
-                <a class="text-btn" href="pricing.html">View All Pricing</a>
+                <a class="text-btn" href="{{route('price')}}">Lihat Layanan Lainnya</a>
             </div>
         </div>
     </section>
@@ -528,115 +529,45 @@
 
     <!-- FAQ area start -->
 
-    <section class="faq-area bd-accordion-fix x-clip pt-130 pb-130 p-relative">
-        <div class="ak-faq4-left-shape">
-            <img src="{{ asset('assets/front-new/img/faq-shape-img.png') }}" alt="image not found">
-        </div>
+    <section class="banner-area-1 banner-bg p-relative py-10"
+        data-background="{{ asset('assets/front-new/img/banner-bg-shape.png') }}">
+        <div class="banner1-blur-round"></div>
         <div class="container">
-            <div class="row ">
-                <div class="col-xl-6 col-lg-7 col-12 order-last order-lg-first">
-                    <div class="ak-faq2-accordion-wrapper">
-                        <div class="ak-faq">
-                            <div class="accordion" id="accordionExample-st-2">
-                                <div class="ak-faq-group ak-faq2-group">
-                                    <div class="accordion-item fade_bottom_4">
-                                        <h2 class="accordion-header" id="headingOne-st-2">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseOne-st-2"
-                                                aria-expanded="false" aria-controls="collapseOne-st-2">
-                                                How much bandwidth the iptv stream use?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne-st-2" class="accordion-collapse collapse"
-                                            aria-labelledby="headingOne-st-2" data-bs-parent="#accordionExample-st-2">
-                                            <div class="accordion-body">
-                                                Please pay attention that except MAG devices one
-                                                subscription can be
-                                                used on multiple devices but you can watch only on one
-                                                device at the
-                                                same
-                                                time.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item fade_bottom_4">
-                                        <h2 class="accordion-header" id="headingTwo-st-2">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseTwo-st-2" aria-expanded="true"
-                                                aria-controls="collapseTwo-st-2">
-                                                Can I use my subscription on multiple devices?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo-st-2" class="accordion-collapse collapse show"
-                                            aria-labelledby="headingTwo-st-2" data-bs-parent="#accordionExample-st-2">
-                                            <div class="accordion-body">
-                                                Please pay attention that except MAG devices one
-                                                subscription can be
-                                                used on multiple devices but you can watch only on one
-                                                device at the
-                                                same
-                                                time.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item fade_bottom_4">
-                                        <h2 class="accordion-header" id="headingThree-st-2">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree-st-2"
-                                                aria-expanded="false" aria-controls="collapseThree-st-2">
-                                                My channel is freezing what should I do?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseThree-st-2" class="accordion-collapse collapse"
-                                            aria-labelledby="headingThree-st-2" data-bs-parent="#accordionExample-st-2">
-                                            <div class="accordion-body">
-                                                Please pay attention that except MAG devices one
-                                                subscription can be
-                                                used on multiple devices but you can watch only on one
-                                                device at the
-                                                same
-                                                time.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item fade_bottom_4">
-                                        <h2 class="accordion-header" id="headingFour-st-2">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseFour-st-2"
-                                                aria-expanded="false" aria-controls="collapseFour-st-2">
-                                                What payment methods are available?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFour-st-2" class="accordion-collapse collapse"
-                                            aria-labelledby="headingFour-st-2" data-bs-parent="#accordionExample-st-2">
-                                            <div class="accordion-body">
-                                                Please pay attention that except MAG devices one
-                                                subscription can be
-                                                used on multiple devices but you can watch only on one
-                                                device at the
-                                                same
-                                                time.
-                                            </div>
+            <div class="banner-slider banner-active">
+                <div class="banner-item">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="banner-content">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-title">
+                                            <p
+                                                class="bdFadeBottom  text-[28px] lg:text-[39px] md:text-[39px] font-bold text-red-600 mb-3">
+                                                Akses Hiburan Terlengkap
+                                            </p>
+                                            <h1
+                                                class="banner-main-title bdFadeBottom text-[28px] lg:text-[39px] md:text-[39px]">
+                                                Berlangganan Internet 2P-Home
+                                            </h1>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="bdFadeBottom">
+                                    <p class="text-2xl">Untuk nikmati channel dan platform video streaming terlengkap
+                                        dan akses ke lebih dari 70+ Channel TV Lokal maupun Internasional
+                                    </p>
+                                </div>
+                                <!-- <div class="banner-button mt-60  bdFadeBottom">
+                                    <a class="button" href="pricing.html">View Package</a>
+                                </div> -->
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-5 col-12 order-first order-lg-last">
-                    <div class="ak-faq2-content-wrapper">
-                        <div class="section-title">
-                            <h5 class="ak-sub-title4 mb-35 bdFadeBottom">Read FAQ</h5>
-                            <h2 class="main-title bdFadeBottom">Do you Have Any <span
-                                    class="ak-title-highlight">Questions</span>
-                            </h2>
-                        </div>
-                        <p class="bdFadeBottom">We are committed to providing our customers
-                            with exceptional service while offering our
-                            employees the best training.</p>
-                        <div class="ak-faq2-btn mt-65 bdFadeBottom">
-                            <a class="button" href="contact.html">Contact Us</a>
+                        <div class="col-xl-6 col-lg-4">
+                            <div class="banner__img p-relative">
+                                <div class="panel"></div>
+                                <img src="{{ asset('assets/front-new/img/tv-plus.jpg') }}" alt="image not found">
+                                <div class="shape p-relative"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -656,19 +587,14 @@
         <div class="container">
             <div class="ak-order-content-wrapper p-relative z-index-1">
                 <div class="section-title order-section-title text-center mb-60">
+
                     <h2 class="main-title bdFadeBottom"
                         style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        Lebih Mudah Dengan OCTAnet</h2>
-                    <h5 class="ak-sub-title4 mb-25 bdFadeBottom"
-                        style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        kami menyediakan solusi layanan internet berkapasitas besar sesuai dengan
-                        kebutuhan menggunakan
-                        media wireless dan fiberoptik.
-                    </h5>
+                        Raih keuntungan bulanan <br> dengan menjadi Agen kami</h2>
                 </div>
                 <div class="ak-order-button text-center mt-60 bdFadeBottom"
                     style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                    <a class="button white" href="pricing.html">Order Now</a>
+                    <a class="button white" href="pricing.html">Lihat Detail</a>
                 </div>
             </div>
         </div>
@@ -690,17 +616,18 @@
                     </div>
                 </div>
             </div>
-            <div class="blog-item pt-40 mb-40">
-                <div class="row align-items-center">
-                    <div class="col-xl-4 col-lg-5 col-12">
+
+            <div class="blog-item pt-24 mb-40">
+                <div class="row align-items-center flex justify-center">
+                    <div class="col-lg-4 col-md-4 col-12">
                         <div class="blog-img bdFadeBottom"
                             style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
                             <a href="blog-single.html">
-                                <img src="assets/img/blog/blog-img-1.jpg" alt="blog-img-1">
+                                <img src="{{ asset('assets/front-new/img/blog-img-1.jpg') }}" alt="blog-img-1">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-5 col-12">
+                    <div class="col-lg-5 col-md-8 col-12">
                         <div class="blog-content bdFadeBottom"
                             style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
                             <h3>
@@ -712,11 +639,13 @@
                             <div class="blog-meta-wrapper">
                                 <div class="blog-meta">
                                     <a href="team-details.html">
-                                        <span class="ak-blog-author-icon"><i class="fa-light fa-circle-user"></i></span>
+                                        <span class="ak-blog-author-icon">
+                                            <iconify-icon icon="solar:user-outline"></iconify-icon>
+                                        </span>
                                         <span class="ak-blog-author-text">By Jaiden</span>
                                     </a>
                                 </div>
-                                <div class="blog-meta">
+                                <div class="blog-meta flex items-center">
                                     <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -755,166 +684,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2">
-                        <div class="blog-item-button bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <a class="blog-btn-icon" href="blog-single.html"><i
-                                    class="fa-thin fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="blog-item pt-40 mb-40">
-                <div class="row align-items-center">
-                    <div class="col-xl-4 col-lg-5 col-12">
-                        <div class="blog-img bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <a href="blog-single.html">
-                                <img src="assets/img/blog/blog-img-2.jpg" alt="blog-img-2">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-5 col-12">
-                        <div class="blog-content bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <h3>
-                                <a href="blog-single.html">Why and how to use a VPN ? Find the best VPN for IPTV</a>
-                            </h3>
-                            <p>Our IPTV Subscription Service is transforming the way you watch TV by giving you
-                                unlimited access to all the channels
-                            </p>
-                            <div class="blog-meta-wrapper">
-                                <div class="blog-meta">
-                                    <a href="team-details.html">
-                                        <span class="ak-blog-author-icon"><i class="fa-light fa-circle-user"></i></span>
-                                        <span class="ak-blog-author-text">By Alfred</span>
-                                    </a>
-                                </div>
-                                <div class="blog-meta">
-                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M2.93317 18.9111H16.0667C17.4435 18.9111 18.5624 17.7922 18.5624 16.4155V3.97897C18.5624 2.60218 17.4435 1.48331 16.0667 1.48331H15.0769V0.78621C15.0769 0.402794 14.7631 0.0891113 14.3797 0.0891113C13.9963 0.0891113 13.6826 0.402794 13.6826 0.78621V1.48331H5.31731V0.78621C5.31731 0.402794 5.00356 0.0891113 4.62015 0.0891113C4.23673 0.0891113 3.92305 0.402794 3.92305 0.78621V1.48331H2.93317C1.55637 1.48331 0.4375 2.60218 0.4375 3.97897V16.4155C0.4375 17.7922 1.55637 18.9111 2.93317 18.9111ZM1.83175 3.97897C1.83175 3.37251 2.3267 2.87756 2.93317 2.87756H3.92305V3.57466C3.92305 3.95808 4.23673 4.27176 4.62015 4.27176C5.00356 4.27176 5.31725 3.95808 5.31725 3.57466V2.87756H13.6826V3.57466C13.6826 3.95808 13.9963 4.27176 14.3797 4.27176C14.7631 4.27176 15.0768 3.95808 15.0768 3.57466V2.87756H16.0667C16.6732 2.87756 17.1681 3.37251 17.1681 3.97897V16.4155C17.1681 17.0219 16.6732 17.5169 16.0667 17.5169H2.93317C2.3267 17.5169 1.83175 17.0219 1.83175 16.4155V3.97897Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M5.49161 8.10603C5.97286 8.10603 6.36299 7.7159 6.36299 7.23465C6.36299 6.75341 5.97286 6.36328 5.49161 6.36328C5.01037 6.36328 4.62024 6.75341 4.62024 7.23465C4.62024 7.7159 5.01037 8.10603 5.49161 8.10603Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M9.32572 8.10603C9.80696 8.10603 10.1971 7.7159 10.1971 7.23465C10.1971 6.75341 9.80696 6.36328 9.32572 6.36328C8.84447 6.36328 8.45435 6.75341 8.45435 7.23465C8.45435 7.7159 8.84447 8.10603 9.32572 8.10603Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M13.1598 8.10603C13.6411 8.10603 14.0312 7.7159 14.0312 7.23465C14.0312 6.75341 13.6411 6.36328 13.1598 6.36328C12.6786 6.36328 12.2885 6.75341 12.2885 7.23465C12.2885 7.7159 12.6786 8.10603 13.1598 8.10603Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M5.49161 11.5914C5.97286 11.5914 6.36299 11.2013 6.36299 10.72C6.36299 10.2388 5.97286 9.84863 5.49161 9.84863C5.01037 9.84863 4.62024 10.2388 4.62024 10.72C4.62024 11.2013 5.01037 11.5914 5.49161 11.5914Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M9.32572 11.5914C9.80696 11.5914 10.1971 11.2013 10.1971 10.72C10.1971 10.2388 9.80696 9.84863 9.32572 9.84863C8.84447 9.84863 8.45435 10.2388 8.45435 10.72C8.45435 11.2013 8.84447 11.5914 9.32572 11.5914Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M13.1598 11.5914C13.6411 11.5914 14.0312 11.2013 14.0312 10.72C14.0312 10.2388 13.6411 9.84863 13.1598 9.84863C12.6786 9.84863 12.2885 10.2388 12.2885 10.72C12.2885 11.2013 12.6786 11.5914 13.1598 11.5914Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M5.49161 15.077C5.97286 15.077 6.36299 14.6868 6.36299 14.2056C6.36299 13.7244 5.97286 13.3342 5.49161 13.3342C5.01037 13.3342 4.62024 13.7244 4.62024 14.2056C4.62024 14.6868 5.01037 15.077 5.49161 15.077Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M9.32572 15.077C9.80696 15.077 10.1971 14.6868 10.1971 14.2056C10.1971 13.7244 9.80696 13.3342 9.32572 13.3342C8.84447 13.3342 8.45435 13.7244 8.45435 14.2056C8.45435 14.6868 8.84447 15.077 9.32572 15.077Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M13.1598 15.077C13.6411 15.077 14.0312 14.6868 14.0312 14.2056C14.0312 13.7244 13.6411 13.3342 13.1598 13.3342C12.6786 13.3342 12.2885 13.7244 12.2885 14.2056C12.2885 14.6868 12.6786 15.077 13.1598 15.077Z"
-                                            fill="#4D4D4D"></path>
-                                    </svg>
-                                    <span>11 December 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2">
-                        <div class="blog-item-button bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <a class="blog-btn-icon" href="blog-single.html"><i
-                                    class="fa-thin fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-item pt-40 mb-40">
-                <div class="row align-items-center">
-                    <div class="col-xl-4 col-lg-5 col-12">
-                        <div class="blog-img bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <a href="blog-single.html">
-                                <img src="assets/img/blog/blog-img-3.jpg" alt="blog-img-3">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-5 col-12">
-                        <div class="blog-content bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <h3>
-                                <a href="blog-single.html">Is Smart IPTV or SIPTV the best app for IPTV ? Review</a>
-                            </h3>
-                            <p>Our IPTV Subscription Service is transforming the way you watch TV by giving you
-                                unlimited access to all the channels
-                            </p>
-                            <div class="blog-meta-wrapper">
-                                <div class="blog-meta">
-                                    <a href="team-details.html">
-                                        <span class="ak-blog-author-icon"><i class="fa-light fa-circle-user"></i></span>
-                                        <span class="ak-blog-author-text">By Morgan</span>
-                                    </a>
-                                </div>
-                                <div class="blog-meta">
-                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M2.93317 18.9111H16.0667C17.4435 18.9111 18.5624 17.7922 18.5624 16.4155V3.97897C18.5624 2.60218 17.4435 1.48331 16.0667 1.48331H15.0769V0.78621C15.0769 0.402794 14.7631 0.0891113 14.3797 0.0891113C13.9963 0.0891113 13.6826 0.402794 13.6826 0.78621V1.48331H5.31731V0.78621C5.31731 0.402794 5.00356 0.0891113 4.62015 0.0891113C4.23673 0.0891113 3.92305 0.402794 3.92305 0.78621V1.48331H2.93317C1.55637 1.48331 0.4375 2.60218 0.4375 3.97897V16.4155C0.4375 17.7922 1.55637 18.9111 2.93317 18.9111ZM1.83175 3.97897C1.83175 3.37251 2.3267 2.87756 2.93317 2.87756H3.92305V3.57466C3.92305 3.95808 4.23673 4.27176 4.62015 4.27176C5.00356 4.27176 5.31725 3.95808 5.31725 3.57466V2.87756H13.6826V3.57466C13.6826 3.95808 13.9963 4.27176 14.3797 4.27176C14.7631 4.27176 15.0768 3.95808 15.0768 3.57466V2.87756H16.0667C16.6732 2.87756 17.1681 3.37251 17.1681 3.97897V16.4155C17.1681 17.0219 16.6732 17.5169 16.0667 17.5169H2.93317C2.3267 17.5169 1.83175 17.0219 1.83175 16.4155V3.97897Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M5.49161 8.10603C5.97286 8.10603 6.36299 7.7159 6.36299 7.23465C6.36299 6.75341 5.97286 6.36328 5.49161 6.36328C5.01037 6.36328 4.62024 6.75341 4.62024 7.23465C4.62024 7.7159 5.01037 8.10603 5.49161 8.10603Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M9.32572 8.10603C9.80696 8.10603 10.1971 7.7159 10.1971 7.23465C10.1971 6.75341 9.80696 6.36328 9.32572 6.36328C8.84447 6.36328 8.45435 6.75341 8.45435 7.23465C8.45435 7.7159 8.84447 8.10603 9.32572 8.10603Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M13.1598 8.10603C13.6411 8.10603 14.0312 7.7159 14.0312 7.23465C14.0312 6.75341 13.6411 6.36328 13.1598 6.36328C12.6786 6.36328 12.2885 6.75341 12.2885 7.23465C12.2885 7.7159 12.6786 8.10603 13.1598 8.10603Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M5.49161 11.5914C5.97286 11.5914 6.36299 11.2013 6.36299 10.72C6.36299 10.2388 5.97286 9.84863 5.49161 9.84863C5.01037 9.84863 4.62024 10.2388 4.62024 10.72C4.62024 11.2013 5.01037 11.5914 5.49161 11.5914Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M9.32572 11.5914C9.80696 11.5914 10.1971 11.2013 10.1971 10.72C10.1971 10.2388 9.80696 9.84863 9.32572 9.84863C8.84447 9.84863 8.45435 10.2388 8.45435 10.72C8.45435 11.2013 8.84447 11.5914 9.32572 11.5914Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M13.1598 11.5914C13.6411 11.5914 14.0312 11.2013 14.0312 10.72C14.0312 10.2388 13.6411 9.84863 13.1598 9.84863C12.6786 9.84863 12.2885 10.2388 12.2885 10.72C12.2885 11.2013 12.6786 11.5914 13.1598 11.5914Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M5.49161 15.077C5.97286 15.077 6.36299 14.6868 6.36299 14.2056C6.36299 13.7244 5.97286 13.3342 5.49161 13.3342C5.01037 13.3342 4.62024 13.7244 4.62024 14.2056C4.62024 14.6868 5.01037 15.077 5.49161 15.077Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M9.32572 15.077C9.80696 15.077 10.1971 14.6868 10.1971 14.2056C10.1971 13.7244 9.80696 13.3342 9.32572 13.3342C8.84447 13.3342 8.45435 13.7244 8.45435 14.2056C8.45435 14.6868 8.84447 15.077 9.32572 15.077Z"
-                                            fill="#4D4D4D"></path>
-                                        <path
-                                            d="M13.1598 15.077C13.6411 15.077 14.0312 14.6868 14.0312 14.2056C14.0312 13.7244 13.6411 13.3342 13.1598 13.3342C12.6786 13.3342 12.2885 13.7244 12.2885 14.2056C12.2885 14.6868 12.6786 15.077 13.1598 15.077Z"
-                                            fill="#4D4D4D"></path>
-                                    </svg>
-                                    <span>05 December 2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2">
-                        <div class="blog-item-button bdFadeBottom"
-                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                            <a class="blog-btn-icon" href="blog-single.html"><i
-                                    class="fa-thin fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
             <div class="blog-btn text-center mt-60 bdFadeBottom"
                 style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                <a class="unfill-btn button" href="blog.html">Read All News</a>
+                <a class="unfill-btn button" href="blog.html">Lihat Semua Berita</a>
             </div>
         </div>
     </section>
@@ -954,6 +730,112 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section class="faq-area bd-accordion-fix x-clip pt-130 pb-130 p-relative">
+        <div class="ak-faq4-left-shape">
+            <img src="{{ asset('assets/front-new/img/faq-shape-img.png') }}" alt="image not found">
+        </div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-6 col-lg-7 col-12 order-last order-lg-first">
+                    <div class="ak-faq2-accordion-wrapper">
+                        <div class="ak-faq">
+                            <div class="accordion" id="accordionExample-st-2">
+                                <div class="ak-faq-group ak-faq2-group">
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingOne-st-2">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne-st-2"
+                                                aria-expanded="false" aria-controls="collapseOne-st-2">
+                                                Apa itu OCTAnet?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne-st-2" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                OCTAnet adalah provider internet berbasis ISP yang memiliki perizinan
+                                                resmi dan lengkap dari Departemen Komunikasi dan Informatika.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingTwo-st-2">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo-st-2" aria-expanded="true"
+                                                aria-controls="collapseTwo-st-2">
+                                                Siapa saja yang dapat berlangganan OCTAnet?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo-st-2" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingTwo-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                OCTAnet dapat digunakan oleh pelanggan individual perumahan yang
+                                                lokasi alamatnya terjangkau oleh jaringan OCTAnet<br>
+                                                <br>
+                                                Begitu juga bagi Anda yang memiliki bisnis anda dapat menggunakan
+                                                OCTAnet untuk bisnis Anda.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingThree-st-2">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree-st-2"
+                                                aria-expanded="false" aria-controls="collapseThree-st-2">
+                                                Apa saja persyaratan untuk mulai berlangganan?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree-st-2" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                Syarat berlangganan OCTAnet adalah sebagai berikut : <br>
+                                                • Pastikan lokasi anda sudah tercover oleh jaringan OCTAnet <br>
+                                                • Melengkapi formulir pendaftaran (via sales tools,via website,
+                                                atau form cetak) <br>
+                                                • Melengkapi dokumen pendukung (KTP/SIM/Paspor/KITAS) <br>
+                                                • Melampirkan kontak dan alamat email yang valid <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item fade_bottom_4">
+                                        <h2 class="accordion-header" id="headingFour-st-2">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour-st-2"
+                                                aria-expanded="false" aria-controls="collapseFour-st-2">
+                                                Apa saja yang dapat mempengaruhi kecepatan internet OCTAnet?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour-st-2" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour-st-2" data-bs-parent="#accordionExample-st-2">
+                                            <div class="accordion-body">
+                                                Kecepatan internet yang didapatkan oleh Pelanggan bersifat “up to”
+                                                dan tergantung pada beberapa faktor diantaranya kondisi perangkat
+                                                Pelanggan yang digunakan (laptop, smartphone, tablet), lokasi ONT,
+                                                kondisi jaringan dll.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-5 col-12 order-first order-lg-last">
+                    <div class="ak-faq2-content-wrapper">
+                        <div class="section-title">
+                            <h5 class="ak-sub-title4 mb-35 bdFadeBottom">Lihat FAQ</h5>
+                            <h2 class="main-title bdFadeBottom">Paling Sering Ditanya <span
+                                    class="ak-title-highlight"></span>
+                            </h2>
+                        </div>
+                        <div class="ak-faq2-btn mt-65 bdFadeBottom">
+                            <a class="button" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -62,11 +62,6 @@
                                 class="delete-btn w-32-px h-32-px bg-danger rounded-circle d-inline-flex align-items-center justify-content-center">
                                 <iconify-icon icon="mingcute:delete-2-line"></iconify-icon>
                             </button>
-                            <div class="form-switch switch-success d-flex align-items-center gap-3">
-                                <input class="form-check-input" type="checkbox" role="switch" id="switch3">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light"
-                                    for="switch3">Nonaktif</label>
-                            </div>
                         </td>
                     </tr>
                     @endforeach
