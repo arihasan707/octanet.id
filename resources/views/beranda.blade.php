@@ -8,11 +8,7 @@
         }
 
         .ak-facilities4-slider-wrapper svg {
-            width: 70px;
-        }
-
-        iconify-icon {
-            font-size: large;
+            width: 60px;
         }
     </style>
     @endpush
@@ -401,7 +397,7 @@
                         <div class="ak-package4-item-content">
                             <div class="ak-package3-item-heading">
                                 <h3>Broadband Bisnis</h3>
-                                <p>Speed Up to <strong class="text-red-500 text-[20px]">250</strong> mbps</p>
+                                <p>Speed Up to <strong class="text-dark text-[20px]">250</strong> mbps</p>
                             </div>
                             <div class="ak-package3-item-price-list">
                                 <ul>
@@ -485,7 +481,7 @@
                         <div class="ak-package4-item-content">
                             <div class="ak-package3-item-heading">
                                 <h3>Dedicated</h3>
-                                <p>Speed Up to <strong class="text-red-500 text-[20px]">500</strong> mbps</p>
+                                <p>Speed Up to <strong class="text-dark text-[20px]">500</strong> mbps</p>
                             </div>
                             <div class="ak-package3-item-price-list">
                                 <ul>

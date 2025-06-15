@@ -7104,29 +7104,29 @@ i[class^="flaticon-"] {
     margin-top: 20px;
     margin-bottom: 0px;
 }
-.ak-facilities4-item:hover {
+.ak-facilities4-item {
     color: white;
     background: var(--clr-bg-15);
     border-color: #fff;
 }
-.ak-facilities4-item:hover::after {
+.ak-facilities4-item::after {
     top: 0;
     inset-inline-start: 0px;
 }
-.ak-facilities4-item:hover::before {
+.ak-facilities4-item::before {
     top: 0;
     inset-inline-start: 4px;
 }
-.ak-facilities4-item:hover h3 {
+.ak-facilities4-item h3 {
     color: var(--clr-common-white);
 }
-.ak-facilities4-item:hover p {
+.ak-facilities4-item p {
     color: var(--clr-text-8);
 }
-.ak-facilities4-item:hover .ak-facilities4-item-img-wrapper .img-icon i {
+.ak-facilities4-item .ak-facilities4-item-img-wrapper .img-icon i {
     color: var(--clr-common-white);
 }
-.ak-facilities4-item:hover .ak-facilities4-item-img-wrapper .item-number {
+.ak-facilities4-item .ak-facilities4-item-img-wrapper .item-number {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
 
@@ -13498,8 +13498,12 @@ i[class^="flaticon-"] {
 .ak-package3-item {
     border: 1px solid #141414;
     padding: 45px 50px 40px 50px;
-    background-color: var(--clr-common-white);
+    background-color: var(--clr-bg-5);
     position: relative;
+}
+
+.ak-package3-item p {
+    color: var(--clr-bg-2);
 }
 @media (max-width: 450px) {
     .ak-package3-item {
@@ -13541,7 +13545,7 @@ i[class^="flaticon-"] {
     font-size: 26px;
     font-weight: var(--bd-fw-bold);
     line-height: 1;
-    color: var(--clr-text-9);
+    color: var(--clr-bg-2);
     margin-bottom: 5px;
 }
 .ak-package3-item-heading span {
@@ -13558,7 +13562,7 @@ i[class^="flaticon-"] {
 .ak-package3-item-price span {
     font-size: 24px;
     line-height: 2;
-    color: var(--clr-text-5);
+    color: var(--clr-bg-2);
 }
 .ak-package3-item-price h2 {
     font-size: 72px;
@@ -13582,7 +13586,7 @@ i[class^="flaticon-"] {
     list-style: none;
     font-size: 18px;
     line-height: 30px;
-    color: var(--clr-text-5);
+    color: var(--clr-bg-2);
     margin-bottom: 17px;
     padding-inline-start: 30px;
     position: relative;
@@ -13601,6 +13605,11 @@ i[class^="flaticon-"] {
     top: 50%;
     inset-inline-start: 0;
     transform: translateY(-50%);
+}
+
+.package4-item .ak-package3-item-price-list ul li span {
+    background: #fff;
+    color: red;
 }
 
 .ak-package3-item-btn .ak-home2-unfill-btn {
@@ -13792,7 +13801,7 @@ i[class^="flaticon-"] {
 .package4-item .ak-offer-price-point {
     font-size: 48px;
     font-weight: var(--bd-fw-bold);
-    color: var(--clr-text-9);
+    color: var(--clr-bg-2);
     margin-inline-start: 8px;
     position: relative;
     top: 19px;
@@ -13829,7 +13838,7 @@ i[class^="flaticon-"] {
 .package4-item .ak-offer-price-date {
     font-size: 16px;
     font-weight: var(--bd-fw-medium);
-    color: var(--clr-text-11);
+    color: var(--clr-bg-2);
     display: block;
     margin-top: 10px;
 }
@@ -13967,7 +13976,7 @@ i[class^="flaticon-"] {
 .ak-package4-item-active .ak-offer-price-date {
     font-size: 16px;
     font-weight: var(--bd-fw-medium);
-    color: var(--clr-text-11);
+    color: var(--clr-bg-2);
     display: block;
     margin-top: 10px;
 }
@@ -18670,3 +18679,7 @@ h6 .movie-cast-name:hover {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+iconify-icon {
+            font-size: large;
+        }

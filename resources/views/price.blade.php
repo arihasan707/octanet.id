@@ -932,7 +932,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Dedicated <br> 50Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">50</strong> mbps
+                                                                    class="text-dark text-[20px]">50</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -986,7 +986,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Dedicated 100Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">100</strong> mbps
+                                                                    class="text-dark text-[20px]">100</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1041,7 +1041,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Dedicated 200Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">200</strong> mbps
+                                                                    class="text-dark text-[20px]">200</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1097,7 +1097,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Dedicated 300Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">300</strong> mbps
+                                                                    class="text-dark text-[20px]">300</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1152,7 +1152,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Dedicated 400Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">400</strong> mbps
+                                                                    class="text-dark text-[20px]">400</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1207,7 +1207,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Dedicated 500Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">500</strong> mbps
+                                                                    class="text-dark text-[20px]">500</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1288,7 +1288,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Metro 50Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">50</strong> mbps
+                                                                    class="text-dark text-[20px]">50</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1337,7 +1337,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Metro 100Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">100</strong> mbps
+                                                                    class="text-dark text-[20px]">100</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1387,7 +1387,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Metro 200Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">200</strong> mbps
+                                                                    class="text-dark text-[20px]">200</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1438,7 +1438,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Metro 300Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">300</strong> mbps
+                                                                    class="text-dark text-[20px]">300</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1488,7 +1488,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Metro 400Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">400</strong> mbps
+                                                                    class="text-dark text-[20px]">400</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
@@ -1538,7 +1538,7 @@
                                                         <div class="ak-package3-item-heading">
                                                             <h3>Metro 500Mbps</h3>
                                                             <p>Speed Up to <strong
-                                                                    class="text-red-500 text-[20px]">500</strong> mbps
+                                                                    class="text-dark text-[20px]">500</strong> mbps
                                                             </p>
                                                         </div>
                                                         <div class="ak-package3-item-price-list">
