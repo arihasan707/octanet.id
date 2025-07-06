@@ -51,8 +51,8 @@
                     @foreach ($data as $row)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td><img src="{{asset('storage/images/desktop/' . $row->img_desktop)}}" width="250px"></td>
-                        <td><img src="{{asset('storage/images/mobile/' . $row->img_mobile)}}" width="200px"></td>
+                        <td><img src="{{asset('storage/images/desktop/' . $row->img}}" width="250px"></td>
+                        <td><img src="{{asset('storage/images/mobile/' . $row->img)}}" width="200px"></td>
                         <td class="text-white flex justify-centers gap-2">
                             <form id="delete-form" method="post" style="display: none;">
                                 @csrf
@@ -188,7 +188,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         let form = $('#delete-form');
-                        form.attr('action', `/admin/produk/${id}/delete`);
+                        form.attr('action', `/admin/banner/${id}/delete`);
                         form.submit();
                     }
                 });

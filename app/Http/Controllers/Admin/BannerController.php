@@ -57,8 +57,7 @@ class BannerController extends Controller
         }
 
         Banner::create([
-            'img_desktop' => $imageName,
-            'img_mobile' => $imageName,
+            'img' => $imageName,
             'link' => $request->link
         ]);
 
@@ -95,6 +94,7 @@ class BannerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Banner::find($id);
+        Storage::disk('public')->delete("images/desktop/$data->img");
     }
 }

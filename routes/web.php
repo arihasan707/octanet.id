@@ -30,7 +30,7 @@ Route::middleware('guestOnly')->group(function () {
         return view('tentang-kami');
     })->name('tentang');
 
-    Route::get('/layanan-dan-harga',[LayananController::class,'index'])->name('price');
+    Route::get('/layanan-dan-harga', [LayananController::class, 'index'])->name('price');
 
     Route::get('/berita-dan-artikel', [BeritaArtikelController::class, 'index'])->name('berita-artikel');
 
@@ -91,6 +91,7 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
     //banner
     Route::get('/admin/banner', [BannerController::class, 'index'])->name('admin.banner');
     Route::post('/admin/banner/store', [BannerController::class, 'store'])->name('admin.banner.store');
+    Route::delete('/admin/banner/{id}/delete', [BannerController::class, 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

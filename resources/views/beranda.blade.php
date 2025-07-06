@@ -1,15 +1,15 @@
 <x-app-layout>
     @push('styles')
     <style>
-        @media (min-width:768px) and (max-width:8560px) {
-            .banner__img .sm {
-                display: none;
-            }
+    @media (min-width:768px) and (max-width:8560px) {
+        .banner__img .sm {
+            display: none;
         }
+    }
 
-        .ak-facilities4-slider-wrapper svg {
-            width: 60px;
-        }
+    .ak-facilities4-slider-wrapper svg {
+        width: 60px;
+    }
     </style>
     @endpush
     <!-- Banner-4 area end -->
@@ -26,10 +26,10 @@
                                 <div class="banner__img p-relative">
                                     <div class="panel"></div>
                                     <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
-                                        <img src="{{asset('storage/images/desktop/' . $row->img_desktop)}}"
+                                        <img src="{{asset('storage/images/desktop/' . $row->img)}}"
                                             alt="image not found">
                                     </div>
-                                    <img class="sm" src="{{asset('storage/images/mobile/' . $row->img_mobile)}}"
+                                    <img class="sm" src="{{asset('storage/images/mobile/' . $row->img)}}"
                                         alt="image not found">
                                     <div class="shape p-relative"></div>
                                 </div>

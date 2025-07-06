@@ -2,17 +2,17 @@
 
     @push('styles')
     <style>
-        label.error {
-            font-size: smaller;
-            color: red;
+    label.error {
+        font-size: smaller;
+        color: red;
 
-        }
+    }
 
-        input.error,
-        select.error,
-        textarea.error {
-            border: 1px solid red;
-        }
+    input.error,
+    select.error,
+    textarea.error {
+        border: 1px solid red;
+    }
     </style>
     @endpush
 
@@ -160,104 +160,104 @@
     <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0"></script>
     <script src="assets/js/app.js"></script>
     <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
 
-            $('.delete-btn').click(function(e) {
-                e.preventDefault();
-                let id = $(this).data('id');
+        $('.delete-btn').click(function(e) {
+            e.preventDefault();
+            let id = $(this).data('id');
 
-                Swal.fire({
-                    title: 'Yakin ingin menghapus?',
-                    text: 'Data yang dihapus tidak dapat dikembalikan!',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ya, hapus!',
-                    cancelButtonText: 'Batal'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        let form = $('#delete-form');
-                        form.attr('action', `/admin/produk/${id}/delete`);
-                        form.submit();
-                    }
-                });
-            });
-
-            let table = new DataTable('#dataTable');
-
-            //harga nominal rupiah
-            new AutoNumeric('#harga', {
-                digitGroupSeparator: '.',
-                decimalCharacter: ',',
-                decimalPlaces: 0,
-                currencySymbol: 'Rp ',
-                unformatOnSubmit: true
-            });
-
-            $('#myFormAdd').validate({
-                rules: {
-                    nama: {
-                        required: true,
-                        minlength: 3
-                    },
-                    kategori: {
-                        required: true,
-                    },
-                    harga: {
-                        required: true,
-                    },
-                    layanan: {
-                        required: true
-                    },
-                    kecepatan: {
-                        required: true,
-                    },
-                    data_quota: {
-                        required: true
-                    },
-                    akses_perangkat: {
-                        required: true
-                    },
-                    alat_wifi: {
-                        required: true
-                    },
-                    biaya_pasang: {
-                        required: true
-                    },
-                },
-                messages: {
-                    nama: {
-                        required: 'Nama harus di isi !',
-                        minlength: 'Nama minimal 3 karakter'
-                    },
-                    kategori: {
-                        required: 'Kategori harus di isi !',
-                    },
-                    harga: {
-                        required: 'Harga harus di isi !',
-                    },
-                    layanan: {
-                        required: 'Layanan harus di isi !',
-                    },
-                    kecepatan: {
-                        required: 'Kecepatan harus di isi !',
-                    },
-                    data_quota: {
-                        required: 'Data Quota harus di isi !',
-                    },
-                    akses_perangkat: {
-                        required: 'Akses Perangkat harus di isi !',
-                    },
-                    alat_wifi: {
-                        required: 'Alat Wifi harus di isi !',
-                    },
-                    biaya_pasang: {
-                        required: 'Biaya Pasang harus di isi !',
-                    },
+            Swal.fire({
+                title: 'Yakin ingin menghapus?',
+                text: 'Data yang dihapus tidak dapat dikembalikan!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let form = $('#delete-form');
+                    form.attr('action', `/admin/produk/${id}/delete`);
+                    form.submit();
                 }
-            })
+            });
+        });
+
+        let table = new DataTable('#dataTable');
+
+        //harga nominal rupiah
+        new AutoNumeric('#harga', {
+            digitGroupSeparator: '.',
+            decimalCharacter: ',',
+            decimalPlaces: 0,
+            currencySymbol: 'Rp ',
+            unformatOnSubmit: true
+        });
+
+        $('#myFormAdd').validate({
+            rules: {
+                nama: {
+                    required: true,
+                    minlength: 3
+                },
+                kategori: {
+                    required: true,
+                },
+                harga: {
+                    required: true,
+                },
+                layanan: {
+                    required: true
+                },
+                kecepatan: {
+                    required: true,
+                },
+                data_quota: {
+                    required: true
+                },
+                akses_perangkat: {
+                    required: true
+                },
+                alat_wifi: {
+                    required: true
+                },
+                biaya_pasang: {
+                    required: true
+                },
+            },
+            messages: {
+                nama: {
+                    required: 'Nama harus di isi !',
+                    minlength: 'Nama minimal 3 karakter'
+                },
+                kategori: {
+                    required: 'Kategori harus di isi !',
+                },
+                harga: {
+                    required: 'Harga harus di isi !',
+                },
+                layanan: {
+                    required: 'Layanan harus di isi !',
+                },
+                kecepatan: {
+                    required: 'Kecepatan harus di isi !',
+                },
+                data_quota: {
+                    required: 'Data Quota harus di isi !',
+                },
+                akses_perangkat: {
+                    required: 'Akses Perangkat harus di isi !',
+                },
+                alat_wifi: {
+                    required: 'Alat Wifi harus di isi !',
+                },
+                biaya_pasang: {
+                    required: 'Biaya Pasang harus di isi !',
+                },
+            }
         })
+    })
     </script>
     @endpush
 </x-admin.app-layout>
