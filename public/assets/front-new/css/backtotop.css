@@ -24,8 +24,7 @@
 
 .progress-wrap::after {
     position: absolute;
-    content: "\f176";
-    font-family: "Font Awesome 5 Pro";
+    content: "\2191";
     text-align: center;
     line-height: 46px;
     font-size: 20px;

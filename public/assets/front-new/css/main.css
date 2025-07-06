@@ -7677,8 +7677,8 @@ i[class^="flaticon-"] {
 .banner__img {
     position: relative;
     z-index: 1;
-    padding: 28px 28px 20px 0;
-    margin-inline-start: 60px;
+    padding: 28px 0 28px 0;
+    /* margin-inline-start: 60px; */
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px),
     only screen and (min-width: 992px) and (max-width: 1199px),
@@ -7784,10 +7784,6 @@ i[class^="flaticon-"] {
     inset-inline-start: -50px;
 }
 
-.banner-item {
-    padding-inline-end: 30px;
-    /* padding-bottom: 20px; */
-}
 @media only screen and (min-width: 768px) and (max-width: 991px),
     only screen and (min-width: 576px) and (max-width: 767px),
     (max-width: 575px) {

@@ -1,17 +1,17 @@
 <x-admin.app-layout>
     @push('styles')
     <style>
-    label.error {
-        font-size: smaller;
-        color: red;
+        label.error {
+            font-size: smaller;
+            color: red;
 
-    }
+        }
 
-    input.error,
-    select.error,
-    textarea.error {
-        border: 1px solid red;
-    }
+        input.error,
+        select.error,
+        textarea.error {
+            border: 1px solid red;
+        }
     </style>
     @endpush
 
@@ -51,8 +51,8 @@
                     @foreach ($data as $row)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td><img src="{{asset('storage/' . $row->img_desktop)}}" width="250px"></td>
-                        <td><img src="{{asset('storage/' . $row->img_mobile)}}" width="200px"></td>
+                        <td><img src="{{asset('storage/images/desktop/' . $row->img_desktop)}}" width="250px"></td>
+                        <td><img src="{{asset('storage/images/mobile/' . $row->img_mobile)}}" width="200px"></td>
                         <td class="text-white flex justify-centers gap-2">
                             <form id="delete-form" method="post" style="display: none;">
                                 @csrf
@@ -109,7 +109,8 @@
                                                 for="upload-file">
                                                 <iconify-icon icon="solar:camera-outline"
                                                     class="text-xl text-secondary-light"></iconify-icon>
-                                                <input id="upload-file" type="file" name="img_desktop" accept="image/*">
+                                                <input id="upload-file" type="file" name="img[desktop]"
+                                                    accept="image/*">
                                             </label>
                                         </div>
                                     </div>
@@ -139,7 +140,8 @@
                                                 for="upload-file2">
                                                 <iconify-icon icon="solar:camera-outline"
                                                     class="text-xl text-secondary-light"></iconify-icon>
-                                                <input id="upload-file2" type="file" name="img_mobile" accept="image/*">
+                                                <input id="upload-file2" type="file" name="img[mobile]"
+                                                    accept="image/*">
                                             </label>
                                         </div>
                                     </div>
@@ -168,115 +170,115 @@
     <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0"></script>
     <script src="assets/js/app.js"></script>
     <script>
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-        $('.delete-btn').click(function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
+            $('.delete-btn').click(function(e) {
+                e.preventDefault();
+                let id = $(this).data('id');
 
-            Swal.fire({
-                title: 'Yakin ingin menghapus?',
-                text: 'Data yang dihapus tidak dapat dikembalikan!',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, hapus!',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    let form = $('#delete-form');
-                    form.attr('action', `/admin/produk/${id}/delete`);
-                    form.submit();
+                Swal.fire({
+                    title: 'Yakin ingin menghapus?',
+                    text: 'Data yang dihapus tidak dapat dikembalikan!',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let form = $('#delete-form');
+                        form.attr('action', `/admin/produk/${id}/delete`);
+                        form.submit();
+                    }
+                });
+            });
+
+
+            //add img 1 
+            const label = document.querySelector('.upload-file');
+            const fileInput = document.getElementById("upload-file");
+            const uploadedImgContainer = document.querySelector(".uploaded-img");
+            const removeButton = document.querySelector(".uploaded-img__remove");
+            const imagePreview = document.getElementById("uploaded-img__preview");
+
+
+            // =============================== Upload Add Image start ================================================
+            fileInput.addEventListener("change", (e) => {
+                if (e.target.files.length) {
+                    const src = URL.createObjectURL(e.target.files[0]);
+                    imagePreview.src = src;
+                    label.classList.add('d-none');
+                    uploadedImgContainer.classList.remove('d-none');
                 }
             });
-        });
+
+            removeButton.addEventListener("click", () => {
+                imagePreview.src = "";
+                label.classList.remove('d-none');
+                uploadedImgContainer.classList.add('d-none');
+                fileInput.value = "";
+            });
+            // =============================== Upload Add Image end ===============================================
 
 
-        //add img 1 
-        const label = document.querySelector('.upload-file');
-        const fileInput = document.getElementById("upload-file");
-        const uploadedImgContainer = document.querySelector(".uploaded-img");
-        const removeButton = document.querySelector(".uploaded-img__remove");
-        const imagePreview = document.getElementById("uploaded-img__preview");
+            //add img 2
+            const label2 = document.querySelector('.upload-file2');
+            const fileInput2 = document.getElementById("upload-file2");
+            const uploadedImgContainer2 = document.querySelector(".uploaded-img2");
+            const removeButton2 = document.querySelector(".uploaded-img__remove2");
+            const imagePreview2 = document.getElementById("uploaded-img__preview2");
 
 
-        // =============================== Upload Add Image start ================================================
-        fileInput.addEventListener("change", (e) => {
-            if (e.target.files.length) {
-                const src = URL.createObjectURL(e.target.files[0]);
-                imagePreview.src = src;
-                label.classList.add('d-none');
-                uploadedImgContainer.classList.remove('d-none');
-            }
-        });
-
-        removeButton.addEventListener("click", () => {
-            imagePreview.src = "";
-            label.classList.remove('d-none');
-            uploadedImgContainer.classList.add('d-none');
-            fileInput.value = "";
-        });
-        // =============================== Upload Add Image end ===============================================
-
-
-        //add img 2
-        const label2 = document.querySelector('.upload-file2');
-        const fileInput2 = document.getElementById("upload-file2");
-        const uploadedImgContainer2 = document.querySelector(".uploaded-img2");
-        const removeButton2 = document.querySelector(".uploaded-img__remove2");
-        const imagePreview2 = document.getElementById("uploaded-img__preview2");
-
-
-        // =============================== Upload Add Image start ================================================
-        fileInput2.addEventListener("change", (e) => {
-            if (e.target.files.length) {
-                const src = URL.createObjectURL(e.target.files[0]);
-                imagePreview2.src = src;
-                label2.classList.add('d-none');
-                uploadedImgContainer2.classList.remove('d-none');
-            }
-        });
-
-        removeButton2.addEventListener("click", () => {
-            imagePreview2.src = "";
-            label2.classList.remove('d-none');
-            uploadedImgContainer2.classList.add('d-none');
-            fileInput2.value = "";
-        });
-        // =============================== Upload Add Image end ===============================================
-
-        let table = new DataTable('#dataTable');
-
-        $('#myFormAdd').validate({
-            rules: {
-                img_desktop: {
-                    required: true,
-                },
-                img_mobile: {
-                    required: true,
-
-                },
-                link: {
-                    required: true,
-                },
-            },
-            messages: {
-                img_desktop: {
-                    required: 'Image uk desktop harus di isi !',
-                },
-                img_mobile: {
-                    required: 'Image uk mobile harus di isi !',
-                },
-                link: {
-                    required: 'Link tautan banner harus di isi !'
+            // =============================== Upload Add Image start ================================================
+            fileInput2.addEventListener("change", (e) => {
+                if (e.target.files.length) {
+                    const src = URL.createObjectURL(e.target.files[0]);
+                    imagePreview2.src = src;
+                    label2.classList.add('d-none');
+                    uploadedImgContainer2.classList.remove('d-none');
                 }
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
+            });
+
+            removeButton2.addEventListener("click", () => {
+                imagePreview2.src = "";
+                label2.classList.remove('d-none');
+                uploadedImgContainer2.classList.add('d-none');
+                fileInput2.value = "";
+            });
+            // =============================== Upload Add Image end ===============================================
+
+            let table = new DataTable('#dataTable');
+
+            $('#myFormAdd').validate({
+                rules: {
+                    img_desktop: {
+                        required: true,
+                    },
+                    img_mobile: {
+                        required: true,
+
+                    },
+                    link: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    img_desktop: {
+                        required: 'Image uk desktop harus di isi !',
+                    },
+                    img_mobile: {
+                        required: 'Image uk mobile harus di isi !',
+                    },
+                    link: {
+                        required: 'Link tautan banner harus di isi !'
+                    }
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            })
         })
-    })
     </script>
     @endpush
 </x-admin.app-layout>

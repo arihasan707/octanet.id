@@ -43,29 +43,22 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        $data_img = [
-            'img_desktop' => $request->file('img_desktop'),
-            'img_mobile' => $request->file('img_mobile')
-        ];
 
-        $getNameArr = collect();
-
-        foreach ($data_img as $key => $value) {
+        foreach ($request->file('img') as $key => $value) {
+            $folder = "images/$key";
             # code...
             //resize gambar
             $image = $this->manager->read($value);
 
             $imageName = time() . '.' . $value->getClientOriginalExtension();
-            $thumbImage =  $image->encodeByExtension($value->getClientOriginalExtension(), quality: 22);
+            $thumbImage =  $image->encodeByExtension($value->getClientOriginalExtension(), quality: 50);
 
-            $getNameArr->push($imageName);
-
-            Storage::disk('public')->put($imageName, $thumbImage);
+            Storage::disk('public')->put("$folder/$imageName", $thumbImage);
         }
 
         Banner::create([
-            'img_desktop' => $getNameArr[0],
-            'img_mobile' => $getNameArr[1],
+            'img_desktop' => $imageName,
+            'img_mobile' => $imageName,
             'link' => $request->link
         ]);
 

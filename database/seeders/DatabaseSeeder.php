@@ -21,24 +21,14 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Agen 1',
             'email' => 'agen1@gmail.com',
-            'roles' => 'agen'
-        ]);
-
-        User::factory()->create([
-            'name' => 'Agen 2',
-            'email' => 'agen2@gmail.com',
-            'roles' => 'agen'
-        ]);
-
-        User::factory()->create([
-            'name' => 'Agen 3',
-            'email' => 'agen3@gmail.com',
+            'telp' => '089513270523',
             'roles' => 'agen'
         ]);
 
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
+            'telp' => '085894020453',
             'roles' => 'admin'
         ]);
 

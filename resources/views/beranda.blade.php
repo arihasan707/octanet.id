@@ -15,9 +15,6 @@
     <!-- Banner-4 area end -->
     <!-- Banner area start -->
     <section class="banner-bg p-relative" data-background="{{ asset('assets/front-new/img/banner-bg-shape.png') }}">
-        <div class="scroll-button-wrapper">
-            <a class="scroll-btn" href="#">SCROLL</a>
-        </div>
         <div class="banner1-blur-round"></div>
         <div class="container">
             <div class="banner-slider banner-active">
@@ -29,9 +26,10 @@
                                 <div class="banner__img p-relative">
                                     <div class="panel"></div>
                                     <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
-                                        <img src="{{asset('storage/' . $row->img_desktop)}}" alt="image not found">
+                                        <img src="{{asset('storage/images/desktop/' . $row->img_desktop)}}"
+                                            alt="image not found">
                                     </div>
-                                    <img class="sm" src="{{asset('storage/' . $row->img_mobile)}}"
+                                    <img class="sm" src="{{asset('storage/images/mobile/' . $row->img_mobile)}}"
                                         alt="image not found">
                                     <div class="shape p-relative"></div>
                                 </div>

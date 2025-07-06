@@ -60,7 +60,7 @@
 
 
     @include('layouts.footer')
-    @stack('scripts')
+
 
     <!-- JS here -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -82,6 +82,8 @@
     <script src="{{ asset('assets/front-new/js/ScrollTrigger.min.js') }}"></script>
     <script src="{{ asset('assets/front-new/js/SplitText.min.js') }}"></script>
     <script src="{{ asset('assets/front-new/js/main.js') }}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

@@ -1309,13 +1309,12 @@ section,
 --------------------------------------------------------------*/
 .consultation {
     padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .consultation .cta-wrapper {
     background-color: var(--surface-color);
     border-radius: 15px;
-    padding: 60px;
+    padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
@@ -1405,7 +1404,7 @@ section,
 .consultation .cta-form {
     background-color: color-mix(in srgb, var(--surface-color), #000 3%);
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .consultation .cta-form h3 {

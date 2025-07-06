@@ -1,9 +1,9 @@
 <x-app-layout>
     @push('styles')
     <style>
-        .is-invalid {
-            color: red;
-        }
+    .is-invalid {
+        color: red;
+    }
     </style>
     @endpush
 
@@ -30,7 +30,7 @@
                             <div class="contact-from-input bdFadeBottom"
                                 style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
                                 <label>Nomor Telepon<span>*</span></label>
-                                <input type="text" name="email" placeholder="Masukan nomor telepon"
+                                <input type="text" name="telp" placeholder="Masukan nomor telepon"
                                     fdprocessedid="7wvj4o" required>
                                 @if ($errors->any())
                                 <div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="login-no-account bdFadeBottom"
                                 style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                                <span>Tertarik Menjadi Agen? <a href="signup.html">Daftar Sekarang</a></span>
+                                <span>Tertarik Menjadi Agen? <a href="{{route('keagenan')}}">Daftar Sekarang</a></span>
                             </div>
                         </form>
                     </div>
@@ -68,5 +68,13 @@
             </div>
         </div>
     </div>
+
+    @push('scripts')
+    <script>
+    $("input[name='telp']").on('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+    </script>
+    @endpush
 
 </x-app-layout>

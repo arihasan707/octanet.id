@@ -37,6 +37,19 @@
                 </ul>
             </li>
             <li class="sidebar-menu-group-title active">Data Master</li>
+            <li>
+                <a href="{{ route('admin.area') }}">
+                    <iconify-icon icon="bxs:map" class="menu-icon"></iconify-icon>
+                    <span>Area Coverage</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('admin.pelanggan')}}">
+                    <iconify-icon icon="proicons:person" class="menu-icon"></iconify-icon>
+                    <span>Pelanggan</span>
+                </a>
+            </li>
+            <li class="sidebar-menu-group-title active">Tampilan Web Utama</li>
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="gridicons:product" class="menu-icon"></iconify-icon>
@@ -55,19 +68,6 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="{{ route('admin.area') }}">
-                    <iconify-icon icon="bxs:map" class="menu-icon"></iconify-icon>
-                    <span>Area Coverage</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('admin.pelanggan')}}">
-                    <iconify-icon icon="proicons:person" class="menu-icon"></iconify-icon>
-                    <span>Pelanggan</span>
-                </a>
-            </li>
-            <li class="sidebar-menu-group-title active">Tampilan Web Utama</li>
             <li>
                 <a href="{{route('admin.banner')}}">
                     <iconify-icon icon="uil:image" class="menu-icon"></iconify-icon>

@@ -2,25 +2,25 @@
 
     @push('styles')
     <style>
-        #keuntungan .swiper-slide .team-content>div {
-            display: flex;
-            justify-content: center;
-        }
+    #keuntungan .swiper-slide .team-content>div {
+        display: flex;
+        justify-content: center;
+    }
 
-        #keuntungan .swiper-slide .team-content svg {
-            width: 74px;
-            margin-bottom: 3px;
-        }
+    #keuntungan .swiper-slide .team-content svg {
+        width: 74px;
+        margin-bottom: 3px;
+    }
 
-        #keuntungan .swiper-slide .team-content p {
-            margin-top: 6px;
-            font-weight: 700;
-            font-size: 18px;
-        }
+    #keuntungan .swiper-slide .team-content p {
+        margin-top: 6px;
+        font-weight: 700;
+        font-size: 18px;
+    }
 
-        form label {
-            font-weight: 600;
-        }
+    form label {
+        font-weight: 600;
+    }
     </style>
     @endpush
 
@@ -145,35 +145,35 @@
 
             <div class="team-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                    {
-                        "loop": true,
-                        "speed": 800,
-                        "autoplay": {
-                            "delay": 5000
+                {
+                    "loop": true,
+                    "speed": 800,
+                    "autoplay": {
+                        "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "spaceBetween": 30,
+                    "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                    },
+                    "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                    },
+                    "breakpoints": {
+                        "576": {
+                            "slidesPerView": 2
                         },
-                        "slidesPerView": 1,
-                        "spaceBetween": 30,
-                        "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "clickable": true
+                        "992": {
+                            "slidesPerView": 3
                         },
-                        "navigation": {
-                            "nextEl": ".swiper-button-next",
-                            "prevEl": ".swiper-button-prev"
-                        },
-                        "breakpoints": {
-                            "576": {
-                                "slidesPerView": 2
-                            },
-                            "992": {
-                                "slidesPerView": 3
-                            },
-                            "1200": {
-                                "slidesPerView": 4
-                            }
+                        "1200": {
+                            "slidesPerView": 4
                         }
                     }
+                }
                 </script>
                 <div class="swiper-wrapper">
 
@@ -291,7 +291,8 @@
                                     </div>
                                     <div class="col-lg-6 form-group mt-3">
                                         <label for="no_hp" class="form-label">Nomor Telepon/HP</label>
-                                        <input type="text" class="form-control" name="no_hp" placeholder="" required="">
+                                        <input type="text" class="form-control" name="telp" placeholder="08123456789"
+                                            required="">
                                     </div>
                                     <div class="col-lg-6 form-group mt-3">
                                         <label for="email" class="form-label">Email</label>
@@ -302,6 +303,15 @@
                                         <label class="form-label d-block">Alamat</label>
                                         <textarea name="alamat" class="w-[100%] border-slate-300" rows="5"
                                             id=""></textarea>
+                                    </div>
+                                    <div class="col-lg-12 form-group mt-3">
+                                        <label for="prov" class="form-label">Provinsi</label>
+                                        <select name="prov" id="" aria-readonly="true" class="form-select" title="tes">
+                                            <option value="">Pilih Provinsi</option>
+                                            @foreach ($provinsi as $row)
+                                                <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="my-3">
                                         <div class="loading">Loading</div>
