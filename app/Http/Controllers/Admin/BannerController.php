@@ -96,5 +96,12 @@ class BannerController extends Controller
     {
         $data = Banner::find($id);
         Storage::disk('public')->delete("images/desktop/$data->img");
+        Storage::disk('public')->delete("images/mobile/$data->img");
+
+        Banner::destroy($id);
+
+        Alert::alert('Berhasil', 'Data telah dihapus!', 'success');
+
+        return redirect()->route('admin.banner');
     }
 }
