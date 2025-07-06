@@ -13,8 +13,7 @@ class BerandaController extends Controller
     public function __invoke(Request $request)
     {
         $banners = Banner::select(
-            'img_desktop',
-            'img_mobile',
+            'img',
             'link'
         )
             ->latest()->get();
