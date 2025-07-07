@@ -67,8 +67,8 @@
           </div>
           <div id="header-sticky" class="header-area-1 header-bottom-bg-white">
               <div class="container">
-                  <div class="row align-items-center">
-                      <div class="col-xl-3 col-lg-4 col-md-12">
+                  <div class="row align-items-center flex justify-between">
+                      <div class="col-xl-2 col-lg-4 col-md-12">
                           <div class="header__left d-flex">
                               <div class="header__logo">
                                   <a href="{{route('beranda')}}">
@@ -81,10 +81,10 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-xl-6 col-lg-4 col-md-4">
+                      <div class="col-xl-7 col-lg-4 col-md-4">
                           <div class="header-nav-item-wrapper">
                               <div class="main-menu d-none d-xl-block">
-                                  <nav id="mobile-menu" style="display: block;">
+                                  <nav id="mobile-menu" style="display: block; ">
                                       <ul class="is-black">
                                           <li class="has-dropdown">
                                               <a href="{{route('beranda')}}">Beranda</a>
@@ -97,6 +97,17 @@
                                           <li class="has-mega-menu">
                                               <a href="{{route('berita-artikel')}}" data-value="Blog & Artikel">Blog &
                                                   Artikel</a>
+                                          </li>
+                                          <li class="has-dropdown">
+                                              <a href="#" data-value="Lainnya">Lainnya</a>
+                                              <ul class="sub-menu">
+                                                  <li> <a href="#">Speedtest</a>
+                                                  </li>
+                                                  <li> <a href="#">Pengaturan Jaringan</a>
+                                                  </li>
+                                                  <li> <a href="#">Company Profile</a>
+                                                  </li>
+                                              </ul>
                                           </li>
                                       </ul>
                                   </nav>
