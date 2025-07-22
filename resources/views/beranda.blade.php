@@ -1,15 +1,15 @@
 <x-app-layout>
     @push('styles')
     <style>
-    @media (min-width:768px) and (max-width:8560px) {
-        .banner__img .sm {
-            display: none;
+        @media (min-width:768px) and (max-width:8560px) {
+            .banner__img .sm {
+                display: none;
+            }
         }
-    }
 
-    .ak-facilities4-slider-wrapper svg {
-        width: 60px;
-    }
+        .ak-facilities4-slider-wrapper svg {
+            width: 60px;
+        }
     </style>
     @endpush
     <!-- Banner-4 area end -->
@@ -464,7 +464,7 @@
                             </div>
                             <div class="ak-package3-item-price d-flex">
                                 <span>Rp</span>
-                                <h3 class="ak-offer-price-point"> 175.000
+                                <h3 class="ak-offer-price-point"> 275.000
                                     <sub class="ak-offer-price-date">/ Bulan</sub>
                                 </h3>
                             </div>

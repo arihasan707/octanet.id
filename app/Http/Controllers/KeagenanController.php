@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class KeagenanController extends Controller
 {
-    public function index() {
-        $provinsi = DB::table('reg_provinces')->get();
+    public function index()
+    {
+        $provinsi = DB::table('province')->get();
         return view('info-keagenan', compact('provinsi'));
     }
 }
