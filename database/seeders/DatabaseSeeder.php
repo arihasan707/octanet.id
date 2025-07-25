@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // DB::unprepared(
-        //     file_get_contents(__DIR__ . '/province.sql')
-        // );
+        DB::unprepared(
+            file_get_contents(__DIR__ . '/province.sql')
+        );
 
         // User::factory()->create([
         //     'name' => 'Admin',
