@@ -19,7 +19,7 @@
                 <input type="text" id="filter-nama" class="form-control" placeholder="Cari Nama">
             </div>
             <div class="col-4">
-                <select id="filter-status" class="form-control">
+                <select id="filter-status" class="form-select">
                     <option value="">-- Semua Status --</option>
                     <option value="aktif">Aktif</option>
                     <option value="ditolak">Ditolak</option>

@@ -12,6 +12,11 @@
         textarea.error {
             border: 1px solid red;
         }
+
+        table tr th,
+        tbody tr td {
+            text-align: start !important;
+        }
     </style>
     @endpush
 

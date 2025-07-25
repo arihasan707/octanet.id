@@ -2,25 +2,46 @@
 
     @push('styles')
     <style>
-    #keuntungan .swiper-slide .team-content>div {
-        display: flex;
-        justify-content: center;
-    }
+        #keuntungan .swiper-slide .team-content>div {
+            display: flex;
+            justify-content: center;
+        }
 
-    #keuntungan .swiper-slide .team-content svg {
-        width: 74px;
-        margin-bottom: 3px;
-    }
+        #keuntungan .swiper-slide .team-content svg {
+            width: 74px;
+            margin-bottom: 3px;
+        }
 
-    #keuntungan .swiper-slide .team-content p {
-        margin-top: 6px;
-        font-weight: 700;
-        font-size: 18px;
-    }
+        #keuntungan .swiper-slide .team-content p {
+            margin-top: 6px;
+            font-weight: 700;
+            font-size: 18px;
+        }
 
-    form label {
-        font-weight: 600;
-    }
+        form label {
+            font-weight: 600;
+        }
+
+        label.error {
+            margin-top: 2px;
+            padding: 6px;
+            width: 100%;
+            background-color: #F9E4E8;
+            font-size: smaller;
+            color: red;
+
+        }
+
+        input.error,
+        select.error,
+        textarea.error {
+            border: 1px solid red !important;
+        }
+
+        iconify-icon {
+            font-size: 120px;
+            color: green;
+        }
     </style>
     @endpush
 
@@ -145,35 +166,35 @@
 
             <div class="team-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                {
-                    "loop": true,
-                    "speed": 800,
-                    "autoplay": {
-                        "delay": 5000
-                    },
-                    "slidesPerView": 1,
-                    "spaceBetween": 30,
-                    "pagination": {
-                        "el": ".swiper-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                    },
-                    "navigation": {
-                        "nextEl": ".swiper-button-next",
-                        "prevEl": ".swiper-button-prev"
-                    },
-                    "breakpoints": {
-                        "576": {
-                            "slidesPerView": 2
+                    {
+                        "loop": true,
+                        "speed": 800,
+                        "autoplay": {
+                            "delay": 5000
                         },
-                        "992": {
-                            "slidesPerView": 3
+                        "slidesPerView": 1,
+                        "spaceBetween": 30,
+                        "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
                         },
-                        "1200": {
-                            "slidesPerView": 4
+                        "navigation": {
+                            "nextEl": ".swiper-button-next",
+                            "prevEl": ".swiper-button-prev"
+                        },
+                        "breakpoints": {
+                            "576": {
+                                "slidesPerView": 2
+                            },
+                            "992": {
+                                "slidesPerView": 3
+                            },
+                            "1200": {
+                                "slidesPerView": 4
+                            }
                         }
                     }
-                }
                 </script>
                 <div class="swiper-wrapper">
 
@@ -281,35 +302,50 @@
                                 Selanjutnya Anda akan dihubungi oleh tim kami untuk verifikasi.</p>
                         </div>
                     </div>
+                    @if (request()->query('regis'))
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex justify-center">
+                            <iconify-icon icon="lets-icons:check-fill"></iconify-icon>
+                        </div>
+                        <div class="text-[20px] font-semibold text-black text-center">Pengajuan Menjadi Agen Berhasil
+                        </div>
+                        <div class="cta-content text-center">
+                            <p>Pastikan WhatsApp aktif agar tim kami mudah menghubungimu.</p>
+                            <p>#Salam Octanet. </p>
+                        </div>
+                    </div>
+                    @else
                     <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
                         <div class="cta-form">
-                            <form action="forms/consultation.php" method="post" class="php-email-form">
+                            <form id="formDaftarAgen" action="{{route('keagenan.store')}}" method="post"
+                                class="php-email-form">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-12  form-group">
                                         <label for="name" class="form-label">Nama Lengkap</label>
-                                        <input type="text" name="name" class="form-control" placeholder="" required="">
+                                        <input type="text" name="name" class="form-control">
                                     </div>
                                     <div class="col-lg-6 form-group mt-3">
-                                        <label for="no_hp" class="form-label">Nomor Telepon/HP</label>
-                                        <input type="text" class="form-control" name="telp" placeholder="08123456789"
-                                            required="">
+                                        <label for="no_hp" class="form-label">Nomor Telepon/HP Aktif</label>
+                                        <input type="text" class="form-control" name="no_telp"
+                                            placeholder="08123456789">
                                     </div>
                                     <div class="col-lg-6 form-group mt-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder=""
-                                            required="">
+                                        <input type="text" class="form-control" name="email" placeholder="">
                                     </div>
                                     <div class="col-lg-12 form-group mt-3">
-                                        <label class="form-label d-block">Alamat</label>
-                                        <textarea name="alamat" class="w-[100%] border-slate-300" rows="5"
+                                        <label class="form-label d-block">Alamat Lengkap</label>
+                                        <textarea name="alamat" class="w-[100%] border-slate-300 rounded-md" rows="5"
                                             id=""></textarea>
                                     </div>
                                     <div class="col-lg-12 form-group mt-3">
                                         <label for="prov" class="form-label">Provinsi</label>
-                                        <select name="prov" id="" aria-readonly="true" class="form-select" title="tes">
+                                        <select name="prov" id="" aria-readonly="true"
+                                            class="form-select border-slate-300 rounded-md">
                                             <option value="">Pilih Provinsi</option>
                                             @foreach ($provinsi as $row)
-                                                <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                            <option value="{{ $row->id }}">{{ $row->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -325,9 +361,57 @@
                             </form>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
     </section><!-- /Consultation Section -->
+
+    @push('scripts')
+    <script src="{{asset('assets/back/js/jquery.validate.min.js')}}"></script>
+    <script>
+        $('#formDaftarAgen').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 5
+                },
+                no_telp: {
+                    required: true
+                },
+                email: {
+                    email: true,
+                    required: true
+                },
+                alamat: {
+                    required: true
+                },
+                prov: {
+                    required: true
+                }
+            },
+            messages: {
+                name: {
+                    minlength: "Minimal 5 karakter !",
+                    required: "Nama Lengkap harus di isi !"
+                },
+                no_telp: {
+                    required: "Nomor Telepon/HP harus di isi !",
+                    number: true
+                },
+                email: {
+                    email: "Masukan email dengan benar !",
+                    required: "Email harus di isi !"
+                },
+                alamat: {
+                    required: "Alamat Lengkap harus di isi !"
+                },
+                prov: {
+                    required: "Provinsi harus di isi !"
+                }
+            }
+        })
+    </script>
+    @endpush
 
 </x-guest.guest-layout>

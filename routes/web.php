@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\PermintaanPelangganBaruController;
 use App\Http\Controllers\Admin\PermintaanPencairanDanaController;
 use App\Http\Controllers\Agen\DashboardController as AgenDashboard;
 use App\Http\Controllers\Admin\PelangganController as adminPelangganController;
+use App\Http\Controllers\Admin\PermintaanAgenBaruController;
 use App\Http\Controllers\Agen\PaymentController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaArtikelController;
@@ -34,7 +35,11 @@ Route::middleware('guestOnly')->group(function () {
 
     Route::get('/berita-dan-artikel', [BeritaArtikelController::class, 'index'])->name('berita-artikel');
 
-    Route::get('/info-keagenan', [KeagenanController::class, 'index'])->name('keagenan');
+    Route::middleware('parameter')->get('/info-keagenan', [KeagenanController::class, 'index'])->name('keagenan');
+
+    Route::post('/info-keagenan/store', [KeagenanController::class, 'store'])->name('keagenan.store');
+
+    Route::middleware('parameter')->get('/agen/form-data', [KeagenanController::class, 'daftar'])->name('keagenan.daftar');
 });
 
 Route::middleware('auth')->group(function () {
@@ -78,6 +83,8 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
     Route::get('/admin/area', [AreaController::class, 'index'])->name('admin.area');
     Route::post('/admin/area/store', [AreaController::class, 'store'])->name('admin.area.store');
     Route::post('/admin/area/update', [AreaController::class, 'update'])->name('admin.area.update');
+    //permintaan agen baru
+    Route::get('/admin/req/agen-baru', [PermintaanAgenBaruController::class, 'index'])->name('admin.req.agen');
     //permintaan pelanggan baru
     Route::get('/admin/req/pelanggan-baru', [PermintaanPelangganBaruController::class, 'index'])->name('admin.req.pelanggan');
     Route::post('/admin/req/pelanggan-baru/{id}/update', [PermintaanPelangganBaruController::class, 'update'])->name('admin.req.pelanggan.update');

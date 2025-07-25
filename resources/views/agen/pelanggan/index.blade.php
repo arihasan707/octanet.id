@@ -199,7 +199,7 @@
                             </div>
                             <div class="col-12">
                                 <label for="layanan" class="form-label">Paket Layanan</label>
-                                <select name="layanan" class="form-select">
+                                <select name="layanan" class="form-select rounded-lg">
                                     <option value="">-- Pilihan Paket Layanan --</option>
                                     @foreach ($layanans as $row)
                                     <option value="{{$row->id}}">{{ $row->Kategori->nama }} -
@@ -224,7 +224,7 @@
                             </div>
                             <div class="col-12">
                                 <label for="alamat" class="form-label">Alamat Pemasangan</label>
-                                <textarea name="alamat" class="form-control"></textarea>
+                                <textarea name="alamat" class="form-control border-[#6b7280]"></textarea>
                             </div>
                             <div class="col-6">
                                 <label for="long" class="form-label">Longitude</label>
@@ -353,13 +353,13 @@
                             </div>
                             <div class="col-6">
                                 <label for="long" class="form-label">Longitude</label>
-                                <input type="text" name="long" value="{{$row->long}}" class="form-control rounded-lg"
-                                    disabled readonly>
+                                <input type="text" name="long" value="{{$row->long}}" class="form-control" disabled
+                                    readonly>
                             </div>
                             <div class="col-6">
                                 <label for="lat" class="form-label">Latitude</label>
-                                <input type="number" name="lat" value="{{$row->lat}}" class="form-control rounded-lg"
-                                    disabled readonly>
+                                <input type="text" name="lat" value="{{$row->lat}}" class="form-control" disabled
+                                    readonly>
                             </div>
                             <div class="col-12">
                                 <div class="card h-100 p-0">

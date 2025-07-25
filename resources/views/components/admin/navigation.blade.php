@@ -4,10 +4,10 @@
     </button>
     <div>
         <a href="index.html" class="sidebar-logo">
-            <img src="{{ asset('assets/front/img/icons/logo-octanet.png') }}" width="120px" alt="site logo"
+            <img src="{{ asset('assets/front-new/img/logo-octanet.png') }}" width="120px" alt="site logo"
                 class="light-logo">
-            <img src="assets/images/logo-light.png" alt="site logo" class="dark-logo">
-            <img src="assets/images/logo-icon.png" alt="site logo" class="logo-icon">
+            <img src="{{ asset('assets/front-new/img/logo-octanet.png') }}" alt="site logo" class="dark-logo">
+            <img src="{{ asset('assets/front-new/img/logo-octanet.png') }}" alt="site logo" class="logo-icon">
         </a>
     </div>
     <div class="sidebar-menu-area">
@@ -26,9 +26,14 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
+                        <a href="{{route('admin.req.agen')}}"><i
+                                class="ri-circle-fill circle-icon text-red-600 w-auto"></i>
+                            Agen</a>
+                    </li>
+                    <li>
                         <a href="{{route('admin.req.pelanggan')}}"><i
                                 class="ri-circle-fill circle-icon text-primary-600 w-auto"></i>
-                            Pelanggan Baru</a>
+                            Pelanggan</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.req.pencairan') }}"><i

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('agens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama');
             $table->string('no_telp');
+            $table->string('email');
             $table->text('alamat');
+            $table->string('prov');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

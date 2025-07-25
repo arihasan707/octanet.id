@@ -64,16 +64,16 @@ class PelangganController extends Controller
                 ->addColumn('status', function ($row) {
                     switch ($row->status) {
                         case 'aktif':
-                            return "<span class='badge text-[3px] fw-semibold rounded-pill bg-success px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
+                            return "<span class='badge fw-semibold rounded-pill bg-success px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
                             break;
                         case 'berhenti':
-                            return "<span class='badge text-[3px] fw-semibold rounded-pill bg-secondary px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
+                            return "<span class='badge fw-semibold rounded-pill bg-secondary px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
                             break;
                         case 'terblokir':
-                            return "<span class='badge text-[3px] fw-semibold rounded-pill bg-danger px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
+                            return "<span class='badge fw-semibold rounded-pill bg-danger px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
                             break;
                         default:
-                            return "<span class='badge text-[3px] fw-semibold rounded-pill bg-warning-600 px-20 py-6 radius-4 text-white'>" . $row->status . "</span>";
+                            return "<span class='badge fw-semibold rounded-pill bg-warning px-20 py-6 radius-4 dark:text-black'>" . $row->status . "</span>";
                             break;
                     }
                 })

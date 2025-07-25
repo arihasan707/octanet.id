@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="{{asset('assets/back/css/lib/audioplayer.css')}}">
     <!-- main css -->
     <link rel="stylesheet" href="{{asset('assets/back/css/style.css')}}">
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')

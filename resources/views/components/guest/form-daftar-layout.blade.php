@@ -48,29 +48,6 @@
 <body class="index-page">
     @include('sweetalert::alert')
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container position-relative d-flex align-items-center justify-content-between">
-
-            <a href="{{route('beranda')}}" class="logo d-flex align-items-center me-auto me-xl-0">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="{{asset('assets/front-new/img/logo-octanet.png')}}" alt="">
-                <!-- <h1 class="sitename">Consulting.</h1> -->
-            </a>
-
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="{{route('beranda')}}">Beranda</a></li>
-                    <li><a href="#langkah-pendaftaran">Langkah Pendaftaran</a></li>
-                    <li><a href="#keuntungan">Keuntungan menjadi agen</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-
-            <a class="btn-getstarted font-medium" href="#daftar-agen">Daftar Agen</a>
-
-        </div>
-    </header>
-
     <main class="main">
         {{ $slot }}
     </main>

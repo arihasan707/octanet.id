@@ -189,6 +189,16 @@ h6 {
     transition: 0.3s;
 }
 
+.consultation .cta-form textarea:focus {
+    border-color: black;
+    box-shadow: none;
+}
+
+.consultation .cta-form .form-select:focus {
+    border-color: black;
+    box-shadow: none;
+}
+
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
     color: var(--contrast-color);
@@ -1437,7 +1447,7 @@ section,
 }
 
 .consultation .cta-form .form-control:focus {
-    border-color: var(--accent-color);
+    border-color: black;
     box-shadow: none;
 }
 

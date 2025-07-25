@@ -1,6 +1,6 @@
 <x-admin.app-layout>
     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
-        <h6 class="fw-semibold mb-0">Pelanggan Baru</h6>
+        <h6 class="fw-semibold mb-0">Pelanggan</h6>
         <ul class="d-flex align-items-center gap-2">
             <li class="fw-medium">
                 <a href="{{ route('admin.dashboard') }}" class="d-flex align-items-center gap-1 hover-text-primary">
@@ -11,13 +11,13 @@
             <li>-</li>
             <li class="fw-medium">Permintaan</li>
             <li>-</li>
-            <li class="fw-medium">Pelanggan Baru</li>
+            <li class="fw-medium">Pelanggan</li>
         </ul>
     </div>
 
     <div class="card basic-data-table">
         <div class="card-header flex justify-between items-center">
-            <h5 class="card-title mb-0">Daftar Pelanggan Baru</h5>
+            <h5 class="card-title mb-0">Permintaan Pelanggan Baru</h5>
         </div>
 
         <div class="card-body">
@@ -29,7 +29,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">No Hp 1</th>
                         <th scope="col">Coverage Area</th>
-                        <th scope="col">Status</th>
+                        <th>Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -42,27 +42,10 @@
                         <td>{{ $row->no_hp1}}</td>
                         <td>{{ $row->Area->nama }}</td>
                         <td>
-                            @switch($row->status)
-                            @case('aktif')
                             <span
-                                class="badge text-sm fw-semibold rounded-pill bg-success px-20 py-6 radius-4 text-white">{{ $row->status }}
+                                class="badge fw-semibold rounded-pill bg-warning px-20 py-6 radius-4 dark:text-black">konfirm
+                                admin
                             </span>
-                            @break
-                            @case('terblokir')
-                            <span
-                                class="badge text-sm fw-semibold rounded-pill bg-danger px-20 py-6 radius-4 text-white">{{ $row->status }}
-                            </span>
-                            @break
-                            @case('berhenti')
-                            <span
-                                class="badge text-sm fw-semibold rounded-pill bg-secondary px-20 py-6 radius-4 text-white">{{ $row->status }}
-                            </span>
-                            @break
-                            @default
-                            <span
-                                class="badge text-sm fw-semibold rounded-pill bg-warning-600 px-20 py-6 radius-4 text-white">{{ $row->status }}
-                            </span>
-                            @endswitch
                         </td>
                         <td class="text-white">
                             <button type="button" data-bs-target="#cek{{$row->id}}" data-bs-toggle="modal"
@@ -80,6 +63,7 @@
             </table>
         </div>
     </div>
+
     </div>
 
     <!-- Modal -->

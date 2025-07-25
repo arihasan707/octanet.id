@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Agen extends Model
 {
     protected $fillable = [
-        'user_id',
         'nama',
+        'email',
         'no_telp',
-        'alamat'
+        'alamat',
+        'prov'
     ];
 
     /**
