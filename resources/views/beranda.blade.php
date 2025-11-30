@@ -1,16 +1,16 @@
 <x-app-layout>
     @push('styles')
-    <style>
-        @media (min-width:768px) and (max-width:8560px) {
-            .banner__img .sm {
-                display: none;
+        <style>
+            @media (min-width:768px) and (max-width:8560px) {
+                .banner__img .sm {
+                    display: none;
+                }
             }
-        }
 
-        .ak-facilities4-slider-wrapper svg {
-            width: 60px;
-        }
-    </style>
+            .ak-facilities4-slider-wrapper svg {
+                width: 60px;
+            }
+        </style>
     @endpush
     <!-- Banner-4 area end -->
     <!-- Banner area start -->
@@ -19,45 +19,42 @@
         <div class="container">
             <div class="banner-slider banner-active">
                 @forelse ($banners as $row)
-                <a href="{{$row->link}}">
+                    <a href="{{ $row->link }}">
+                        <div class="banner-item">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="banner__img p-relative">
+                                        <div class="panel"></div>
+                                        <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
+                                            <img src="{{ asset('storage/images/desktop/' . $row->img) }}"
+                                                alt="image not found">
+                                        </div>
+                                        <img class="sm" src="{{ asset('storage/images/mobile/' . $row->img) }}"
+                                            alt="image not found">
+                                        <div class="shape p-relative"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                @empty
                     <div class="banner-item">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12">
                                 <div class="banner__img p-relative">
                                     <div class="panel"></div>
                                     <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
-                                        <img src="{{asset('storage/images/desktop/' . $row->img)}}"
+                                        <img src="{{ asset('assets/front-new/img/empty-banner-lg.jpg') }}"
                                             alt="image not found">
                                     </div>
-                                    <img class="sm" src="{{asset('storage/images/mobile/' . $row->img)}}"
+                                    <img class="sm" src="{{ asset('assets/front-new/img/empty-banner-sm.jpg') }}"
                                         alt="image not found">
                                     <div class="shape p-relative"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </a>
-                @empty
-                <div class="banner-item">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="banner__img p-relative">
-                                <div class="panel"></div>
-                                <div class=" min-[130px]:hidden max-[768px]:block md:block lg:block">
-                                    <img src="{{asset('assets/front-new/img/empty-banner-lg.jpg')}}"
-                                        alt="image not found">
-                                </div>
-                                <img class="sm" src="{{asset('assets/front-new/img/empty-banner-sm.jpg')}}"
-                                    alt="image not found">
-                                <div class="shape p-relative"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 @endforelse
-            </div>
-            <div class="banner-img-shape">
-                <img src="{{ asset('assets/front-new/img/banner-img-shape.png') }}" alt="banner-img-shape">
             </div>
         </div>
     </section>
@@ -69,172 +66,170 @@
             <div class="brand-wrapper ak-brand4-shadow">
                 <div class="brand-slider brand-active">
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-1.jpg') }}" width="150px"
-                                alt="brand-logo-1">
-                        </a>
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-1.jpg') }}" width="150px"
+                            alt="brand-logo-1">
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-2.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-2.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-3.jpg') }}" width="150px"
-                                alt="brand-logo-3">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-3.jpg') }}" width="150px"
+                            alt="brand-logo-3">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-4.jpg') }}" width="150px"
-                                alt="brand-logo-4">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-4.jpg') }}" width="150px"
+                            alt="brand-logo-4">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-5.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-5.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-6.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-6.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-7.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-7.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-8.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-8.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-9.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-9.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-10.jpg') }}" width="120px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-10.jpg') }}" width="120px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-11.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-11.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-12.jpg') }}" width="110px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-12.jpg') }}" width="110px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-13.jpg') }}" width="110px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-13.jpg') }}" width="110px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-14.jpg') }}" width="110px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-14.jpg') }}" width="110px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-15.jpg') }}" width="110px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-15.jpg') }}" width="110px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-16.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-16.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-17.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-17.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-18.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-18.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-19.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-19.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-20.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-20.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-21.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-21.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-22.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-22.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-23.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-23.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-24.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-24.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-25.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-25.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-26.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-26.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-27.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-27.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                     <div class="brand-item">
-                        <a href="#">
-                            <img src="{{ asset('assets/front-new/img/logo-client/logo-28.jpg') }}" width="150px"
-                                alt="brand-logo-2">
-                        </a>
+
+                        <img src="{{ asset('assets/front-new/img/logo-client/logo-28.jpg') }}" width="150px"
+                            alt="brand-logo-2">
+
                     </div>
                 </div>
             </div>
@@ -263,7 +258,8 @@
                                 <div class="ak-facilities4-content-wrapper">
                                     <div class="ak-facilities4-item-img-wrapper">
                                         <div class="img-icon mb-25">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="130" viewBox="0 0 24 24">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="130"
+                                                viewBox="0 0 24 24">
                                                 <path fill="currentColor"
                                                     d="M5 21q-.825 0-1.412-.587T3 19v-4q0-.825.588-1.412T5 13h10V9h2v4h2q.825 0 1.413.588T21 15v4q0 .825-.587 1.413T19 21zm2-3q.425 0 .713-.288T8 17t-.288-.712T7 16t-.712.288T6 17t.288.713T7 18m3.5 0q.425 0 .713-.288T11.5 17t-.288-.712T10.5 16t-.712.288T9.5 17t.288.713t.712.287m3.5 0q.425 0 .713-.288T15 17t-.288-.712T14 16t-.712.288T13 17t.288.713T14 18m.25-9.75L12.8 6.8q.65-.6 1.45-.95T16 5.5t1.75.35t1.45.95l-1.45 1.45q-.35-.35-.788-.55T16 7.5t-.963.2t-.787.55m-2.5-2.5l-1.4-1.4q1.1-1.1 2.55-1.725T16 2t3.1.625t2.55 1.725l-1.4 1.4q-.825-.825-1.912-1.287T16 4t-2.337.463T11.75 5.75" />
                                             </svg>
@@ -284,7 +280,8 @@
                                 <div class="ak-facilities4-content-wrapper">
                                     <div class="ak-facilities4-item-img-wrapper">
                                         <div class="img-icon mb-25">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 20 20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128"
+                                                viewBox="0 0 20 20">
                                                 <g fill="currentColor">
                                                     <path fill-rule="evenodd"
                                                         d="M1.5 10a8.5 8.5 0 1 0 17 0a8.5 8.5 0 0 0-17 0m16 0a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0"
@@ -313,7 +310,8 @@
                                 <div class="ak-facilities4-content-wrapper">
                                     <div class="ak-facilities4-item-img-wrapper">
                                         <div class="img-icon mb-25">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 24 24">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128"
+                                                viewBox="0 0 24 24">
                                                 <path fill="currentColor"
                                                     d="M4.9 17.1q-1.425-1.5-2.162-3.325T2 10t.738-3.775T4.9 2.9l1.2 1.2Q4.9 5.3 4.3 6.863T3.7 10t.6 3.138T6.1 15.9zm2.4-2.4q-.975-.975-1.487-2.2T5.3 10t.513-2.5T7.3 5.3l1.2 1.2q-.75.675-1.125 1.6T7 10q0 .9.375 1.825T8.5 13.5zM7 22l3.375-10.125q-.4-.35-.638-.825T9.5 10q0-1.05.725-1.775T12 7.5t1.775.725T14.5 10q0 .575-.238 1.05t-.637.825L17 22h-2l-.65-2H9.675L9 22zm3.325-4h3.35L12 13zm6.375-3.3l-1.2-1.2q.75-.675 1.125-1.6T17 10q0-.9-.375-1.825T15.5 6.5l1.2-1.2q.975.975 1.45 2.2t.55 2.5q0 1.275-.512 2.5T16.7 14.7m2.4 2.4l-1.2-1.2q1.2-1.2 1.8-2.762T20.3 10t-.6-3.137T17.9 4.1l1.2-1.2q1.425 1.5 2.163 3.325T22 10t-.7 3.775t-2.2 3.325" />
                                             </svg>
@@ -334,7 +332,8 @@
                                 <div class="ak-facilities4-content-wrapper">
                                     <div class="ak-facilities4-item-img-wrapper">
                                         <div class="img-icon mb-25">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 24 24">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128"
+                                                viewBox="0 0 24 24">
                                                 <path fill="currentColor"
                                                     d="m22.9 21.2l-4.1-4.1c.4-1 .2-2.3-.7-3.1c-.9-.9-2.2-1.1-3.3-.6l1.9 1.9l-1.4 1.4l-2-2c-.5 1.1-.3 2.4.6 3.4c.9.9 2.1 1.1 3.1.7l4.1 4.1c.2.2.5.2.6 0l1-1c.3-.3.3-.6.2-.7M13 20H2v-2c0-2.2 3.6-4 8-4c.5 0 1 0 1.4.1c-.3.6-.4 1.2-.4 1.9c0 1.6.8 3.1 2 4M10 4C7.8 4 6 5.8 6 8s1.8 4 4 4s4-1.8 4-4s-1.8-4-4-4" />
                                             </svg>
@@ -355,7 +354,8 @@
                                 <div class="ak-facilities4-content-wrapper">
                                     <div class="ak-facilities4-item-img-wrapper">
                                         <div class="img-icon mb-25">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="128" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="128"
+                                                viewBox="0 0 16 16">
                                                 <path fill="currentColor"
                                                     d="M11.5 0h-7C3.675 0 3 .675 3 1.5v13c0 .825.675 1.5 1.5 1.5h7c.825 0 1.5-.675 1.5-1.5v-13c0-.825-.675-1.5-1.5-1.5M6 .75h4v.5H6zM8 15a1 1 0 1 1 0-2a1 1 0 0 1 0 2m4-3H4V2h8z" />
                                             </svg>
@@ -514,7 +514,7 @@
                 </div>
             </div>
             <div class="ak-package4-button text-center mt-15 bdFadeBottom">
-                <a class="text-btn" href="{{route('price')}}">Lihat Layanan Lainnya</a>
+                <a class="text-btn" href="{{ route('price') }}">Lihat Layanan Lainnya</a>
             </div>
         </div>
     </section>
@@ -588,7 +588,7 @@
                 </div>
                 <div class="ak-order-button text-center mt-60 bdFadeBottom"
                     style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                    <a class="button white" href="{{route('keagenan')}}">Lihat Detail</a>
+                    <a class="button white" href="{{ route('keagenan') }}">Lihat Detail</a>
                 </div>
             </div>
         </div>
@@ -702,7 +702,8 @@
                     <div class="container">
                         <div class="row p-4">
                             <div class="col-xl-6 col-lg-6">
-                                <img src="{{asset('assets/front-new/img/mobile-app.png')}}" alt="" srcset="">
+                                <img src="{{ asset('assets/front-new/img/mobile-app.png') }}" alt=""
+                                    srcset="">
                             </div>
                             <div class="col-xl-6 col-lg-6 flex items-center">
                                 <div class="ak-footer-cta-details bdFadeBottom text-center">
@@ -713,8 +714,8 @@
                                     <h5 class="my-3 text-white font-bold text-xl">Segera Download di :</h5>
                                     <div class=" flex justify-center">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                                            <img src="{{asset('assets/front/img/img_play-store.webp')}}" width="200px"
-                                                alt="" srcset="">
+                                            <img src="{{ asset('assets/front/img/img_play-store.webp') }}"
+                                                width="200px" alt="" srcset="">
                                         </a>
                                     </div>
                                 </div>
@@ -782,7 +783,8 @@
                                             </button>
                                         </h2>
                                         <div id="collapseThree-st-2" class="accordion-collapse collapse"
-                                            aria-labelledby="headingThree-st-2" data-bs-parent="#accordionExample-st-2">
+                                            aria-labelledby="headingThree-st-2"
+                                            data-bs-parent="#accordionExample-st-2">
                                             <div class="accordion-body">
                                                 Syarat berlangganan OCTAnet adalah sebagai berikut : <br>
                                                 • Pastikan lokasi anda sudah tercover oleh jaringan OCTAnet <br>
@@ -802,7 +804,8 @@
                                             </button>
                                         </h2>
                                         <div id="collapseFour-st-2" class="accordion-collapse collapse"
-                                            aria-labelledby="headingFour-st-2" data-bs-parent="#accordionExample-st-2">
+                                            aria-labelledby="headingFour-st-2"
+                                            data-bs-parent="#accordionExample-st-2">
                                             <div class="accordion-body">
                                                 Kecepatan internet yang didapatkan oleh Pelanggan bersifat “up to”
                                                 dan tergantung pada beberapa faktor diantaranya kondisi perangkat

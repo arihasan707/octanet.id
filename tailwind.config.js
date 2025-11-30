@@ -9,6 +9,8 @@ export default {
         "./resources/views/**/*.blade.php",
     ],
 
+    darkMode: ['attribute', 'data-theme'],
+
     theme: {
         screens: {
             sm: "375px",
@@ -22,5 +24,5 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [],
 };

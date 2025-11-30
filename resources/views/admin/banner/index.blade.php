@@ -173,7 +173,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- format rupiah -->
     <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0"></script>
-    <script src="assets/js/app.js"></script>
     <script>
         $(document).ready(function() {
 

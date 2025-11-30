@@ -15,7 +15,6 @@ class PermintaanAgenBaruController extends Controller
     public function index()
     {
         $data = DB::table('agens')
-            ->join('province', 'province.id', '=', 'agens.prov')
             ->where('is_active', false)
             ->get();
 

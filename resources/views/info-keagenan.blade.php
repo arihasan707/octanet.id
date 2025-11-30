@@ -23,7 +23,7 @@
         }
 
         label.error {
-            margin-top: 2px;
+            margin-top: 4px;
             padding: 6px;
             width: 100%;
             background-color: #F9E4E8;
@@ -310,7 +310,7 @@
                         <div class="text-[20px] font-semibold text-black text-center">Pengajuan Menjadi Agen Berhasil
                         </div>
                         <div class="cta-content text-center">
-                            <p>Pastikan WhatsApp aktif agar tim kami mudah menghubungimu.</p>
+                            <p>Pastikan No. WhatsApp aktif agar tim kami mudah menghubungimu.</p>
                             <p>#Salam Octanet. </p>
                         </div>
                     </div>
@@ -336,18 +336,20 @@
                                     </div>
                                     <div class="col-lg-12 form-group mt-3">
                                         <label class="form-label d-block">Alamat Lengkap</label>
-                                        <textarea name="alamat" class="w-[100%] border-slate-300 rounded-md" rows="5"
+                                        <textarea name="alamat" class="w-[100%] p-[15px] mb-[-7px] border-slate-300 rounded-md" rows="5"
                                             id=""></textarea>
                                     </div>
-                                    <div class="col-lg-12 form-group mt-3">
-                                        <label for="prov" class="form-label">Provinsi</label>
-                                        <select name="prov" id="" aria-readonly="true"
-                                            class="form-select border-slate-300 rounded-md">
-                                            <option value="">Pilih Provinsi</option>
-                                            @foreach ($provinsi as $row)
-                                            <option value="{{ $row->id }}">{{ $row->name }}</option>
-                                            @endforeach
-                                        </select>
+                                    <div class="col-4 form-group mt-3">
+                                        <label for="rt" class="form-label">RT</label>
+                                         <input type="text" class="form-control" name="rt" placeholder="">
+                                    </div>
+                                    <div class="col-4 form-group mt-3">
+                                        <label for="rw" class="form-label">RW</label>
+                                         <input type="text" class="form-control" name="rw" placeholder="">
+                                    </div>
+                                    <div class="col-4 form-group mt-3">
+                                        <label for="kd_pos" class="form-label">Kode Pos</label>
+                                         <input type="text" class="form-control" name="kd_pos" placeholder="">
                                     </div>
                                     <div class="my-3">
                                         <div class="loading">Loading</div>
@@ -386,9 +388,15 @@
                 alamat: {
                     required: true
                 },
-                prov: {
+                rt: {
                     required: true
-                }
+                },
+                rw: {
+                    required: true
+                },
+                kd_pos: {
+                    required: true
+                },
             },
             messages: {
                 name: {
@@ -406,9 +414,15 @@
                 alamat: {
                     required: "Alamat Lengkap harus di isi !"
                 },
-                prov: {
-                    required: "Provinsi harus di isi !"
-                }
+                rt: {
+                    required: "RT harus di isi !"
+                },
+                rw: {
+                    required: "RW harus di isi !"
+                },
+                kd_pos: {
+                    required: "Kode Pos harus di isi !"
+                },
             }
         })
     </script>

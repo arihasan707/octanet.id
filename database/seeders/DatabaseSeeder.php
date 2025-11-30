@@ -18,23 +18,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::unprepared(
-            file_get_contents(__DIR__ . '/province.sql')
-        );
-
-        // User::factory()->create([
-        //     'name' => 'Admin',
-        //     'email' => 'admin@gmail.com',
-        //     'telp' => '085894020453',
-        //     'roles' => 'admin'
-        // ]);
+        // DB::unprepared(
+        //     file_get_contents(__DIR__ . '/province.sql')
+        // );
 
         User::factory()->create([
-            'name' => 'Agen',
-            'email' => 'agen@gmail.com',
-            'telp' => '089513270523',
-            'roles' => 'agen'
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'telp' => '085894020453',
+            'roles' => 'admin'
         ]);
+
+        // User::factory()->create([
+        //     'name' => 'Agen',
+        //     'email' => 'agen@gmail.com',
+        //     'telp' => '089513270523',
+        //     'roles' => 'agen'
+        // ]);
 
         // Kategori::factory()->create();
 

@@ -215,8 +215,6 @@
 
 
     @push('scripts')
-    <!-- main js -->
-    <script src="assets/js/app.js"></script>
     <script>
         let table = new DataTable('#dataTable');
     </script>

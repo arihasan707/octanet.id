@@ -12,7 +12,9 @@ class Agen extends Model
         'email',
         'no_telp',
         'alamat',
-        'prov'
+        'rt',
+        'rw',
+        'kd_pos',
     ];
 
     /**

@@ -5,7 +5,8 @@
 
     <section class="ak-broadband-area bd-accordion-fix ak-broadband-bg pt-32 pb-140">
         <div class="ak-broadband-right-shape">
-            <img src="{{ asset('assets/front-new/img/ak-broadband-right-shape-img.png') }}" alt="image not found">
+            <img src="{{ asset('assets/front-new/img/ak-broadband-right-shape-img.png') }}" alt="image not found"
+                loading="lazy">
         </div>
         <div class="container">
             <div class="section-title theme-section-title mb-60">
@@ -31,7 +32,7 @@
                                         </div>
                                         <div class="ak-accourdion-body-shape">
                                             <img src="{{ asset('assets/front-new/img/ak-accordion-item-shape.png') }}"
-                                                alt="image not found">
+                                                alt="image not found" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +53,7 @@
                                         </div>
                                         <div class="ak-accourdion-body-shape">
                                             <img src="{{ asset('assets/front-new/img/ak-accordion-item-shape.png') }}"
-                                                alt="image not found">
+                                                alt="image not found" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +76,7 @@
                                         </div>
                                         <div class="ak-accourdion-body-shape">
                                             <img src="{{ asset('assets/front-new/img/ak-accordion-item-shape.png') }}"
-                                                alt="image not found">
+                                                alt="image not found" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +100,7 @@
                                         </div>
                                         <div class="ak-accourdion-body-shape">
                                             <img src="{{ asset('assets/front-new/img/ak-accordion-item-shape.png') }}"
-                                                alt="image not found">
+                                                alt="image not found" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +110,8 @@
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="ak-broadband-img-wrapper">
-                        <img src="{{ asset('assets/front-new/img/hero-provider.jpg') }}" alt="ak-broadband-img">
+                        <img src="{{ asset('assets/front-new/img/hero-provider.jpg') }}" alt="ak-broadband-img"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -121,113 +123,131 @@
     <div class="gallery-grid-area bd-nav-tabs-fix pb-36 pt-115">
         <div class="container">
             <div class="gallery-grid-menu-wrapper">
+
+                {{-- TAB MENU KATEGORI --}}
                 <div class="ak-movies-menu mb-45">
                     <ul class="nav nav-tabs justify-center" id="myTab" role="tablist">
-                        @foreach ($kategori as $row)  
-                        <li class="nav-item bdFadeUp" role="presentation">
-                            <button class="nav-link {{ $loop->first ? 'active' : '' }}" id="{{ Str::slug($row->nama) }}-tab" data-bs-toggle="tab"
-                                data-bs-target="#{{ Str::slug($row->nama) }}-tab-pane" type="button" role="tab"
-                                aria-controls="{{ Str::slug($row->nama) }}-tab-pane" aria-selected="false">{{ $row->nama }}</button>
-                        </li>
+                        @foreach ($kategori as $kat)
+                            <li class="nav-item bdFadeUp" style="padding: 4px;" role="presentation">
+                                <button class="nav-link {{ $loop->first ? 'active' : '' }}"
+                                    id="{{ Str::slug($kat->nama) }}-tab" data-bs-toggle="tab"
+                                    data-bs-target="#{{ Str::slug($kat->nama) }}-tab-pane" type="button"
+                                    role="tab" aria-controls="{{ Str::slug($kat->nama) }}-tab-pane"
+                                    aria-selected="{{ $loop->first ? 'true' : 'false' }}">
+                                    {{ $kat->nama }}
+                                </button>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
+
                 <div class="ak-movies-item-wrapper">
                     <div class="tab-content" id="myTabContent">
-                        @foreach ($kategori as $row)
-                            <div class="tab-pane fade {{ $loop->first ? ' show active' : '' }}" id="{{ Str::slug($row->nama) }}-tab-pane" role="tabpanel"
-                            aria-labelledby="{{ Str::slug($row->nama) }}-tab" tabindex="0">
-                            <div class="row">
-        <div class="inner-service-slider-wrapper">
-            <div
-                class="swiper ak-service3-active swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                <div class="swiper-wrapper" id="swiper-wrapper-2e108cb2228748ad9"
-                    aria-live="polite"
-                    style="transition-duration: 0ms; transform: translate3d(-884px, 0px, 0px);">
-                    @foreach ($prices as $price)     
-                    <div class="swiper-slide bdFade4" role="group" aria-label="2 / 4"
-                        style="width: 412px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px); margin-right: 30px;"
-                        data-swiper-slide-index="0">
-                        <div
-                            class="ak-package3-item ak-package3-item-active ak-package4-item-active p-relative">
-                            <div class="ak-package4-item-active-img">
-                                <img src="{{ asset('assets/front-new/img/ak-package4-item-active-bg-img.png') }}"
-                                    alt="image not found">
+
+                        {{-- TAB CONTENT PER KATEGORI --}}
+                        @foreach ($kategori as $kat)
+                            <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}"
+                                id="{{ Str::slug($kat->nama) }}-tab-pane" role="tabpanel"
+                                aria-labelledby="{{ Str::slug($kat->nama) }}-tab" tabindex="0">
+
+                                <div class="row">
+                                    <div class="inner-service-slider-wrapper">
+                                        <div class="swiper ak-service3-active">
+
+                                            <div class="swiper-wrapper">
+
+                                                {{-- PRODUK SESUAI KATEGORI --}}
+                                                @foreach ($kat->products as $price)
+                                                    <div class="swiper-slide bdFade4">
+                                                        <div
+                                                            class="ak-package3-item ak-package3-item-active ak-package4-item-active p-relative">
+
+                                                            {{-- BG Template --}}
+                                                            <div class="ak-package4-item-active-img">
+                                                                <img src="{{ asset('assets/front-new/img/ak-package4-item-active-bg-img.png') }}"
+                                                                    alt="image not found" loading="lazy">
+                                                            </div>
+
+                                                            <div class="ak-package4-item-content">
+
+                                                                {{-- TITLE & SPEED --}}
+                                                                <div class="ak-package3-item-heading">
+                                                                    <h3>{{ $price->nama }}</h3>
+                                                                    <p class="text-white">
+                                                                        Speed Up to
+                                                                        <strong class="text-red-500 text-[20px]">
+                                                                            {{ $price->kecepatan }}
+                                                                        </strong>
+                                                                    </p>
+                                                                </div>
+
+                                                                {{-- FEATURE LIST --}}
+                                                                <div class="ak-package3-item-price-list">
+                                                                    <ul>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->layanan }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>Kecepatan
+                                                                            {{ $price->kecepatan }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->data_quota }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $kat->nama !== 'Home Internet' ? 'IP Address' : 'Akses' }}
+                                                                            {{ $price->akses_perangkat }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->biaya_pasang }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->alat_wifi }}</li>
+                                                                    </ul>
+                                                                </div>
+
+                                                                {{-- PRICE --}}
+                                                                <div class="ak-package3-item-price d-flex">
+                                                                    <span>Rp</span>
+                                                                    <h3 class="ak-offer-price-point">
+                                                                        {{ number_format($price->harga, 0, ',', '.') }}
+                                                                        <sub class="ak-offer-price-date">/ Bulan</sub>
+                                                                    </h3>
+                                                                </div>
+
+                                                                {{-- BUTTON --}}
+                                                                <div
+                                                                    class="ak-package-active-item-btn price-active-item-btn mt-15">
+                                                                    <a class="unfill-btn button white w-100"
+                                                                        href="#">
+                                                                        Get Started
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+
+                                            </div>
+
+                                            {{-- SWIPER PAGINATION --}}
+                                            <div class="service3-slider-dot swiper-pagination"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="ak-package4-item-content">
-                                <div class="ak-package3-item-heading">
-                                    <h3>Home 10Mbps</h3>
-                                    <p class="text-white">Speed Up to <strong
-                                            class="text-red-500 text-[20px]">10</strong>
-                                        mbps</p>
-                                </div>
-                                <div class="ak-package3-item-price-list">
-                                    <ul>
-                                        <li><span>
-                                                <iconify-icon
-                                                    icon="material-symbols:check-rounded">
-                                                </iconify-icon>
-                                            </span> Layanan Internet Only</li>
-                                        <li><span>
-                                                <iconify-icon
-                                                    icon="material-symbols:check-rounded">
-                                                </iconify-icon>
-                                            </span> Data Quota Unlimited</li>
-                                        <li><span>
-                                                <iconify-icon
-                                                    icon="material-symbols:check-rounded">
-                                                </iconify-icon>
-                                            </span> Akses Perangkat 5 Perangkat</li>
-                                        <li><span>
-                                                <iconify-icon
-                                                    icon="material-symbols:check-rounded">
-                                                </iconify-icon>
-                                            </span> Biaya Pemasangan Gratis</li>
-                                        <li><span>
-                                                <iconify-icon
-                                                    icon="material-symbols:check-rounded">
-                                                </iconify-icon>
-                                            </span> Alat Wifi/Router DiPinjamkan</li>
-                                    </ul>
-                                </div>
-                                <div class="ak-package3-item-price d-flex">
-                                    <span>Rp</span>
-                                    <h3 class="ak-offer-price-point"> 175.000
-                                        <sub class="ak-offer-price-date">/ Bulan</sub>
-                                    </h3>
-                                </div>
-                                <div
-                                    class="ak-package-active-item-btn price-active-item-btn mt-15">
-                                    <a class="unfill-btn button white w-100" href="#">Get
-                                        Started</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="service3-slider-dot bdFade4 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
-                    style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"
-                        tabindex="0" role="button" aria-label="Go to slide 1"
-                        aria-current="true"></span><span class="swiper-pagination-bullet"
-                        tabindex="0" role="button" aria-label="Go to slide 2"></span><span
-                        class="swiper-pagination-bullet" tabindex="0" role="button"
-                        aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet"
-                        tabindex="0" role="button" aria-label="Go to slide 4"></span>
-                </div>
-                <span class="swiper-notification" aria-live="assertive"
-                    aria-atomic="true"></span>
-            </div>
-        </div>
-    </div>
-</div>
                         @endforeach
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
 
 
 </x-app-layout>

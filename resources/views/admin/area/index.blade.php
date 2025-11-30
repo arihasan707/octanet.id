@@ -169,8 +169,6 @@
     <script src="{{asset('assets/back/js/jquery.validate.min.js')}}"></script>
     <!-- format rupiah -->
     <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0"></script>
-    <!-- main js -->
-    <script src="assets/js/app.js"></script>
     <script>
         $(document).ready(function() {
             let table = new DataTable('#dataTable');

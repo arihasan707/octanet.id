@@ -2,8 +2,13 @@
 
 function formatRupiah($amount)
 {
-    $formatter =  new \NumberFormatter('id_ID', \NumberFormatter::CURRENCY);
-    return $formatter->formatCurrency($amount, 'IDR');
+    $formatter = new \NumberFormatter('id_ID', \NumberFormatter::CURRENCY);
+    $formatted = $formatter->formatCurrency($amount, 'IDR');
+
+    // Hilangkan koma + nol desimal
+    $formatted = preg_replace('/([.,]00)(?=\D*$)/', '', $formatted);
+
+    return $formatted;
 }
 
 function parseRupiah($value)

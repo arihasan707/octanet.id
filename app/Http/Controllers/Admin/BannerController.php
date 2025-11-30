@@ -51,7 +51,7 @@ class BannerController extends Controller
             $image = $this->manager->read($value);
 
             $imageName = time() . '.' . $value->getClientOriginalExtension();
-            $thumbImage =  $image->encodeByExtension($value->getClientOriginalExtension(), quality: 50);
+            $thumbImage =  $image->encodeByExtension($value->getClientOriginalExtension(), quality: 80);
 
 
             Storage::disk('public')->put("$folder/$imageName", $thumbImage);

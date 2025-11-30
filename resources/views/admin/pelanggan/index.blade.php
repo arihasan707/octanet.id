@@ -1,4 +1,5 @@
 <x-admin.app-layout>
+
     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
         <h6 class="fw-semibold mb-0">Pelanggan</h6>
         <ul class="d-flex align-items-center gap-2">
@@ -16,10 +17,10 @@
     <div class="row mb-3 mt-3">
         <div class="col-12 flex justify-end gap-3">
             <div class="col-4">
-                <input type="text" id="filter-nama" class="form-control" placeholder="Cari Nama">
+                <input type="text" id="filter-nama" class="form-control dark:bg-[#1b2431]" placeholder="Cari Nama">
             </div>
             <div class="col-4">
-                <select id="filter-status" class="form-select">
+                <select id="filter-status" class="form-select dark:bg-[#1b2431]">
                     <option value="">-- Semua Status --</option>
                     <option value="aktif">Aktif</option>
                     <option value="ditolak">Ditolak</option>
@@ -188,8 +189,6 @@
     @endforeach
 
     @push('scripts')
-    <!-- main js -->
-    <script src="assets/js/app.js"></script>
     <script>
         $(document).ready(function() {
             let table = $('#dataTable').DataTable({
