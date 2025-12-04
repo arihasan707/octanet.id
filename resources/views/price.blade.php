@@ -220,7 +220,7 @@
                                                                     class="ak-package-active-item-btn price-active-item-btn mt-15">
                                                                     <a class="unfill-btn button white w-100"
                                                                         href="#">
-                                                                        Get Started
+                                                                        Order Now
                                                                     </a>
                                                                 </div>
 

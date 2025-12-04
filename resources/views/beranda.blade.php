@@ -383,141 +383,137 @@
 
     <!-- Package area start -->
 
-    <section class="ak-package4-area ak-package4-bg pt-125 pb-125 p-relative">
+    <div class="gallery-grid-area bd-nav-tabs-fix pb-36 pt-50">
         <div class="container">
-            <div class="section-title text-center section-title-4 mb-60">
-                <h2 class="main-title bdFadeBottom"> Layanan Paket OCTAnet
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
-                    <div class="ak-package3-item package4-item">
-                        <div class="ak-package4-item-content">
-                            <div class="ak-package3-item-heading">
-                                <h3>Broadband Bisnis</h3>
-                                <p>Speed Up to <strong class="text-dark text-[20px]">250</strong> mbps</p>
-                            </div>
-                            <div class="ak-package3-item-price-list">
-                                <ul>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span>
+            <div class="gallery-grid-menu-wrapper">
+                <div class="section-title text-center mb-30">
+                    <h2 class="main-title bdFadeBottom">Layanan Paket OCTAnet
+                    </h2>
+                </div>
 
-                                        Layanan Internet Only
-                                    </li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Data Quota Unlimited</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> IP Address Private Static</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Biaya Pemasangan</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Alat Wifi/Router DiPinjamkan</li>
-                                </ul>
+                {{-- TAB MENU KATEGORI --}}
+                <div class="ak-movies-menu mb-45">
+                    <ul class="nav nav-tabs justify-center" id="myTab" role="tablist">
+                        @foreach ($kategori as $kat)
+                            <li class="nav-item bdFadeUp" style="padding: 4px;" role="presentation">
+                                <button class="nav-link {{ $loop->first ? 'active' : '' }}"
+                                    id="{{ Str::slug($kat->nama) }}-tab" data-bs-toggle="tab"
+                                    data-bs-target="#{{ Str::slug($kat->nama) }}-tab-pane" type="button"
+                                    role="tab" aria-controls="{{ Str::slug($kat->nama) }}-tab-pane"
+                                    aria-selected="{{ $loop->first ? 'true' : 'false' }}">
+                                    {{ $kat->nama }}
+                                </button>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <div class="ak-movies-item-wrapper">
+                    <div class="tab-content" id="myTabContent">
+
+                        {{-- TAB CONTENT PER KATEGORI --}}
+                        @foreach ($kategori as $kat)
+                            <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}"
+                                id="{{ Str::slug($kat->nama) }}-tab-pane" role="tabpanel"
+                                aria-labelledby="{{ Str::slug($kat->nama) }}-tab" tabindex="0">
+
+                                <div class="row">
+                                    <div class="inner-service-slider-wrapper">
+                                        <div class="swiper ak-service3-active">
+
+                                            <div class="swiper-wrapper">
+
+                                                {{-- PRODUK SESUAI KATEGORI --}}
+                                                @foreach ($kat->products as $price)
+                                                    <div class="swiper-slide bdFade4">
+                                                        <div
+                                                            class="ak-package3-item ak-package3-item-active ak-package4-item-active p-relative">
+
+                                                            {{-- BG Template --}}
+                                                            <div class="ak-package4-item-active-img">
+                                                                <img src="{{ asset('assets/front-new/img/ak-package4-item-active-bg-img.png') }}"
+                                                                    alt="image not found" loading="lazy">
+                                                            </div>
+
+                                                            <div class="ak-package4-item-content">
+
+                                                                {{-- TITLE & SPEED --}}
+                                                                <div class="ak-package3-item-heading">
+                                                                    <h3>{{ $price->nama }}</h3>
+                                                                    <p class="text-white">
+                                                                        Speed Up to
+                                                                        <strong class="text-red-500 text-[20px]">
+                                                                            {{ $price->kecepatan }}
+                                                                        </strong>
+                                                                    </p>
+                                                                </div>
+
+                                                                {{-- FEATURE LIST --}}
+                                                                <div class="ak-package3-item-price-list">
+                                                                    <ul>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->layanan }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>Kecepatan
+                                                                            {{ $price->kecepatan }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->data_quota }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $kat->nama !== 'Home Internet' ? 'IP Address' : 'Akses' }}
+                                                                            {{ $price->akses_perangkat }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->biaya_pasang }}</li>
+                                                                        <li><iconify-icon
+                                                                                icon="material-symbols:check-rounded"></iconify-icon>
+                                                                            {{ $price->alat_wifi }}</li>
+                                                                    </ul>
+                                                                </div>
+
+                                                                {{-- PRICE --}}
+                                                                <div class="ak-package3-item-price d-flex">
+                                                                    <span>Rp</span>
+                                                                    <h3 class="ak-offer-price-point">
+                                                                        {{ number_format($price->harga, 0, ',', '.') }}
+                                                                        <sub class="ak-offer-price-date">/ Bulan</sub>
+                                                                    </h3>
+                                                                </div>
+
+                                                                {{-- BUTTON --}}
+                                                                <div
+                                                                    class="ak-package-active-item-btn price-active-item-btn mt-15">
+                                                                    <a class="unfill-btn button white w-100"
+                                                                        href="#">
+                                                                        Order Now
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+
+                                            </div>
+
+                                            {{-- SWIPER PAGINATION --}}
+                                            <div class="service3-slider-dot swiper-pagination"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="ak-package3-item-price d-flex">
-                                <span>Rp</span>
-                                <h3 class="ak-offer-price-point">650.000
-                                    <sub class="ak-offer-price-date">/ Bulan</sub>
-                                </h3>
-                            </div>
-                            <div class="ak-package3-item-btn mt-15">
-                                <a class="unfill-btn button w-100" href="#">Get Started</a>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
-                    <div class="ak-package3-item ak-package3-item-active ak-package4-item-active p-relative">
-                        <div class="ak-package4-item-active-img">
-                            <img src="{{ asset('assets/front-new/img/ak-package4-item-active-bg-img.png') }}"
-                                alt="image not found">
-                        </div>
-                        <div class="ak-package4-item-content">
-                            <div class="ak-package3-item-heading">
-                                <h3>Home Internet</h3>
-                                <p class="text-white">Speed Up to <strong class="text-red-500 text-[20px]">30</strong>
-                                    mbps</p>
-                            </div>
-                            <div class="ak-package3-item-price-list">
-                                <ul>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Layanan Internet Only</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Data Quota Unlimited</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Akses Perangkat 5 Perangkat</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Biaya Pemasangan Gratis</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Alat Wifi/Router DiPinjamkan</li>
-                                </ul>
-                            </div>
-                            <div class="ak-package3-item-price d-flex">
-                                <span>Rp</span>
-                                <h3 class="ak-offer-price-point"> 275.000
-                                    <sub class="ak-offer-price-date">/ Bulan</sub>
-                                </h3>
-                            </div>
-                            <div class="ak-package-active-item-btn price-active-item-btn mt-15">
-                                <a class="unfill-btn button white w-100" href="#">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-12 bdFade3 mb-4">
-                    <div class="ak-package3-item package4-item">
-                        <div class="ak-package4-item-content">
-                            <div class="ak-package3-item-heading">
-                                <h3>Dedicated</h3>
-                                <p>Speed Up to <strong class="text-dark text-[20px]">500</strong> mbps</p>
-                            </div>
-                            <div class="ak-package3-item-price-list">
-                                <ul>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Layanan Internet Only</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Data Quota Unlimited</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> IP Address IP Public Static /30</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Biaya Pemasangan</li>
-                                    <li><span>
-                                            <iconify-icon icon="material-symbols:check-rounded"></iconify-icon>
-                                        </span> Alat Wifi/Router DiPinjamkan</li>
-                                </ul>
-                            </div>
-                            <div class="ak-package3-item-price d-flex">
-                                <span>Rp</span>
-                                <h3 class="ak-offer-price-point"> 2.600.000
-                                    <sub class="ak-offer-price-date">/ Bulan</sub>
-                                </h3>
-                            </div>
-                            <div class="ak-package3-item-btn mt-15">
-                                <a class="unfill-btn button w-100" href="#">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ak-package4-button text-center mt-15 bdFadeBottom">
-                <a class="text-btn" href="{{ route('price') }}">Lihat Layanan Lainnya</a>
+
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Package area end -->
 
