@@ -62,11 +62,12 @@
                     <li><a href="{{route('beranda')}}">Beranda</a></li>
                     <li><a href="#langkah-pendaftaran">Langkah Pendaftaran</a></li>
                     <li><a href="#keuntungan">Keuntungan menjadi agen</a></li>
+                    <li><a href="#daftar-agen">Daftar Agen</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted font-medium" href="#daftar-agen">Daftar Agen</a>
+            <a class="btn-getstarted font-medium" href="https://reseller.octanet.id">Login Reseller</a>
 
         </div>
     </header>
